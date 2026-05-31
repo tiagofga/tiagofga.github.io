@@ -207,6 +207,10 @@ main {
   z-index: 1;
 }
 
+.hero-copy {
+  container-type: inline-size;
+}
+
 .eyebrow {
   margin: 0 0 12px;
   color: var(--primary);
@@ -219,8 +223,14 @@ main {
 h1 {
   margin: 0;
   color: var(--heading);
-  font-size: clamp(2.5rem, 4vw, 4.75rem);
-  line-height: 1.02;
+  font-size: clamp(2rem, 3.6vw, 4.2rem);
+  line-height: 1.06;
+}
+
+@supports (font-size: 1cqw) {
+  .hero-copy h1 {
+    font-size: clamp(1.9rem, 9.5cqw, 4rem);
+  }
 }
 
 .lead,
@@ -441,8 +451,114 @@ h1 {
 #projects,
 #publications,
 #collaboration,
-#contact {
+#contact,
+#legal {
   padding: 30px;
+}
+
+.legal-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.privacy-shell {
+  width: min(860px, calc(100% - 32px));
+}
+
+.privacy-main {
+  margin-top: 14px;
+}
+
+.privacy-panel {
+  padding: 28px;
+}
+
+.privacy-panel h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.privacy-panel h2 {
+  margin: 22px 0 10px;
+  color: var(--heading);
+  font-size: clamp(1.12rem, 1.9vw, 1.35rem);
+}
+
+.privacy-list {
+  margin: 0;
+  padding-left: 22px;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.privacy-list li + li {
+  margin-top: 8px;
+}
+
+.privacy-divider {
+  margin: 24px 0;
+  border: 0;
+  border-top: 1px solid var(--panel-border);
+}
+
+.privacy-page::before {
+  display: none;
+}
+
+.privacy-page .topbar {
+  position: static;
+  top: auto;
+  border-radius: 14px;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.privacy-page .panel {
+  border-radius: 14px;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.privacy-page .panel::after {
+  display: none;
+}
+
+.privacy-intro {
+  margin-bottom: 14px;
+}
+
+.privacy-toc {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.36);
+}
+
+.privacy-toc strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--heading);
+}
+
+.privacy-toc ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.privacy-toc li + li {
+  margin-top: 6px;
+}
+
+.privacy-toc a {
+  color: var(--primary-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .section-heading {
@@ -650,8 +766,18 @@ h1 {
   #projects,
   #publications,
   #collaboration,
-  #contact {
+  #contact,
+  #legal {
     padding: 24px;
+  }
+
+  .privacy-panel {
+    padding: 24px;
+  }
+
+  .privacy-page .topbar {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
@@ -668,6 +794,6 @@ h1 {
   }
 
   h1 {
-    font-size: 2.25rem;
+    line-height: 1.08;
   }
 }

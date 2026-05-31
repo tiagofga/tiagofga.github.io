@@ -11,9 +11,9 @@ const content = {
     },
     hero: {
       eyebrow: "Professor, pesquisador e desenvolvedor",
-      title: "Integro inteligencia artificial, ciencia aplicada e engenharia de software para gerar impacto academico.",
+      title: "Integro inteligência artificial, ciência aplicada e engenharia de software para gerar impacto acadêmico.",
       subtitle: "CEFET-MG · Bioengenharia · IA aplicada · Software científico",
-      lead: "No CEFET-MG, conduzo ensino, orientacao e desenvolvimento de projetos que conectam descoberta de farmacos, bioinformatica, visao computacional e workflows computacionais reproduziveis.",
+      lead: "No CEFET-MG, conduzo ensino, orientação e desenvolvimento de projetos que conectam descoberta de fármacos, bioinformática, visão computacional e workflows computacionais reproduzíveis.",
       primaryCta: "Ver projetos",
       secondaryCta: "Entrar em contato",
       cardKicker: "Base atual",
@@ -21,9 +21,9 @@ const content = {
     },
     about: {
       eyebrow: "Perfil",
-      title: "Uma trajetoria orientada por rigor cientifico, ensino e software aberto.",
-      body1: "Sou professor de Engenharia de Computacao no CEFET-MG, doutor em Bioengenharia e pesquisador de problemas em que modelagem computacional, inteligencia artificial e relevancia cientifica caminham juntos.",
-      body2: "No GitHub, publico projetos de software, materiais didaticos, templates academicos e experimentos tecnicos com foco em clareza metodologica e reprodutibilidade."
+      title: "Uma trajetória orientada por rigor científico, ensino e software aberto.",
+      body1: "Sou professor de Engenharia de Computação no CEFET-MG, doutor em Bioengenharia e pesquisador de problemas em que modelagem computacional, inteligência artificial e relevância científica caminham juntos.",
+      body2: "No GitHub, publico projetos de software, materiais didáticos, templates acadêmicos e experimentos técnicos com foco em clareza metodológica e reprodutibilidade."
     },
     research: {
       eyebrow: "Pesquisa",
@@ -31,16 +31,16 @@ const content = {
     },
     timeline: {
       eyebrow: "Trajetória",
-      title: "Eixos centrais da minha atuacao"
+      title: "Eixos centrais da minha atuação"
     },
     projects: {
       eyebrow: "Projetos",
-      title: "Repositorios que representam ensino, pesquisa aplicada e engenharia de software",
+      title: "Repositórios que representam ensino, pesquisa aplicada e engenharia de software",
       link: "Ver todos no GitHub"
     },
     publications: {
       eyebrow: "Publicações",
-      title: "Selecao de trabalhos e producao academica"
+      title: "Seleção de trabalhos e produção acadêmica"
     },
     collaboration: {
       eyebrow: "Colaboração",
@@ -48,7 +48,7 @@ const content = {
     },
     contact: {
       eyebrow: "Contato e perfis",
-      title: "Presenca academica, profissional e social"
+      title: "Presença acadêmica, profissional e social"
     },
     socialImageAlt: "Tiago Alves de Oliveira - professor, pesquisador e desenvolvedor de software",
     quickLinks: [
@@ -158,23 +158,28 @@ const content = {
     publicationsList: [
       {
         title: "Structure-based virtual screening: from classical to artificial intelligence",
-        meta: "Frontiers in Chemistry, 2020"
+        meta: "Frontiers in Chemistry, 2020",
+        url: "https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2020.00343/full"
       },
       {
         title: "Virtual Screening Algorithms in Drug Discovery: a review focused on machine and deep learning methods",
-        meta: "Drugs and Drug Candidates, 2023"
+        meta: "Drugs and Drug Candidates, 2023",
+        url: "https://link.springer.com/chapter/10.1007/978-3-031-47859-8_13"
       },
       {
         title: "Evaluation of Docking Machine Learning and Molecular Dynamics Methodologies for DNA-Ligand Systems",
-        meta: "Pharmaceuticals, 2022"
+        meta: "Pharmaceuticals, 2022",
+        url: "https://www.mdpi.com/1424-8247/15/10/1208"
       },
       {
         title: "Drug Discovery by Deep Learning and Virtual Screening: Review and Case Study",
-        meta: "Bioinformatics and Computational Biology, 2023"
+        meta: "Bioinformatics and Computational Biology, 2023",
+        url: "https://link.springer.com/chapter/10.1007/978-3-031-47859-8_15"
       },
       {
         title: "Predição de classes farmacológicas para o descobrimento e reposicionamento de fármacos por redes neurais convolucionais",
-        meta: "Tese de Doutorado, 2025"
+        meta: "Tese de Doutorado, 2025",
+        url: "https://scholar.google.com/scholar?q=Predi%C3%A7%C3%A3o+de+classes+farmacol%C3%B3gicas+para+o+descobrimento+e+reposicionamento+de+f%C3%A1rmacos+por+redes+neurais+convolucionais"
       }
     ],
     collaborationItems: [
@@ -394,23 +399,28 @@ const content = {
     publicationsList: [
       {
         title: "Structure-based virtual screening: from classical to artificial intelligence",
-        meta: "Frontiers in Chemistry, 2020"
+        meta: "Frontiers in Chemistry, 2020",
+        url: "https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2020.00343/full"
       },
       {
         title: "Virtual Screening Algorithms in Drug Discovery: a review focused on machine and deep learning methods",
-        meta: "Drugs and Drug Candidates, 2023"
+        meta: "Drugs and Drug Candidates, 2023",
+        url: "https://link.springer.com/chapter/10.1007/978-3-031-47859-8_13"
       },
       {
         title: "Evaluation of Docking Machine Learning and Molecular Dynamics Methodologies for DNA-Ligand Systems",
-        meta: "Pharmaceuticals, 2022"
+        meta: "Pharmaceuticals, 2022",
+        url: "https://www.mdpi.com/1424-8247/15/10/1208"
       },
       {
         title: "Drug Discovery by Deep Learning and Virtual Screening: Review and Case Study",
-        meta: "Bioinformatics and Computational Biology, 2023"
+        meta: "Bioinformatics and Computational Biology, 2023",
+        url: "https://link.springer.com/chapter/10.1007/978-3-031-47859-8_15"
       },
       {
         title: "Prediction of pharmacological classes for drug discovery and repositioning using convolutional neural networks",
-        meta: "PhD Thesis, 2025"
+        meta: "PhD Thesis, 2025",
+        url: "https://scholar.google.com/scholar?q=Prediction+of+pharmacological+classes+for+drug+discovery+and+repositioning+using+convolutional+neural+networks"
       }
     ],
     collaborationItems: [
@@ -558,6 +568,7 @@ function setLanguage(language) {
     <article class="publication-item">
       <h3>${item.title}</h3>
       <div class="publication-meta">${item.meta}</div>
+      ${item.url ? `<a class="inline-link" href="${item.url}" target="_blank" rel="noreferrer">${locale === "pt-BR" ? "Ler publicação" : "Read publication"}</a>` : ""}
     </article>
   `);
   renderList(collaborationContainer, data.collaborationItems, (item) => `<li>${item}</li>`);
