@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Homepage pessoal de Tiago Alves de Oliveira, professor, pesquisador e desenvolvedor de software.">
+  <meta name="theme-color" content="#0b1510">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tiago Alves de Oliveira">
+  <meta property="og:description" content="Homepage pessoal de Tiago Alves de Oliveira, professor, pesquisador e desenvolvedor de software.">
+  <meta property="og:image" content="https://tiagofga.github.io/social-card.svg">
+  <meta property="og:image:alt" content="Tiago Alves de Oliveira - Professor, researcher, and software developer">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tiago Alves de Oliveira">
+  <meta name="twitter:description" content="Homepage pessoal de Tiago Alves de Oliveira, professor, pesquisador e desenvolvedor de software.">
+  <meta name="twitter:image" content="https://tiagofga.github.io/social-card.svg">
+  <meta name="twitter:image:alt" content="Tiago Alves de Oliveira - Professor, researcher, and software developer">
+  <title>Tiago Alves de Oliveira</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="black">
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#hero">Tiago Alves</a>
+      <nav class="nav" aria-label="Primary">
+        <a data-i18n="nav.about" href="#about">Sobre</a>
+        <a data-i18n="nav.research" href="#research">Pesquisa</a>
+        <a data-i18n="nav.projects" href="#projects">Projetos</a>
+        <a data-i18n="nav.publications" href="#publications">Publicações</a>
+        <a data-i18n="nav.contact" href="#contact">Contato</a>
+      </nav>
+      <div class="controls" aria-label="Controls">
+        <div class="segmented" role="group" aria-label="Theme switcher">
+          <button class="segment active" type="button" data-theme-option="black">Black</button>
+          <button class="segment" type="button" data-theme-option="light">Light</button>
+        </div>
+        <div class="segmented" role="group" aria-label="Language switcher">
+          <button class="segment active" type="button" data-lang-option="pt-BR">PT</button>
+          <button class="segment" type="button" data-lang-option="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero panel reveal" id="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Professor, pesquisador e desenvolvedor</p>
+          <h1 data-i18n="hero.title">Integro inteligencia artificial, ciencia aplicada e engenharia de software para gerar impacto academico.</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">CEFET-MG · Bioengenharia · IA aplicada · Software cientifico</p>
+          <p class="lead" data-i18n="hero.lead">
+            No CEFET-MG, conduzo ensino, orientacao e desenvolvimento de projetos que conectam descoberta de
+            farmacos, bioinformatica, visao computacional e workflows computacionais reproduziveis.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects" data-i18n="hero.primaryCta">Ver projetos</a>
+            <a class="button secondary" href="#contact" data-i18n="hero.secondaryCta">Entrar em contato</a>
+          </div>
+          <div class="quick-links" id="quick-links"></div>
+          <ul class="key-points" id="key-points"></ul>
+        </div>
+        <aside class="hero-card">
+          <img class="avatar" src="https://avatars.githubusercontent.com/tiagofga?v=4" alt="Portrait of Tiago Alves de Oliveira">
+          <div class="hero-card-body">
+            <p class="card-kicker" data-i18n="hero.cardKicker">Base atual</p>
+            <h2>CEFET-MG</h2>
+            <p data-i18n="hero.cardText">Professor de Engenharia de Computação, com foco em IA aplicada, workflows científicos e software educacional.</p>
+          </div>
+          <div class="stats-grid" id="stats-grid"></div>
+        </aside>
+      </section>
+
+      <section class="panel reveal" id="projects">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow" data-i18n="projects.eyebrow">Projetos</p>
+            <h2 data-i18n="projects.title">Repositórios que representam diferentes partes do meu trabalho</h2>
+          </div>
+          <a class="inline-link" href="https://github.com/tiagofga?tab=repositories" target="_blank" rel="noreferrer" data-i18n="projects.link">Ver todos no GitHub</a>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </section>
+
+      <section class="two-column reveal-group">
+        <article class="panel" id="about">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="about.eyebrow">Perfil</p>
+            <h2 data-i18n="about.title">Uma atuação que combina academia, pesquisa aplicada e código.</h2>
+          </div>
+          <p class="section-copy" data-i18n="about.body1">
+            Sou professor de Engenharia de Computação no CEFET-MG, doutor em Bioengenharia e pesquisador
+            interessado em problemas onde modelagem computacional e impacto científico se encontram.
+          </p>
+          <p class="section-copy" data-i18n="about.body2">
+            No GitHub, organizo projetos de software, materiais didáticos, templates acadêmicos e experimentos
+            técnicos que ajudam a transformar ideias em fluxos reproduzíveis.
+          </p>
+        </article>
+
+        <article class="panel" id="research">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="research.eyebrow">Pesquisa</p>
+            <h2 data-i18n="research.title">Frentes principais de trabalho</h2>
+          </div>
+          <ul class="pill-list" id="research-list"></ul>
+        </article>
+      </section>
+
+      <section class="panel timeline-panel reveal" id="timeline">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="timeline.eyebrow">Trajetória</p>
+          <h2 data-i18n="timeline.title">Pontos centrais da minha atuação</h2>
+        </div>
+        <div class="timeline" id="timeline-list"></div>
+      </section>
+
+      <section class="two-column reveal-group">
+        <article class="panel" id="publications">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="publications.eyebrow">Publicações</p>
+            <h2 data-i18n="publications.title">Seleção de trabalhos e produção acadêmica</h2>
+          </div>
+          <div class="stack-list" id="publications-list"></div>
+        </article>
+
+        <article class="panel" id="collaboration">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="collaboration.eyebrow">Colaboração</p>
+            <h2 data-i18n="collaboration.title">Áreas em que estou aberto a colaborar</h2>
+          </div>
+          <ul class="collaboration-list" id="collaboration-list"></ul>
+        </article>
+      </section>
+
+      <section class="panel contact-panel reveal" id="contact">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow" data-i18n="contact.eyebrow">Contato e perfis</p>
+            <h2 data-i18n="contact.title">Presença acadêmica, profissional e social</h2>
+          </div>
+          <a class="button primary compact" href="mailto:tiagofga@gmail.com">tiagofga@gmail.com</a>
+        </div>
+        <div class="contact-grid" id="contact-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
