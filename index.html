@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=20260531">
 </head>
-<body data-theme="black">
+<body data-theme="light" class="home-page">
   <div class="site-shell">
     <header class="topbar">
       <a class="brand" href="#hero">Tiago Alves</a>
@@ -36,8 +36,8 @@
       </nav>
       <div class="controls" aria-label="Controls">
         <div class="segmented" role="group" aria-label="Theme switcher">
-          <button class="segment active" type="button" data-theme-option="black">Black</button>
-          <button class="segment" type="button" data-theme-option="light">Light</button>
+          <button class="segment" type="button" data-theme-option="black">Black</button>
+          <button class="segment active" type="button" data-theme-option="light">Light</button>
         </div>
         <div class="segmented" role="group" aria-label="Language switcher">
           <button class="segment active" type="button" data-lang-option="pt-BR">PT</button>
@@ -46,7 +46,10 @@
       </div>
     </header>
 
-    <main>
+    <div class="hero-cover" aria-hidden="true"></div>
+    <div class="hero-cover-glass" aria-hidden="true"></div>
+
+    <main class="content-surface">
       <section class="hero panel reveal" id="hero">
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="hero.eyebrow">Professor, pesquisador e desenvolvedor</p>

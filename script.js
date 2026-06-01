@@ -495,7 +495,7 @@ const publicationsContainer = document.getElementById("publications-list");
 const collaborationContainer = document.getElementById("collaboration-list");
 const contactContainer = document.getElementById("contact-grid");
 
-const storedTheme = localStorage.getItem("theme") || "black";
+const storedTheme = localStorage.getItem("theme") || "light";
 const browserLang = navigator.language.startsWith("pt") ? "pt-BR" : "en";
 const storedLang = localStorage.getItem("lang") || browserLang;
 
