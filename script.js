@@ -191,48 +191,56 @@ const content = {
     ],
     contactCards: [
       {
+        icon: "GS",
         title: "Google Scholar",
         description: "Produção científica, citações e perfil acadêmico.",
         label: "Acessar perfil",
         url: "https://scholar.google.com/citations?user=uFCAPt8AAAAJ&hl=en"
       },
       {
+        icon: "ID",
         title: "ORCID",
         description: "Identificador acadêmico e integração com publicações.",
         label: "Abrir ORCID",
         url: "https://orcid.org/0000-0002-2541-9305"
       },
       {
+        icon: "LT",
         title: "Lattes",
         description: "Currículo acadêmico e histórico de produção no CNPq.",
         label: "Abrir Lattes",
         url: "http://lattes.cnpq.br/5021181563738789"
       },
       {
+        icon: "IN",
         title: "LinkedIn",
         description: "Trajetória profissional, conexões e presença institucional.",
         label: "Ver LinkedIn",
         url: "https://linkedin.com/in/tiagofga"
       },
       {
+        icon: "GH",
         title: "GitHub",
         description: "Código, experimentos, templates e projetos públicos.",
         label: "Ver GitHub",
         url: "https://github.com/tiagofga"
       },
       {
+        icon: "SO",
         title: "Stack Overflow",
         description: "Histórico técnico e participação na comunidade.",
         label: "Ver perfil",
         url: "https://stackoverflow.com/users/2011194"
       },
       {
+        icon: "YT",
         title: "YouTube",
         description: "Canal com presença pública e conteúdo compartilhado.",
         label: "Abrir canal",
         url: "https://www.youtube.com/user/tiagofga"
       },
       {
+        icon: "IG",
         title: "Instagram",
         description: "Presença social complementar.",
         label: "Abrir perfil",
@@ -432,48 +440,56 @@ const content = {
     ],
     contactCards: [
       {
+        icon: "GS",
         title: "Google Scholar",
         description: "Scientific output, citations, and academic profile.",
         label: "Open profile",
         url: "https://scholar.google.com/citations?user=uFCAPt8AAAAJ&hl=en"
       },
       {
+        icon: "ID",
         title: "ORCID",
         description: "Academic identifier and publication integration.",
         label: "Open ORCID",
         url: "https://orcid.org/0000-0002-2541-9305"
       },
       {
+        icon: "LT",
         title: "Lattes",
         description: "Academic CV and publication history on CNPq.",
         label: "Open Lattes",
         url: "http://lattes.cnpq.br/5021181563738789"
       },
       {
+        icon: "IN",
         title: "LinkedIn",
         description: "Professional track record, network, and institutional presence.",
         label: "View LinkedIn",
         url: "https://linkedin.com/in/tiagofga"
       },
       {
+        icon: "GH",
         title: "GitHub",
         description: "Code, experiments, templates, and public projects.",
         label: "View GitHub",
         url: "https://github.com/tiagofga"
       },
       {
+        icon: "SO",
         title: "Stack Overflow",
         description: "Technical history and community participation.",
         label: "View profile",
         url: "https://stackoverflow.com/users/2011194"
       },
       {
+        icon: "YT",
         title: "YouTube",
         description: "Public channel and shared content.",
         label: "Open channel",
         url: "https://www.youtube.com/user/tiagofga"
       },
       {
+        icon: "IG",
         title: "Instagram",
         description: "Complementary social presence.",
         label: "Open profile",
@@ -575,10 +591,16 @@ function setLanguage(language) {
   renderList(contactContainer, data.contactCards, (item) => `
     <article class="contact-card">
       <div>
-        <h3>${item.title}</h3>
+        <div class="contact-card-head">
+          <span class="contact-icon" aria-hidden="true">${item.icon || "@@"}</span>
+          <h3>${item.title}</h3>
+        </div>
         <p>${item.description}</p>
       </div>
-      <a class="contact-link" href="${item.url}" target="_blank" rel="noreferrer">${item.label}</a>
+      <a class="contact-link" href="${item.url}" target="_blank" rel="noreferrer">
+        <span class="contact-link-icon" aria-hidden="true">${item.icon || "@@"}</span>
+        <span>${item.label}</span>
+      </a>
     </article>
   `);
 }

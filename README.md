@@ -90,6 +90,21 @@ Observacoes:
 
 - Sem ID configurado, o arquivo retorna imediatamente e nao envia dados.
 - O script `analytics.js` e carregado em `index.html` e `privacy.html`.
+- O GA4 so e carregado apos consentimento explicito de cookies para analytics.
+- A escolha de consentimento e salva em `localStorage` na chave `cookieConsent` (`accepted` ou `rejected`).
+
+## Cookies e consentimento
+
+- O site exibe um aviso de cookies quando o GA4 esta configurado e ainda nao existe escolha salva.
+- O usuario pode aceitar ou recusar cookies de analytics.
+- Sem aceite, o analytics nao e inicializado.
+
+## Credito da imagem de fundo
+
+- Arquivo local: `bookshelf-real.jpg`
+- Origem: Wikimedia Commons - `File:Engineering and Computer Science Library.jpg`
+- Licenca: CC0 (dominio publico)
+- Link da fonte: https://commons.wikimedia.org/wiki/File:Engineering_and_Computer_Science_Library.jpg
 
 ### Como isso se relaciona com LGPD/GDPR
 
