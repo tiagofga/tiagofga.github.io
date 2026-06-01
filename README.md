@@ -14,6 +14,7 @@ Arquivos principais:
 - `index.html`: estrutura semântica da página
 - `styles.css`: tema visual (black/light), layout responsivo e animações
 - `script.js`: i18n, troca de tema, renderização dos cards/listas e animações de reveal
+- `analytics.js`: bootstrap opcional do Google Analytics 4 (GA4)
 - `favicon.svg` e `social-card.svg`: assets de identidade e compartilhamento
 
 ## Funcionalidades
@@ -73,6 +74,22 @@ Aviso: este conteúdo é informativo e não substitui orientação jurídica.
 
 - Google Fonts (`fonts.googleapis.com` e `fonts.gstatic.com`)
 - Avatar do GitHub (`avatars.githubusercontent.com`)
+- Google Analytics 4 (`googletagmanager.com` e `google-analytics.com`), quando configurado
+
+## Configurar Google Analytics 4 (GA4)
+
+O projeto ja esta pronto para GA4 sem ativar rastreamento por padrao.
+
+Passos:
+
+1. Abra `analytics.js`.
+2. Defina `GA_MEASUREMENT_ID` com seu codigo, por exemplo: `G-ABC123DEF4`.
+3. Publique no GitHub Pages.
+
+Observacoes:
+
+- Sem ID configurado, o arquivo retorna imediatamente e nao envia dados.
+- O script `analytics.js` e carregado em `index.html` e `privacy.html`.
 
 ### Como isso se relaciona com LGPD/GDPR
 
