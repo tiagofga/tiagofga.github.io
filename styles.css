@@ -43,6 +43,8 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
   background: var(--bg-accent);
   color: var(--text);
   font-family: var(--font-body);
@@ -52,14 +54,32 @@ body[data-theme="light"]::before {
   background-image: linear-gradient(rgba(10, 31, 17, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(10, 31, 17, 0.05) 1px, transparent 1px);
 }
 
+body[data-theme="light"]::after {
+  opacity: 0.12;
+  filter: saturate(0.82) brightness(1.08);
+}
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
+  z-index: 0;
   background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(circle at center, black 45%, transparent 92%);
   pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 0;
+  height: 58vh;
+  background: url("bookshelf-bg.svg") center bottom / min(1320px, 118vw) auto no-repeat;
+  opacity: 0.24;
+  pointer-events: none;
+  mask-image: linear-gradient(to top, black 16%, rgba(0, 0, 0, 0.92) 44%, transparent 100%);
 }
 
 a {
@@ -76,6 +96,8 @@ img {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
   padding: 24px 0 72px;
+  position: relative;
+  z-index: 1;
 }
 
 .topbar {
