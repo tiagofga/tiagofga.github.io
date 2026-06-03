@@ -1,7 +1,9 @@
 /* Site-wide interactive card refinements and full-width header image */
 
 .home-page {
-  --cover-height: clamp(320px, 44vh, 520px);
+  --cover-height: clamp(340px, 48vh, 560px);
+  --card-glow: color-mix(in srgb, var(--primary) 22%, transparent);
+  --card-shadow-hover: 0 18px 38px rgba(0, 0, 0, 0.16);
 }
 
 .home-page .site-shell {
@@ -21,19 +23,21 @@
   margin-left: calc(50% - 50vw);
   border-radius: 0;
   overflow: hidden;
-  background: linear-gradient(120deg, rgba(6, 23, 15, 0.62), rgba(18, 90, 55, 0.42)), url("bookshelf-real.jpg") center 50% / cover no-repeat;
+  background:
+    linear-gradient(120deg, rgba(6, 23, 15, 0.70), rgba(18, 90, 55, 0.44)),
+    url("https://images.unsplash.com/photo-1763568258121-3538ac983f31?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=2400") center 50% / cover no-repeat;
 }
 
 .home-page .hero-cover::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(3, 13, 8, 0.18) 0%, rgba(3, 13, 8, 0.02) 46%, rgba(240, 242, 246, 0.94) 100%);
+  background: linear-gradient(to bottom, rgba(3, 13, 8, 0.12) 0%, rgba(3, 13, 8, 0.02) 48%, rgba(240, 242, 246, 0.96) 100%);
   pointer-events: none;
 }
 
 .home-page[data-theme="black"] .hero-cover::after {
-  background: linear-gradient(to bottom, rgba(3, 13, 8, 0.18) 0%, rgba(3, 13, 8, 0.08) 48%, rgba(18, 35, 26, 0.96) 100%);
+  background: linear-gradient(to bottom, rgba(3, 13, 8, 0.12) 0%, rgba(3, 13, 8, 0.08) 50%, rgba(18, 35, 26, 0.98) 100%);
 }
 
 .home-page .hero-cover-glass {
@@ -41,7 +45,7 @@
 }
 
 .home-page .content-surface {
-  margin-top: -124px;
+  margin-top: -132px;
 }
 
 .home-page .content-surface,
@@ -52,96 +56,169 @@
   position: relative;
 }
 
-.interactive-card {
-  --card-x: 50%;
-  --card-y: 50%;
-  --card-rotate-x: 0deg;
-  --card-rotate-y: 0deg;
+.home-page :where(
+  .project-card,
+  .publication-item,
+  .contact-card,
+  .timeline-item,
+  .stat-card,
+  .key-points li,
+  .pill-list li,
+  .collaboration-list li,
+  .quick-link
+) {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  transform: perspective(900px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y)) translateY(0);
-  transform-style: preserve-3d;
-  will-change: transform;
   transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
 }
 
-.interactive-card::before {
+.home-page :where(
+  .project-card,
+  .publication-item,
+  .contact-card,
+  .timeline-item,
+  .stat-card,
+  .key-points li,
+  .pill-list li,
+  .collaboration-list li,
+  .quick-link
+)::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 0;
   opacity: 0;
   pointer-events: none;
-  background: radial-gradient(circle at var(--card-x) var(--card-y), color-mix(in srgb, var(--primary) 22%, transparent), transparent 36%);
+  background: radial-gradient(circle at 18% 18%, var(--card-glow), transparent 38%);
   transition: opacity 220ms ease;
 }
 
-.interactive-card > * {
+.home-page :where(
+  .project-card,
+  .publication-item,
+  .contact-card,
+  .timeline-item,
+  .stat-card,
+  .key-points li,
+  .pill-list li,
+  .collaboration-list li,
+  .quick-link
+) > * {
   position: relative;
   z-index: 1;
 }
 
-.interactive-card.is-hovered,
-.interactive-card:hover,
-.interactive-card:focus-visible,
-.interactive-card:focus-within {
-  transform: perspective(900px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y)) translateY(-4px);
+.home-page :where(
+  .project-card,
+  .publication-item,
+  .contact-card,
+  .timeline-item,
+  .stat-card,
+  .key-points li,
+  .pill-list li,
+  .collaboration-list li,
+  .quick-link
+):hover,
+.home-page :where(
+  .project-card,
+  .publication-item,
+  .contact-card,
+  .timeline-item,
+  .stat-card,
+  .key-points li,
+  .pill-list li,
+  .collaboration-list li,
+  .quick-link
+):focus-visible,
+.home-page :where(
+  .project-card,
+  .publication-item,
+  .contact-card,
+  .timeline-item,
+  .stat-card,
+  .key-points li,
+  .pill-list li,
+  .collaboration-list li,
+  .quick-link
+):focus-within {
+  transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--primary) 56%, var(--panel-border));
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+  box-shadow: var(--card-shadow-hover);
 }
 
-.interactive-card.is-hovered::before,
-.interactive-card:hover::before,
-.interactive-card:focus-visible::before,
-.interactive-card:focus-within::before {
+.home-page :where(
+  .project-card,
+  .publication-item,
+  .contact-card,
+  .timeline-item,
+  .stat-card,
+  .key-points li,
+  .pill-list li,
+  .collaboration-list li,
+  .quick-link
+):hover::before,
+.home-page :where(
+  .project-card,
+  .publication-item,
+  .contact-card,
+  .timeline-item,
+  .stat-card,
+  .key-points li,
+  .pill-list li,
+  .collaboration-list li,
+  .quick-link
+):focus-visible::before,
+.home-page :where(
+  .project-card,
+  .publication-item,
+  .contact-card,
+  .timeline-item,
+  .stat-card,
+  .key-points li,
+  .pill-list li,
+  .collaboration-list li,
+  .quick-link
+):focus-within::before {
   opacity: 1;
 }
 
-.clickable-card {
+.home-page :where(.project-card, .publication-item, .contact-card, .quick-link) {
   cursor: pointer;
 }
 
-.clickable-card:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary) 55%, transparent);
-  outline-offset: 3px;
+.home-page :where(.project-link, .inline-link, .contact-link) {
+  transition: color 180ms ease, transform 180ms ease;
 }
 
-.project-card.clickable-card .project-link,
-.publication-item.clickable-card .inline-link,
-.contact-card.clickable-card .contact-link {
-  width: max-content;
+.home-page :where(.project-card, .publication-item, .contact-card):hover :where(.project-link, .inline-link, .contact-link),
+.home-page :where(.project-card, .publication-item, .contact-card):focus-within :where(.project-link, .inline-link, .contact-link) {
+  transform: translateX(2px);
 }
 
-.project-card.clickable-card .project-link::after,
-.publication-item.clickable-card .inline-link::after {
+.home-page .project-link::after,
+.home-page .publication-item .inline-link::after {
   content: " ↗";
   font-size: 0.85em;
 }
 
-.home-page .quick-link.interactive-card {
-  transform: perspective(700px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+.home-page .button,
+.home-page .segment,
+.home-page .inline-link {
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.home-page .quick-link.interactive-card:hover,
-.home-page .quick-link.interactive-card:focus-visible {
-  transform: perspective(700px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y)) translateY(-2px);
-}
-
-.home-page .key-points li.interactive-card,
-.home-page .pill-list li.interactive-card,
-.home-page .collaboration-list li.interactive-card,
-.home-page .stat-card.interactive-card {
-  cursor: default;
-}
-
-.home-page .timeline-item.interactive-card {
-  cursor: default;
+.home-page .button:hover,
+.home-page .button:focus-visible,
+.home-page .segment:hover,
+.home-page .segment:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 960px) {
   .home-page {
-    --cover-height: 300px;
+    --cover-height: 310px;
   }
 
   .home-page .topbar {
@@ -155,35 +232,116 @@
   }
 
   .home-page .content-surface {
-    margin-top: -86px;
+    margin-top: -92px;
   }
 }
 
 @media (max-width: 680px) {
   .home-page {
-    --cover-height: 260px;
+    --cover-height: 270px;
   }
 
   .home-page .content-surface {
-    margin-top: -64px;
+    margin-top: -68px;
   }
 
-  .interactive-card,
-  .interactive-card:hover,
-  .interactive-card:focus-visible,
-  .interactive-card:focus-within,
-  .interactive-card.is-hovered {
-    transform: translateY(0);
+  .home-page :where(
+    .project-card,
+    .publication-item,
+    .contact-card,
+    .timeline-item,
+    .stat-card,
+    .key-points li,
+    .pill-list li,
+    .collaboration-list li,
+    .quick-link
+  ):hover,
+  .home-page :where(
+    .project-card,
+    .publication-item,
+    .contact-card,
+    .timeline-item,
+    .stat-card,
+    .key-points li,
+    .pill-list li,
+    .collaboration-list li,
+    .quick-link
+  ):focus-visible,
+  .home-page :where(
+    .project-card,
+    .publication-item,
+    .contact-card,
+    .timeline-item,
+    .stat-card,
+    .key-points li,
+    .pill-list li,
+    .collaboration-list li,
+    .quick-link
+  ):focus-within {
+    transform: translateY(-2px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .interactive-card,
-  .interactive-card:hover,
-  .interactive-card:focus-visible,
-  .interactive-card:focus-within,
-  .interactive-card.is-hovered {
-    transform: none;
+  .home-page :where(
+    .project-card,
+    .publication-item,
+    .contact-card,
+    .timeline-item,
+    .stat-card,
+    .key-points li,
+    .pill-list li,
+    .collaboration-list li,
+    .quick-link,
+    .button,
+    .segment,
+    .inline-link
+  ) {
     transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  }
+
+  .home-page :where(
+    .project-card,
+    .publication-item,
+    .contact-card,
+    .timeline-item,
+    .stat-card,
+    .key-points li,
+    .pill-list li,
+    .collaboration-list li,
+    .quick-link,
+    .button,
+    .segment,
+    .inline-link
+  ):hover,
+  .home-page :where(
+    .project-card,
+    .publication-item,
+    .contact-card,
+    .timeline-item,
+    .stat-card,
+    .key-points li,
+    .pill-list li,
+    .collaboration-list li,
+    .quick-link,
+    .button,
+    .segment,
+    .inline-link
+  ):focus-visible,
+  .home-page :where(
+    .project-card,
+    .publication-item,
+    .contact-card,
+    .timeline-item,
+    .stat-card,
+    .key-points li,
+    .pill-list li,
+    .collaboration-list li,
+    .quick-link,
+    .button,
+    .segment,
+    .inline-link
+  ):focus-within {
+    transform: none;
   }
 }
