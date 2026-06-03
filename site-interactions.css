@@ -1,0 +1,189 @@
+/* Site-wide interactive card refinements and full-width header image */
+
+.home-page {
+  --cover-height: clamp(320px, 44vh, 520px);
+}
+
+.home-page .site-shell {
+  overflow: visible;
+}
+
+.home-page .topbar {
+  background: rgba(9, 27, 18, 0.78);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.home-page .hero-cover {
+  position: relative;
+  width: 100vw;
+  height: var(--cover-height);
+  min-height: var(--cover-height);
+  margin-left: calc(50% - 50vw);
+  border-radius: 0;
+  overflow: hidden;
+  background: linear-gradient(120deg, rgba(6, 23, 15, 0.62), rgba(18, 90, 55, 0.42)), url("bookshelf-real.jpg") center 50% / cover no-repeat;
+}
+
+.home-page .hero-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(3, 13, 8, 0.18) 0%, rgba(3, 13, 8, 0.02) 46%, rgba(240, 242, 246, 0.94) 100%);
+  pointer-events: none;
+}
+
+.home-page[data-theme="black"] .hero-cover::after {
+  background: linear-gradient(to bottom, rgba(3, 13, 8, 0.18) 0%, rgba(3, 13, 8, 0.08) 48%, rgba(18, 35, 26, 0.96) 100%);
+}
+
+.home-page .hero-cover-glass {
+  display: none;
+}
+
+.home-page .content-surface {
+  margin-top: -124px;
+}
+
+.home-page .content-surface,
+.home-page .panel,
+.home-page .section-heading,
+.home-page .hero-copy,
+.home-page .hero-card {
+  position: relative;
+}
+
+.interactive-card {
+  --card-x: 50%;
+  --card-y: 50%;
+  --card-rotate-x: 0deg;
+  --card-rotate-y: 0deg;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transform: perspective(900px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y)) translateY(0);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+.interactive-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--card-x) var(--card-y), color-mix(in srgb, var(--primary) 22%, transparent), transparent 36%);
+  transition: opacity 220ms ease;
+}
+
+.interactive-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.interactive-card.is-hovered,
+.interactive-card:hover,
+.interactive-card:focus-visible,
+.interactive-card:focus-within {
+  transform: perspective(900px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y)) translateY(-4px);
+  border-color: color-mix(in srgb, var(--primary) 56%, var(--panel-border));
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+}
+
+.interactive-card.is-hovered::before,
+.interactive-card:hover::before,
+.interactive-card:focus-visible::before,
+.interactive-card:focus-within::before {
+  opacity: 1;
+}
+
+.clickable-card {
+  cursor: pointer;
+}
+
+.clickable-card:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 55%, transparent);
+  outline-offset: 3px;
+}
+
+.project-card.clickable-card .project-link,
+.publication-item.clickable-card .inline-link,
+.contact-card.clickable-card .contact-link {
+  width: max-content;
+}
+
+.project-card.clickable-card .project-link::after,
+.publication-item.clickable-card .inline-link::after {
+  content: " ↗";
+  font-size: 0.85em;
+}
+
+.home-page .quick-link.interactive-card {
+  transform: perspective(700px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+}
+
+.home-page .quick-link.interactive-card:hover,
+.home-page .quick-link.interactive-card:focus-visible {
+  transform: perspective(700px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y)) translateY(-2px);
+}
+
+.home-page .key-points li.interactive-card,
+.home-page .pill-list li.interactive-card,
+.home-page .collaboration-list li.interactive-card,
+.home-page .stat-card.interactive-card {
+  cursor: default;
+}
+
+.home-page .timeline-item.interactive-card {
+  cursor: default;
+}
+
+@media (max-width: 960px) {
+  .home-page {
+    --cover-height: 300px;
+  }
+
+  .home-page .topbar {
+    position: relative;
+    z-index: 20;
+  }
+
+  .home-page .hero-cover {
+    display: block;
+    margin-top: -12px;
+  }
+
+  .home-page .content-surface {
+    margin-top: -86px;
+  }
+}
+
+@media (max-width: 680px) {
+  .home-page {
+    --cover-height: 260px;
+  }
+
+  .home-page .content-surface {
+    margin-top: -64px;
+  }
+
+  .interactive-card,
+  .interactive-card:hover,
+  .interactive-card:focus-visible,
+  .interactive-card:focus-within,
+  .interactive-card.is-hovered {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-card,
+  .interactive-card:hover,
+  .interactive-card:focus-visible,
+  .interactive-card:focus-within,
+  .interactive-card.is-hovered {
+    transform: none;
+    transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  }
+}
