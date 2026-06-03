@@ -1,0 +1,76 @@
+/* Reliable icon rendering for hero quick links and contact cards.
+   Uses SVGs as background images instead of CSS masks to avoid blank icons in some browsers. */
+
+.home-page .quick-link::before,
+.home-page .contact-icon::before {
+  background-color: transparent !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+}
+
+.home-page .quick-link::before {
+  background-image: var(--quick-link-icon) !important;
+}
+
+.home-page .contact-icon::before {
+  background-image: var(--contact-icon-url) !important;
+}
+
+.home-page .quick-link:nth-child(1) {
+  --quick-link-icon: url("https://api.iconify.design/simple-icons/googlescholar.svg?color=%234285f4");
+}
+
+.home-page .quick-link:nth-child(2) {
+  --quick-link-icon: url("https://api.iconify.design/simple-icons/github.svg?color=%2324292f");
+}
+
+.home-page[data-theme="black"] .quick-link:nth-child(2) {
+  --quick-link-icon: url("https://api.iconify.design/simple-icons/github.svg?color=%23f0f6fc");
+}
+
+.home-page .quick-link:nth-child(3) {
+  --quick-link-icon: url("https://api.iconify.design/simple-icons/linkedin.svg?color=%230a66c2");
+}
+
+.home-page .quick-link:nth-child(4) {
+  --quick-link-icon: url("https://api.iconify.design/mdi/web.svg?color=%231f7a4d");
+}
+
+.home-page .contact-card:nth-child(1) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/googlescholar.svg?color=%234285f4");
+}
+
+.home-page .contact-card:nth-child(2) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/orcid.svg?color=%23a6ce39");
+}
+
+.home-page .contact-card:nth-child(3) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/academicons/lattes.svg?color=%231f7a4d");
+}
+
+.home-page .contact-card:nth-child(4) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/linkedin.svg?color=%230a66c2");
+}
+
+.home-page .contact-card:nth-child(5) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/github.svg?color=%2324292f");
+}
+
+.home-page[data-theme="black"] .contact-card:nth-child(5) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/github.svg?color=%23f0f6fc");
+}
+
+.home-page .contact-card:nth-child(6) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/stackoverflow.svg?color=%23f58025");
+}
+
+.home-page .contact-card:nth-child(7) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/youtube.svg?color=%23ff0000");
+}
+
+.home-page .contact-card:nth-child(8) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/instagram.svg?color=%23c13584");
+}
