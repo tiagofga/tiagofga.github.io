@@ -1,0 +1,161 @@
+/* Icon-based contact cards
+   Loaded after styles.css to refine the contact/profile section without changing the existing data structure. */
+
+.home-page .contact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-page .contact-card {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  min-height: 132px;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.home-page .contact-card > div {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  column-gap: 16px;
+  row-gap: 4px;
+  align-items: center;
+}
+
+.home-page .contact-card-head {
+  display: contents;
+}
+
+.home-page .contact-card-head h3 {
+  grid-column: 2;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.home-page .contact-card p {
+  grid-column: 2;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.home-page .contact-icon {
+  --contact-icon-url: none;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 56px;
+  min-width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 16px;
+  font-size: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.home-page .contact-icon::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: currentColor;
+  -webkit-mask: var(--contact-icon-url) center / contain no-repeat;
+  mask: var(--contact-icon-url) center / contain no-repeat;
+}
+
+.home-page .contact-link {
+  position: relative;
+  z-index: 1;
+  width: max-content;
+  margin-left: 72px;
+  font-size: 0.92rem;
+}
+
+.home-page .contact-link::after {
+  content: " ↗";
+  font-size: 0.85em;
+}
+
+.home-page .contact-link-icon {
+  display: none;
+}
+
+.home-page .contact-card:hover .contact-icon,
+.home-page .contact-card:focus-within .contact-icon {
+  background: color-mix(in srgb, var(--primary) 18%, transparent);
+  border-color: color-mix(in srgb, var(--primary) 58%, var(--panel-border));
+}
+
+.home-page .contact-card:nth-child(1) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/academicons/google-scholar.svg");
+}
+
+.home-page .contact-card:nth-child(2) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/academicons/orcid.svg");
+}
+
+.home-page .contact-card:nth-child(3) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/academicons/lattes.svg");
+}
+
+.home-page .contact-card:nth-child(4) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/linkedin.svg");
+}
+
+.home-page .contact-card:nth-child(5) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/github.svg");
+}
+
+.home-page .contact-card:nth-child(6) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/stackoverflow.svg");
+}
+
+.home-page .contact-card:nth-child(7) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/youtube.svg");
+}
+
+.home-page .contact-card:nth-child(8) .contact-icon {
+  --contact-icon-url: url("https://api.iconify.design/simple-icons/instagram.svg");
+}
+
+@supports not ((mask: url("")) or (-webkit-mask: url(""))) {
+  .home-page .contact-icon {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+
+  .home-page .contact-icon::before {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-page .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .contact-card {
+    min-height: auto;
+  }
+
+  .home-page .contact-card > div {
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+
+  .home-page .contact-icon {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .home-page .contact-icon::before {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-page .contact-link {
+    margin-left: 62px;
+  }
+}
