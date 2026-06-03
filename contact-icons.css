@@ -277,14 +277,135 @@
   line-height: 1.25;
 }
 
+/* Hero quick links as icon-only buttons with lightweight tooltips. */
+.home-page .quick-links {
+  gap: 12px;
+  align-items: center;
+}
+
+.home-page .quick-link {
+  --quick-link-icon: none;
+  --quick-link-brand: var(--primary);
+  position: relative;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--quick-link-brand);
+  font-size: 0;
+  line-height: 0;
+  overflow: visible;
+  background: #f7fbf8;
+  border-color: #d2e2d7;
+}
+
+.home-page[data-theme="black"] .quick-link {
+  background: #1c3327;
+  border-color: #355843;
+}
+
+.home-page .quick-link::before {
+  content: "";
+  display: block;
+  width: 21px;
+  height: 21px;
+  background: currentColor;
+  -webkit-mask: var(--quick-link-icon) center / contain no-repeat;
+  mask: var(--quick-link-icon) center / contain no-repeat;
+}
+
+.home-page .quick-link::after {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 9px);
+  z-index: 20;
+  transform: translateX(-50%) translateY(4px);
+  padding: 7px 9px;
+  border-radius: 8px;
+  background: #10271b;
+  color: #ffffff;
+  font-size: 0.76rem;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.home-page .quick-link:hover::after,
+.home-page .quick-link:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.home-page .quick-link:hover,
+.home-page .quick-link:focus-visible {
+  background: color-mix(in srgb, var(--quick-link-brand) 10%, #f7fbf8);
+  border-color: color-mix(in srgb, var(--quick-link-brand) 52%, #d2e2d7);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.home-page .quick-link:nth-child(1) {
+  --quick-link-icon: url("https://api.iconify.design/academicons/google-scholar.svg");
+  --quick-link-brand: #4285f4;
+}
+
+.home-page .quick-link:nth-child(1)::after {
+  content: "Google Scholar";
+}
+
+.home-page .quick-link:nth-child(2) {
+  --quick-link-icon: url("https://api.iconify.design/simple-icons/github.svg");
+  --quick-link-brand: #24292f;
+}
+
+.home-page[data-theme="black"] .quick-link:nth-child(2) {
+  --quick-link-brand: #f0f6fc;
+}
+
+.home-page .quick-link:nth-child(2)::after {
+  content: "GitHub";
+}
+
+.home-page .quick-link:nth-child(3) {
+  --quick-link-icon: url("https://api.iconify.design/simple-icons/linkedin.svg");
+  --quick-link-brand: #0a66c2;
+}
+
+.home-page .quick-link:nth-child(3)::after {
+  content: "LinkedIn";
+}
+
+.home-page .quick-link:nth-child(4) {
+  --quick-link-icon: url("https://api.iconify.design/mdi/web.svg");
+  --quick-link-brand: var(--primary);
+}
+
+.home-page .quick-link:nth-child(4)::after {
+  content: "Website";
+}
+
 @supports not ((mask: url("")) or (-webkit-mask: url(""))) {
   .home-page .contact-icon {
     font-size: 0.72rem;
     letter-spacing: 0.04em;
   }
 
-  .home-page .contact-icon::before {
+  .home-page .contact-icon::before,
+  .home-page .quick-link::before {
     display: none;
+  }
+
+  .home-page .quick-link {
+    width: auto;
+    min-width: 44px;
+    padding: 0 14px;
+    font-size: 0.84rem;
+    line-height: 1;
   }
 }
 
