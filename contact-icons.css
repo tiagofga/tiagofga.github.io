@@ -1,3 +1,5 @@
+@import url("site-interactions.css?v=20260603");
+
 /* Icon-based contact cards
    Loaded after styles.css to refine the contact/profile section without changing the existing data structure. */
 
@@ -118,6 +120,39 @@
   --contact-icon-url: url("https://api.iconify.design/simple-icons/instagram.svg");
 }
 
+.home-page .timeline {
+  grid-template-columns: 1fr;
+}
+
+.home-page .timeline-item {
+  display: grid;
+  grid-template-columns: minmax(110px, 140px) minmax(0, 1fr);
+  column-gap: 22px;
+  row-gap: 6px;
+  align-items: start;
+  min-height: auto;
+}
+
+.home-page .timeline-item time {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  margin: 0;
+  white-space: normal;
+}
+
+.home-page .timeline-item h3 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+}
+
+.home-page .timeline-item .timeline-copy {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 72ch;
+  margin: 0;
+}
+
 @supports not ((mask: url("")) or (-webkit-mask: url(""))) {
   .home-page .contact-icon {
     font-size: 0.72rem;
@@ -158,6 +193,15 @@
   .home-page .contact-link {
     margin-left: 62px;
   }
-}
 
-@import url("site-interactions.css?v=20260603");
+  .home-page .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .timeline-item time,
+  .home-page .timeline-item h3,
+  .home-page .timeline-item .timeline-copy {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
