@@ -153,6 +153,130 @@
   margin: 0;
 }
 
+/* Academic-reference hero layout: title first, profile card secondary. */
+.home-page .hero-cover {
+  height: clamp(150px, 22vh, 240px);
+  min-height: 150px;
+  background-position: center 46%;
+}
+
+.home-page .content-surface {
+  margin-top: -42px;
+}
+
+.home-page .hero {
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 320px);
+  align-items: start;
+  gap: 38px;
+  padding: 46px 54px 40px;
+  text-align: left;
+}
+
+.home-page .hero-copy {
+  order: 1;
+  justify-items: start;
+  text-align: left;
+}
+
+.home-page .hero-card {
+  order: 2;
+  width: 100%;
+  max-width: 320px;
+  padding: 22px;
+  border: 1px solid #d8e7de;
+  border-radius: 16px;
+  background: #f7fbf8;
+  text-align: center;
+  box-shadow: none;
+}
+
+.home-page[data-theme="black"] .hero-card {
+  background: #1c3327;
+  border-color: #355843;
+}
+
+.home-page .avatar {
+  width: 138px;
+  height: 138px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 999px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 12px 24px rgba(16, 56, 34, 0.16);
+}
+
+.home-page .hero-card-body {
+  display: grid;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.home-page .hero-card-body h2 {
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  line-height: 1.1;
+}
+
+.home-page .hero-card-body p:not(.card-kicker) {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.home-page .card-kicker {
+  margin-top: 4px;
+}
+
+.home-page .hero-copy h1 {
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.08;
+}
+
+.home-page .eyebrow {
+  margin-bottom: 10px;
+}
+
+.home-page .lead,
+.home-page .hero-subtitle {
+  max-width: 64ch;
+}
+
+.home-page .hero-actions,
+.home-page .quick-links {
+  justify-content: flex-start;
+}
+
+.home-page .key-points {
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  justify-content: stretch;
+  width: min(100%, 520px);
+}
+
+.home-page .hero-card .stats-grid {
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.home-page .hero-card .stat-card {
+  padding: 10px 8px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.home-page .hero-card .stat-card strong {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.08;
+}
+
+.home-page .hero-card .stat-card span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.74rem;
+  line-height: 1.25;
+}
+
 @supports not ((mask: url("")) or (-webkit-mask: url(""))) {
   .home-page .contact-icon {
     font-size: 0.72rem;
@@ -161,6 +285,30 @@
 
   .home-page .contact-icon::before {
     display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .home-page .hero-cover {
+    height: 150px;
+    min-height: 150px;
+    margin-top: -12px;
+  }
+
+  .home-page .content-surface {
+    margin-top: -34px;
+  }
+
+  .home-page .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 34px 30px;
+  }
+
+  .home-page .hero-card {
+    order: 2;
+    max-width: 420px;
+    justify-self: start;
   }
 }
 
@@ -203,5 +351,25 @@
   .home-page .timeline-item .timeline-copy {
     grid-column: 1;
     grid-row: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-page .hero {
+    padding: 30px 24px;
+  }
+
+  .home-page .hero-copy h1 {
+    max-width: none;
+    font-size: clamp(1.75rem, 9vw, 2.35rem);
+  }
+
+  .home-page .key-points,
+  .home-page .hero-card .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .hero-card {
+    max-width: 100%;
   }
 }
