@@ -78,7 +78,7 @@ body::after {
   inset: auto 0 0;
   z-index: 0;
   height: 100vh;
-  background: url("bookshelf-bg.svg?v=20260902") center 78% / min(1360px, 122vw) auto no-repeat;
+  background: url("bookshelf-bg.svg?v=20260902-v2") center 78% / min(1360px, 122vw) auto no-repeat;
   opacity: 0.14;
   pointer-events: none;
   mask-image: linear-gradient(to top, black 6%, rgba(0, 0, 0, 0.96) 24%, transparent 72%);
@@ -224,7 +224,7 @@ main {
   inset: auto -12% -28% auto;
   width: min(640px, 62vw);
   height: min(260px, 28vw);
-  background: url("bookshelf-bg.svg?v=20260902") right bottom / cover no-repeat;
+  background: url("bookshelf-bg.svg?v=20260902-v2") right bottom / cover no-repeat;
   opacity: 0.1;
   pointer-events: none;
   mask-image: linear-gradient(to left, black 18%, rgba(0, 0, 0, 0.65) 46%, transparent 100%);
@@ -995,7 +995,7 @@ h1 {
   height: 40vh;
   min-height: 280px;
   border-radius: 16px;
-  background: linear-gradient(120deg, rgba(7, 33, 20, 0.76), rgba(16, 85, 52, 0.52)), url("bookshelf-real.jpg?v=20260902") center 54% / cover no-repeat;
+  background: linear-gradient(120deg, rgba(7, 33, 20, 0.76), rgba(16, 85, 52, 0.52)), url("bookshelf-real.jpg?v=20260902-v2") center 54% / cover no-repeat;
 }
 
 .home-page .hero-cover-glass {

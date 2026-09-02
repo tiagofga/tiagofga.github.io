@@ -562,7 +562,7 @@ function setLanguage(language) {
     button.classList.toggle("active", button.dataset.langOption === locale);
   });
 
-  renderList(quickLinksContainer, data.quickLinks, (item) => `<a class="quick-link" href="${item.url}" target="_blank" rel="noreferrer" aria-label="${item.label}" data-tooltip="${item.label}"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902" width="21" height="21" alt="" aria-hidden="true"></a>`);
+  renderList(quickLinksContainer, data.quickLinks, (item) => `<a class="quick-link" href="${item.url}" target="_blank" rel="noreferrer" aria-label="${item.label}" data-tooltip="${item.label}"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902-v2" width="21" height="21" alt="" aria-hidden="true"></a>`);
   renderList(keyPointsContainer, data.keyPoints, (item) => `<li>${item}</li>`);
   renderList(statsContainer, data.stats, (item) => `
     <div class="stat-card">
@@ -631,18 +631,14 @@ function setLanguage(language) {
   `);
   renderList(collaborationContainer, data.collaborationItems, (item) => `<li>${item}</li>`);
   renderList(contactContainer, data.contactCards, (item) => `
-    <article class="contact-card">
-      <div>
-        <div class="contact-card-head">
-          <span class="contact-icon" aria-hidden="true"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902" width="28" height="28" alt=""></span>
-          <h3>${item.title}</h3>
-        </div>
-        <p>${item.description}</p>
-      </div>
-      <a class="contact-link" href="${item.url}" target="_blank" rel="noreferrer">
-        <span>${item.label}</span>
-      </a>
-    </article>
+    <a class="contact-card compact-contact" href="${item.url}" target="_blank" rel="noreferrer" aria-label="${item.title}: ${item.label}">
+      <span class="contact-icon" aria-hidden="true"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902-v2" width="26" height="26" alt=""></span>
+      <span class="contact-card-copy">
+        <strong>${item.title}</strong>
+        <small>${item.label}</small>
+      </span>
+      <span class="contact-arrow" aria-hidden="true">↗</span>
+    </a>
   `);
 }
 

@@ -1,4 +1,4 @@
-@import url("site-interactions.css?v=20260902");
+@import url("site-interactions.css?v=20260902-v2");
 
 /* Final visual refinements for the homepage. */
 
@@ -819,5 +819,194 @@
 @media (max-width: 760px) {
   .timeline {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* Step 5: compact profile links and footer */
+.home-page .timeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.home-page .timeline::before,
+.home-page .timeline-item::before {
+  display: none;
+}
+
+.home-page .timeline-item {
+  display: block;
+  min-height: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--panel-strong) 92%, var(--primary-soft));
+}
+
+.home-page .timeline-item time {
+  position: static;
+  display: inline-flex;
+  width: auto;
+  margin: 0 0 0.8rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  color: var(--primary);
+  background: var(--primary-soft);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-page .timeline-item h3,
+.home-page .timeline-item .timeline-copy {
+  display: block;
+  margin-left: 0;
+}
+
+.home-page .timeline-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.home-page .project-flagship-card {
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+}
+
+.home-page .projects-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.home-page .contact-panel {
+  padding: clamp(1.4rem, 3.5vw, 2.35rem);
+  color: #f4fffb;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(72, 210, 169, 0.24), transparent 32%),
+    linear-gradient(135deg, #092f2e 0%, #123e4b 100%);
+}
+
+.home-page .contact-panel::after {
+  opacity: 0.18;
+}
+
+.home-page .contact-panel .eyebrow,
+.home-page .contact-panel .section-heading h2 {
+  color: #f4fffb;
+}
+
+.home-page .contact-panel .button {
+  color: #0b3d3a;
+  background: #effff9;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.home-page .contact-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.home-page .contact-card.compact-contact {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 76px;
+  padding: 0.85rem;
+  border: 1px solid rgba(226, 255, 246, 0.15);
+  border-radius: 16px;
+  color: #f4fffb;
+  background: rgba(245, 255, 251, 0.08);
+  box-shadow: none;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.home-page .contact-card.compact-contact:hover,
+.home-page .contact-card.compact-contact:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(226, 255, 246, 0.4);
+  background: rgba(245, 255, 251, 0.14);
+}
+
+.home-page .compact-contact .contact-icon {
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+  place-items: center;
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  border-color: rgba(226, 255, 246, 0.18);
+  border-radius: 12px;
+  background: rgba(245, 255, 251, 0.1);
+}
+
+.home-page .compact-contact .contact-card-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.18rem;
+}
+
+.home-page .compact-contact strong {
+  overflow: hidden;
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-page .compact-contact small {
+  overflow: hidden;
+  color: rgba(235, 255, 248, 0.66);
+  font-size: 0.72rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-page .contact-arrow {
+  color: #9be9d0;
+}
+
+.home-page .legal-panel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+.home-page .legal-panel .eyebrow {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .home-page .project-flagship-card,
+  .home-page .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .home-page .timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .home-page .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .legal-panel {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
