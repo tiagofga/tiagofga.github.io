@@ -561,7 +561,7 @@ function setLanguage(language) {
     button.classList.toggle("active", button.dataset.langOption === locale);
   });
 
-  renderList(quickLinksContainer, data.quickLinks, (item) => `<a class="quick-link" href="${item.url}" target="_blank" rel="noreferrer" aria-label="${item.label}" data-tooltip="${item.label}"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg" width="21" height="21" alt="" aria-hidden="true"></a>`);
+  renderList(quickLinksContainer, data.quickLinks, (item) => `<a class="quick-link" href="${item.url}" target="_blank" rel="noreferrer" aria-label="${item.label}" data-tooltip="${item.label}"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902" width="21" height="21" alt="" aria-hidden="true"></a>`);
   renderList(keyPointsContainer, data.keyPoints, (item) => `<li>${item}</li>`);
   renderList(statsContainer, data.stats, (item) => `
     <div class="stat-card">
@@ -600,7 +600,7 @@ function setLanguage(language) {
     <article class="contact-card">
       <div>
         <div class="contact-card-head">
-          <span class="contact-icon" aria-hidden="true"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg" width="28" height="28" alt=""></span>
+          <span class="contact-icon" aria-hidden="true"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902" width="28" height="28" alt=""></span>
           <h3>${item.title}</h3>
         </div>
         <p>${item.description}</p>
