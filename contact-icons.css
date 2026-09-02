@@ -125,14 +125,13 @@
   line-height: 1.25;
 }
 
-/* Hero quick links: reliable image-based SVG icons. */
+/* Hero quick links use local assets and semantic icon identifiers. */
 .home-page .quick-links {
   gap: 12px;
   align-items: center;
 }
 
 .home-page .quick-link {
-  --quick-link-icon: none;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -142,6 +141,7 @@
   height: 44px;
   padding: 0;
   border-radius: 999px;
+  color: var(--primary);
   font-size: 0;
   line-height: 0;
   overflow: visible;
@@ -154,33 +154,34 @@
   border-color: #355843;
 }
 
-.home-page .quick-link::before {
-  content: "";
+.home-page .profile-icon-image {
   display: block;
-  width: 21px;
-  height: 21px;
-  background-image: var(--quick-link-icon);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.home-page[data-theme="black"] .profile-icon-image.icon-github {
+  filter: invert(1) brightness(1.35);
 }
 
 .home-page .quick-link::after {
+  content: attr(data-tooltip);
   position: absolute;
   left: 50%;
   bottom: calc(100% + 9px);
   z-index: 20;
-  transform: translateX(-50%) translateY(4px);
-  padding: 7px 9px;
+  padding: 6px 8px;
   border-radius: 8px;
-  background: #10271b;
+  background: #10231a;
   color: #ffffff;
-  font-size: 0.76rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
   line-height: 1;
-  font-weight: 700;
   white-space: nowrap;
-  opacity: 0;
   pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
   transition: opacity 160ms ease, transform 160ms ease;
 }
@@ -196,30 +197,7 @@
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
 }
 
-.home-page .quick-link:nth-child(1) {
-  --quick-link-icon: url("https://api.iconify.design/simple-icons/googlescholar.svg?color=%234285f4");
-}
-.home-page .quick-link:nth-child(1)::after { content: "Google Scholar"; }
-
-.home-page .quick-link:nth-child(2) {
-  --quick-link-icon: url("https://api.iconify.design/simple-icons/github.svg?color=%2324292f");
-}
-.home-page[data-theme="black"] .quick-link:nth-child(2) {
-  --quick-link-icon: url("https://api.iconify.design/simple-icons/github.svg?color=%23f0f6fc");
-}
-.home-page .quick-link:nth-child(2)::after { content: "GitHub"; }
-
-.home-page .quick-link:nth-child(3) {
-  --quick-link-icon: url("https://api.iconify.design/simple-icons/linkedin.svg?color=%230a66c2");
-}
-.home-page .quick-link:nth-child(3)::after { content: "LinkedIn"; }
-
-.home-page .quick-link:nth-child(4) {
-  --quick-link-icon: url("https://api.iconify.design/mdi/web.svg?color=%231f7a4d");
-}
-.home-page .quick-link:nth-child(4)::after { content: "Website"; }
-
-/* Contact cards with reliable image-based icons. */
+/* Contact cards share the same local icon assets. */
 .home-page .contact-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
@@ -259,7 +237,6 @@
 }
 
 .home-page .contact-icon {
-  --contact-icon-url: none;
   grid-column: 1;
   grid-row: 1 / span 2;
   width: 56px;
@@ -267,20 +244,11 @@
   height: 56px;
   padding: 0;
   border-radius: 16px;
-  font-size: 0;
-  letter-spacing: 0;
-  text-transform: none;
 }
 
-.home-page .contact-icon::before {
-  content: "";
-  display: block;
+.home-page .contact-icon .profile-icon-image {
   width: 28px;
   height: 28px;
-  background-image: var(--contact-icon-url);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .home-page .contact-link {
@@ -296,25 +264,11 @@
   font-size: 0.85em;
 }
 
-.home-page .contact-link-icon {
-  display: none;
-}
-
 .home-page .contact-card:hover .contact-icon,
 .home-page .contact-card:focus-within .contact-icon {
   background: color-mix(in srgb, var(--primary) 18%, transparent);
   border-color: color-mix(in srgb, var(--primary) 58%, var(--panel-border));
 }
-
-.home-page .contact-card:nth-child(1) .contact-icon { --contact-icon-url: url("https://api.iconify.design/simple-icons/googlescholar.svg?color=%234285f4"); }
-.home-page .contact-card:nth-child(2) .contact-icon { --contact-icon-url: url("https://api.iconify.design/simple-icons/orcid.svg?color=%23a6ce39"); }
-.home-page .contact-card:nth-child(3) .contact-icon { --contact-icon-url: url("https://api.iconify.design/academicons/lattes.svg?color=%231f7a4d"); }
-.home-page .contact-card:nth-child(4) .contact-icon { --contact-icon-url: url("https://api.iconify.design/simple-icons/linkedin.svg?color=%230a66c2"); }
-.home-page .contact-card:nth-child(5) .contact-icon { --contact-icon-url: url("https://api.iconify.design/simple-icons/github.svg?color=%2324292f"); }
-.home-page[data-theme="black"] .contact-card:nth-child(5) .contact-icon { --contact-icon-url: url("https://api.iconify.design/simple-icons/github.svg?color=%23f0f6fc"); }
-.home-page .contact-card:nth-child(6) .contact-icon { --contact-icon-url: url("https://api.iconify.design/simple-icons/stackoverflow.svg?color=%23f58025"); }
-.home-page .contact-card:nth-child(7) .contact-icon { --contact-icon-url: url("https://api.iconify.design/simple-icons/youtube.svg?color=%23ff0000"); }
-.home-page .contact-card:nth-child(8) .contact-icon { --contact-icon-url: url("https://api.iconify.design/simple-icons/instagram.svg?color=%23c13584"); }
 
 /* Timeline layout. */
 .home-page .timeline {

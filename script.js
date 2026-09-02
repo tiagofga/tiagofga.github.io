@@ -54,18 +54,22 @@ const content = {
     quickLinks: [
       {
         label: "Google Scholar",
+        icon: "google-scholar",
         url: "https://scholar.google.com/citations?user=uFCAPt8AAAAJ&hl=en"
       },
       {
         label: "GitHub",
+        icon: "github",
         url: "https://github.com/tiagofga"
       },
       {
         label: "LinkedIn",
+        icon: "linkedin",
         url: "https://linkedin.com/in/tiagofga"
       },
       {
         label: "Website",
+        icon: "website",
         url: "http://www.tiagofga.com.br/"
       }
     ],
@@ -191,56 +195,56 @@ const content = {
     ],
     contactCards: [
       {
-        icon: "GS",
+        icon: "google-scholar",
         title: "Google Scholar",
         description: "Produção científica, citações e perfil acadêmico.",
         label: "Acessar perfil",
         url: "https://scholar.google.com/citations?user=uFCAPt8AAAAJ&hl=en"
       },
       {
-        icon: "ID",
+        icon: "orcid",
         title: "ORCID",
         description: "Identificador acadêmico e integração com publicações.",
         label: "Abrir ORCID",
         url: "https://orcid.org/0000-0002-2541-9305"
       },
       {
-        icon: "LT",
+        icon: "lattes",
         title: "Lattes",
         description: "Currículo acadêmico e histórico de produção no CNPq.",
         label: "Abrir Lattes",
         url: "http://lattes.cnpq.br/5021181563738789"
       },
       {
-        icon: "IN",
+        icon: "linkedin",
         title: "LinkedIn",
         description: "Trajetória profissional, conexões e presença institucional.",
         label: "Ver LinkedIn",
         url: "https://linkedin.com/in/tiagofga"
       },
       {
-        icon: "GH",
+        icon: "github",
         title: "GitHub",
         description: "Código, experimentos, templates e projetos públicos.",
         label: "Ver GitHub",
         url: "https://github.com/tiagofga"
       },
       {
-        icon: "SO",
+        icon: "stackoverflow",
         title: "Stack Overflow",
         description: "Histórico técnico e participação na comunidade.",
         label: "Ver perfil",
         url: "https://stackoverflow.com/users/2011194"
       },
       {
-        icon: "YT",
+        icon: "youtube",
         title: "YouTube",
         description: "Canal com presença pública e conteúdo compartilhado.",
         label: "Abrir canal",
         url: "https://www.youtube.com/user/tiagofga"
       },
       {
-        icon: "IG",
+        icon: "instagram",
         title: "Instagram",
         description: "Presença social complementar.",
         label: "Abrir perfil",
@@ -303,18 +307,22 @@ const content = {
     quickLinks: [
       {
         label: "Google Scholar",
+        icon: "google-scholar",
         url: "https://scholar.google.com/citations?user=uFCAPt8AAAAJ&hl=en"
       },
       {
         label: "GitHub",
+        icon: "github",
         url: "https://github.com/tiagofga"
       },
       {
         label: "LinkedIn",
+        icon: "linkedin",
         url: "https://linkedin.com/in/tiagofga"
       },
       {
         label: "Website",
+        icon: "website",
         url: "http://www.tiagofga.com.br/"
       }
     ],
@@ -440,56 +448,56 @@ const content = {
     ],
     contactCards: [
       {
-        icon: "GS",
+        icon: "google-scholar",
         title: "Google Scholar",
         description: "Scientific output, citations, and academic profile.",
         label: "Open profile",
         url: "https://scholar.google.com/citations?user=uFCAPt8AAAAJ&hl=en"
       },
       {
-        icon: "ID",
+        icon: "orcid",
         title: "ORCID",
         description: "Academic identifier and publication integration.",
         label: "Open ORCID",
         url: "https://orcid.org/0000-0002-2541-9305"
       },
       {
-        icon: "LT",
+        icon: "lattes",
         title: "Lattes",
         description: "Academic CV and publication history on CNPq.",
         label: "Open Lattes",
         url: "http://lattes.cnpq.br/5021181563738789"
       },
       {
-        icon: "IN",
+        icon: "linkedin",
         title: "LinkedIn",
         description: "Professional track record, network, and institutional presence.",
         label: "View LinkedIn",
         url: "https://linkedin.com/in/tiagofga"
       },
       {
-        icon: "GH",
+        icon: "github",
         title: "GitHub",
         description: "Code, experiments, templates, and public projects.",
         label: "View GitHub",
         url: "https://github.com/tiagofga"
       },
       {
-        icon: "SO",
+        icon: "stackoverflow",
         title: "Stack Overflow",
         description: "Technical history and community participation.",
         label: "View profile",
         url: "https://stackoverflow.com/users/2011194"
       },
       {
-        icon: "YT",
+        icon: "youtube",
         title: "YouTube",
         description: "Public channel and shared content.",
         label: "Open channel",
         url: "https://www.youtube.com/user/tiagofga"
       },
       {
-        icon: "IG",
+        icon: "instagram",
         title: "Instagram",
         description: "Complementary social presence.",
         label: "Open profile",
@@ -553,7 +561,7 @@ function setLanguage(language) {
     button.classList.toggle("active", button.dataset.langOption === locale);
   });
 
-  renderList(quickLinksContainer, data.quickLinks, (item) => `<a class="quick-link" href="${item.url}" target="_blank" rel="noreferrer">${item.label}</a>`);
+  renderList(quickLinksContainer, data.quickLinks, (item) => `<a class="quick-link" href="${item.url}" target="_blank" rel="noreferrer" aria-label="${item.label}" data-tooltip="${item.label}"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg" width="21" height="21" alt="" aria-hidden="true"></a>`);
   renderList(keyPointsContainer, data.keyPoints, (item) => `<li>${item}</li>`);
   renderList(statsContainer, data.stats, (item) => `
     <div class="stat-card">
@@ -592,13 +600,12 @@ function setLanguage(language) {
     <article class="contact-card">
       <div>
         <div class="contact-card-head">
-          <span class="contact-icon" aria-hidden="true">${item.icon || "@@"}</span>
+          <span class="contact-icon" aria-hidden="true"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg" width="28" height="28" alt=""></span>
           <h3>${item.title}</h3>
         </div>
         <p>${item.description}</p>
       </div>
       <a class="contact-link" href="${item.url}" target="_blank" rel="noreferrer">
-        <span class="contact-link-icon" aria-hidden="true">${item.icon || "@@"}</span>
         <span>${item.label}</span>
       </a>
     </article>
