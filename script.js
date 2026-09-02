@@ -35,7 +35,7 @@ const content = {
     },
     projects: {
       eyebrow: "Projetos",
-      title: "Repositórios que representam ensino, pesquisa aplicada e engenharia de software",
+      title: "Projetos que conectam ensino, pesquisa aplicada e software",
       link: "Ver todos no GitHub"
     },
     publications: {
@@ -288,7 +288,7 @@ const content = {
     },
     projects: {
       eyebrow: "Projects",
-      title: "Repositories that represent teaching, applied research, and software engineering",
+      title: "Projects connecting teaching, applied research, and software",
       link: "View all on GitHub"
     },
     publications: {
@@ -514,6 +514,7 @@ const keyPointsContainer = document.getElementById("key-points");
 const statsContainer = document.getElementById("stats-grid");
 const researchContainer = document.getElementById("research-list");
 const timelineContainer = document.getElementById("timeline-list");
+const projectFlagshipContainer = document.getElementById("project-flagship");
 const projectsContainer = document.getElementById("projects-grid");
 const publicationsContainer = document.getElementById("publications-list");
 const collaborationContainer = document.getElementById("collaboration-list");
@@ -577,7 +578,40 @@ function setLanguage(language) {
       <p class="timeline-copy">${item.body}</p>
     </article>
   `);
-  renderList(projectsContainer, data.projectsList, (item) => `
+  const [flagshipProject, ...secondaryProjects] = data.projectsList;
+  projectFlagshipContainer.innerHTML = `
+    <article class="project-flagship-card">
+      <div class="flagship-copy">
+        <p class="flagship-label">${locale === "pt-BR" ? "Projeto em destaque" : "Featured project"}</p>
+        <h3>${flagshipProject.name}</h3>
+        <div class="project-meta">${flagshipProject.meta}</div>
+        <p>${flagshipProject.description}</p>
+        <div class="project-tags">${flagshipProject.tags.map((tag) => `<span>${tag}</span>`).join("")}</div>
+        <div class="flagship-actions">
+          <a class="button button-light" href="https://tiagofga.github.io/EC-IA/" target="_blank" rel="noreferrer">${locale === "pt-BR" ? "Explorar o curso" : "Explore the course"}</a>
+          <a class="project-link project-link-light" href="${flagshipProject.url}" target="_blank" rel="noreferrer">${locale === "pt-BR" ? "Ver repositório" : "View repository"}</a>
+        </div>
+      </div>
+      <div class="search-preview" aria-hidden="true">
+        <div class="preview-toolbar">
+          <span></span><span></span><span></span>
+          <strong>EC-IA / Search Lab</strong>
+        </div>
+        <div class="preview-tabs">
+          <span class="active">${locale === "pt-BR" ? "Não informada" : "Uninformed"}</span>
+          <span>${locale === "pt-BR" ? "Informada" : "Informed"}</span>
+          <span>${locale === "pt-BR" ? "Local" : "Local"}</span>
+        </div>
+        <div class="preview-canvas">
+          <span class="maze-block block-a"></span><span class="maze-block block-b"></span><span class="maze-block block-c"></span>
+          <span class="route route-a"></span><span class="route route-b"></span><span class="route route-c"></span>
+          <span class="search-node node-start">A</span><span class="search-node node-mid">•</span><span class="search-node node-goal">B</span>
+        </div>
+        <div class="preview-status"><span>BFS</span><strong>${locale === "pt-BR" ? "Rota encontrada" : "Route found"}</strong></div>
+      </div>
+    </article>
+  `;
+  renderList(projectsContainer, secondaryProjects, (item) => `
     <article class="project-card">
       <div>
         <h3>${item.name}</h3>
