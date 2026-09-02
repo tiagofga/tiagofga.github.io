@@ -11,7 +11,7 @@ const content = {
     },
     hero: {
       eyebrow: "Professor no CEFET-MG • Pesquisador em IA aplicada",
-      title: "Desenvolvo inteligência artificial para ciência, educação e software reprodutível.",
+      title: "Construo inteligência artificial para ciência e educação.",
       subtitle: "Bioengenharia • Drug discovery • Visão computacional • Ensino de IA",
       lead: "Minha atuação conecta descoberta de fármacos, bioinformática, visão computacional e recursos educacionais abertos, incluindo o EC-IA.",
       primaryCta: "Explorar EC-IA",
@@ -264,7 +264,7 @@ const content = {
     },
     hero: {
       eyebrow: "Professor at CEFET-MG • Applied AI researcher",
-      title: "I build artificial intelligence for science, education, and reproducible software.",
+      title: "I build artificial intelligence for science and education.",
       subtitle: "Bioengineering • Drug discovery • Computer vision • AI education",
       lead: "My work connects drug discovery, bioinformatics, computer vision, and open educational resources, including EC-IA.",
       primaryCta: "Explore EC-IA",
@@ -562,7 +562,7 @@ function setLanguage(language) {
     button.classList.toggle("active", button.dataset.langOption === locale);
   });
 
-  renderList(quickLinksContainer, data.quickLinks, (item) => `<a class="quick-link" href="${item.url}" target="_blank" rel="noreferrer" aria-label="${item.label}" data-tooltip="${item.label}"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902-v2" width="21" height="21" alt="" aria-hidden="true"></a>`);
+  renderList(quickLinksContainer, data.quickLinks, (item) => `<a class="quick-link" href="${item.url}" target="_blank" rel="noreferrer" aria-label="${item.label}" data-tooltip="${item.label}"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902-v3" width="21" height="21" alt="" aria-hidden="true"></a>`);
   renderList(keyPointsContainer, data.keyPoints, (item) => `<li>${item}</li>`);
   renderList(statsContainer, data.stats, (item) => `
     <div class="stat-card">
@@ -632,7 +632,7 @@ function setLanguage(language) {
   renderList(collaborationContainer, data.collaborationItems, (item) => `<li>${item}</li>`);
   renderList(contactContainer, data.contactCards, (item) => `
     <a class="contact-card compact-contact" href="${item.url}" target="_blank" rel="noreferrer" aria-label="${item.title}: ${item.label}">
-      <span class="contact-icon" aria-hidden="true"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902-v2" width="26" height="26" alt=""></span>
+      <span class="contact-icon" aria-hidden="true"><img class="profile-icon-image icon-${item.icon}" src="assets/icons/${item.icon}.svg?v=20260902-v3" width="26" height="26" alt=""></span>
       <span class="contact-card-copy">
         <strong>${item.title}</strong>
         <small>${item.label}</small>

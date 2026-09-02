@@ -1,4 +1,4 @@
-@import url("site-interactions.css?v=20260902-v2");
+@import url("site-interactions.css?v=20260902-v3");
 
 /* Final visual refinements for the homepage. */
 
@@ -1008,5 +1008,24 @@
   .home-page .legal-panel {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+/* Live QA: keep the hero decisive and above the fold on desktop. */
+@media (min-width: 961px) {
+  .home-page .hero {
+    min-height: 560px;
+    gap: clamp(28px, 4vw, 52px);
+    padding: clamp(40px, 4.5vw, 58px);
+  }
+
+  .home-page .hero-copy {
+    gap: 14px;
+  }
+
+  .home-page .hero-copy h1 {
+    max-width: 19ch;
+    font-size: clamp(2.6rem, 4.25vw, 3.8rem);
+    line-height: 1;
   }
 }
