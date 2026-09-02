@@ -30,8 +30,8 @@ const content = {
       title: "Frentes principais de trabalho"
     },
     timeline: {
-      eyebrow: "Trajetória",
-      title: "Eixos centrais da minha atuação"
+      eyebrow: "Atuação atual",
+      title: "Três eixos que orientam meu trabalho"
     },
     projects: {
       eyebrow: "Projetos",
@@ -94,19 +94,19 @@ const content = {
     ],
     timelineItems: [
       {
-        period: "Hoje",
-        title: "Professor no CEFET-MG",
-        body: "Atuação em Engenharia de Computação com ensino, orientação e desenvolvimento de projetos acadêmicos e técnicos."
+        period: "Ensino",
+        title: "Formação em Engenharia de Computação",
+        body: "Aulas, orientação e experiências práticas que conectam fundamentos, implementação e pensamento crítico."
       },
       {
         period: "Pesquisa",
-        title: "Bioengenharia e IA aplicada",
-        body: "Investigação em descoberta de fármacos, bioinformática, deep learning e workflows científicos reproduzíveis."
+        title: "IA aplicada à ciência",
+        body: "Bioengenharia, descoberta de fármacos e bioinformática com métodos de aprendizado profundo."
       },
       {
-        period: "Open source",
-        title: "Projetos públicos e materiais didáticos",
-        body: "Repositórios que reúnem software de pesquisa, materiais de inteligência artificial, estruturas de dados e templates acadêmicos."
+        period: "Software aberto",
+        title: "Recursos reproduzíveis",
+        body: "Código, materiais didáticos e ferramentas públicas que tornam métodos complexos mais claros e reutilizáveis."
       }
     ],
     projectsList: [
@@ -347,19 +347,19 @@ const content = {
     ],
     timelineItems: [
       {
-        period: "Today",
-        title: "Professor at CEFET-MG",
-        body: "Teaching Computer Engineering, advising students, and developing academic and technical projects."
+        period: "Teaching",
+        title: "Computer Engineering education",
+        body: "Classes, mentoring, and practical experiences connecting fundamentals, implementation, and critical thinking."
       },
       {
         period: "Research",
-        title: "Bioengineering and applied AI",
-        body: "Research on drug discovery, bioinformatics, deep learning, and reproducible scientific workflows."
+        title: "AI applied to science",
+        body: "Bioengineering, drug discovery, and bioinformatics through deep learning methods."
       },
       {
-        period: "Open source",
-        title: "Public projects and teaching resources",
-        body: "Repositories spanning research software, artificial intelligence teaching resources, data structures, and academic templates."
+        period: "Open software",
+        title: "Reproducible resources",
+        body: "Public code, teaching materials, and tools that make complex methods clearer and reusable."
       }
     ],
     projectsList: [
@@ -622,7 +622,7 @@ function setLanguage(language) {
       <a class="project-link" href="${item.url}" target="_blank" rel="noreferrer">${item.cta}</a>
     </article>
   `);
-  renderList(publicationsContainer, data.publicationsList, (item) => `
+  renderList(publicationsContainer, data.publicationsList.slice(0, 3), (item) => `
     <article class="publication-item">
       <h3>${item.title}</h3>
       <div class="publication-meta">${item.meta}</div>
