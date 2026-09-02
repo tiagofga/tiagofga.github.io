@@ -389,3 +389,117 @@
     max-width: 100%;
   }
 }
+
+
+/* Compact academic-technology hero. */
+.home-page .hero {
+  min-height: 610px;
+  grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.75fr);
+  gap: clamp(34px, 5vw, 68px);
+  align-items: center;
+  padding: clamp(46px, 6vw, 76px);
+  background:
+    radial-gradient(circle at 88% 15%, rgba(0, 51, 128, 0.09), transparent 28%),
+    radial-gradient(circle at 12% 90%, rgba(31, 122, 77, 0.08), transparent 34%),
+    var(--panel);
+}
+
+.home-page .hero-copy {
+  gap: 18px;
+}
+
+.home-page .hero-copy h1 {
+  max-width: 16ch;
+  margin: 0;
+  font-size: clamp(2.7rem, 5.25vw, 4.65rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.home-page .hero-subtitle {
+  color: var(--primary);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-page .hero .lead {
+  max-width: 61ch;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+}
+
+.home-page .hero-actions {
+  margin-top: 4px;
+}
+
+.home-page .hero-card {
+  max-width: 310px;
+  padding: 26px 22px 22px;
+  background: linear-gradient(155deg, #f4fbf7 0%, #edf4ff 100%);
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--panel-border));
+  box-shadow: 0 22px 50px rgba(16, 56, 34, 0.13);
+}
+
+.home-page[data-theme="black"] .hero-card {
+  background: linear-gradient(155deg, #1c3528 0%, #172b3d 100%);
+}
+
+.home-page .avatar {
+  width: 168px;
+  height: 168px;
+}
+
+.home-page .hero-card-body p:last-child {
+  max-width: 30ch;
+  margin-inline: auto;
+}
+
+.home-page .hero .key-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.home-page .hero .key-points li {
+  min-height: auto;
+  padding: 9px 12px;
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 960px) {
+  .home-page .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 48px 40px;
+  }
+
+  .home-page .hero-copy h1 {
+    max-width: 18ch;
+  }
+
+  .home-page .hero-card {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-page .hero {
+    padding: 38px 24px;
+  }
+
+  .home-page .hero-copy h1 {
+    max-width: none;
+    font-size: clamp(2.2rem, 12vw, 3.35rem);
+  }
+
+  .home-page .hero .key-points li {
+    width: 100%;
+    border-radius: 14px;
+  }
+}

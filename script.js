@@ -10,14 +10,14 @@ const content = {
       contact: "Contato"
     },
     hero: {
-      eyebrow: "Professor, pesquisador e desenvolvedor",
-      title: "Integro inteligência artificial, ciência aplicada e engenharia de software para gerar impacto acadêmico.",
-      subtitle: "CEFET-MG · Bioengenharia · IA aplicada · Software científico",
-      lead: "No CEFET-MG, conduzo ensino, orientação e desenvolvimento de projetos que conectam descoberta de fármacos, bioinformática, visão computacional e workflows computacionais reproduzíveis.",
-      primaryCta: "Ver projetos",
-      secondaryCta: "Entrar em contato",
-      cardKicker: "Base atual",
-      cardText: "Professor de Engenharia de Computação, com foco em IA aplicada, workflows científicos e software educacional."
+      eyebrow: "Professor no CEFET-MG • Pesquisador em IA aplicada",
+      title: "Desenvolvo inteligência artificial para ciência, educação e software reprodutível.",
+      subtitle: "Bioengenharia • Drug discovery • Visão computacional • Ensino de IA",
+      lead: "Minha atuação conecta descoberta de fármacos, bioinformática, visão computacional e recursos educacionais abertos, incluindo o EC-IA.",
+      primaryCta: "Explorar EC-IA",
+      secondaryCta: "Conhecer a pesquisa",
+      cardKicker: "Atuação atual",
+      cardText: "Professor do Curso de Engenharia de Computação do CEFET-MG, campus Divinópolis."
     },
     about: {
       eyebrow: "Perfil",
@@ -263,14 +263,14 @@ const content = {
       contact: "Contact"
     },
     hero: {
-      eyebrow: "Professor, researcher, and developer",
-      title: "Bridging artificial intelligence, applied science, and software engineering for academic impact.",
-      subtitle: "CEFET-MG · Bioengineering · Applied AI · Scientific software",
-      lead: "At CEFET-MG, I combine teaching, supervision, and software development to connect drug discovery, bioinformatics, computer vision, and reproducible computational workflows.",
-      primaryCta: "View projects",
-      secondaryCta: "Get in touch",
-      cardKicker: "Current base",
-      cardText: "Computer Engineering professor focused on applied AI, scientific workflows, and educational software."
+      eyebrow: "Professor at CEFET-MG • Applied AI researcher",
+      title: "I build artificial intelligence for science, education, and reproducible software.",
+      subtitle: "Bioengineering • Drug discovery • Computer vision • AI education",
+      lead: "My work connects drug discovery, bioinformatics, computer vision, and open educational resources, including EC-IA.",
+      primaryCta: "Explore EC-IA",
+      secondaryCta: "View research",
+      cardKicker: "Current role",
+      cardText: "Professor in the Computer Engineering program at CEFET-MG, Divinópolis."
     },
     about: {
       eyebrow: "Profile",
