@@ -76,11 +76,11 @@ const content = {
     keyPoints: [
       "IA aplicada a problemas científicos",
       "Drug discovery e virtual screening",
-      "Materiais didáticos e templates acadêmicos",
+      "EC-IA: estudos guiados e visualizações interativas",
       "Workflows reprodutíveis em software"
     ],
     stats: [
-      { value: "5+", label: "repositórios em destaque" },
+      { value: "6", label: "repositórios em destaque" },
       { value: "3", label: "frentes centrais de atuação" },
       { value: "C++, Python, JS", label: "ecossistemas recorrentes" },
       { value: "PT / EN", label: "comunicação do site" }
@@ -106,10 +106,18 @@ const content = {
       {
         period: "Open source",
         title: "Projetos públicos e materiais didáticos",
-        body: "Repositórios que transitam entre software de pesquisa, projetos full stack, estruturas de dados e templates acadêmicos."
+        body: "Repositórios que reúnem software de pesquisa, materiais de inteligência artificial, estruturas de dados e templates acadêmicos."
       }
     ],
     projectsList: [
+      {
+        name: "EC-IA",
+        description: "Repositório público da disciplina de Inteligência Artificial do Curso de Engenharia de Computação do CEFET-MG, campus Divinópolis. Reúne estudos guiados, atividades, pseudocódigos conceituais e visualizações interativas de algoritmos de busca.",
+        meta: "JavaScript • Ensino • Inteligência Artificial",
+        tags: ["Busca em IA", "Visualizações", "Estudos guiados"],
+        url: "https://github.com/tiagofga/EC-IA",
+        cta: "Explorar repositório"
+      },
       {
         name: "mlp",
         description: "Implementação modular de multilayer perceptron em C++ moderno, com CLI para experimentos, biblioteca CMake reutilizável e suporte opcional a OpenMP e CUDA.",
@@ -119,19 +127,11 @@ const content = {
         cta: "Abrir repositório"
       },
       {
-        name: "be-the-hero",
-        description: "Projeto full stack usado para aprendizado de Node.js, React e React Native, integrando backend, frontend e aplicativo mobile em uma mesma proposta.",
-        meta: "JavaScript • Full stack • Mobile",
-        tags: ["Node.js", "React", "React Native"],
-        url: "https://github.com/tiagofga/be-the-hero",
-        cta: "Abrir repositório"
-      },
-      {
-        name: "Estruturas-de-Dados-em-C",
+        name: "Estruturas-de-Dados-e-Algoritmos-em-C",
         description: "Repositório educacional voltado à divulgação de algoritmos e estruturas de dados em C, cobrindo TAD, listas, filas, pilhas, árvores, grafos e métodos clássicos.",
         meta: "C • Ensino • Estruturas de dados",
         tags: ["C", "Educação", "Algoritmos"],
-        url: "https://github.com/tiagofga/Estruturas-de-Dados-em-C",
+        url: "https://github.com/tiagofga/Estruturas-de-Dados-e-Algoritmos-em-C",
         cta: "Abrir repositório"
       },
       {
@@ -329,11 +329,11 @@ const content = {
     keyPoints: [
       "Applied AI for scientific problems",
       "Drug discovery and virtual screening",
-      "Teaching materials and academic templates",
+      "EC-IA: guided studies and interactive visualizations",
       "Reproducible software workflows"
     ],
     stats: [
-      { value: "5+", label: "featured repositories" },
+      { value: "6", label: "featured repositories" },
       { value: "3", label: "core activity areas" },
       { value: "C++, Python, JS", label: "recurring ecosystems" },
       { value: "PT / EN", label: "site communication" }
@@ -359,10 +359,18 @@ const content = {
       {
         period: "Open source",
         title: "Public projects and teaching resources",
-        body: "Repositories spanning research software, full-stack learning projects, data structures, and academic templates."
+        body: "Repositories spanning research software, artificial intelligence teaching resources, data structures, and academic templates."
       }
     ],
     projectsList: [
+      {
+        name: "EC-IA",
+        description: "Public teaching repository for the Artificial Intelligence course at CEFET-MG, Divinópolis. It combines guided studies, activities, conceptual pseudocode, and interactive visualizations of search algorithms.",
+        meta: "JavaScript • Teaching • Artificial Intelligence",
+        tags: ["AI Search", "Visualizations", "Guided studies"],
+        url: "https://github.com/tiagofga/EC-IA",
+        cta: "Explore repository"
+      },
       {
         name: "mlp",
         description: "A modular multilayer perceptron implementation in modern C++, with an experiments CLI, a reusable CMake library package, and optional OpenMP and CUDA support.",
@@ -372,19 +380,11 @@ const content = {
         cta: "Open repository"
       },
       {
-        name: "be-the-hero",
-        description: "A full-stack learning project built with Node.js, React, and React Native, combining backend, frontend, and mobile applications in a single proposal.",
-        meta: "JavaScript • Full stack • Mobile",
-        tags: ["Node.js", "React", "React Native"],
-        url: "https://github.com/tiagofga/be-the-hero",
-        cta: "Open repository"
-      },
-      {
-        name: "Estruturas-de-Dados-em-C",
+        name: "Estruturas-de-Dados-e-Algoritmos-em-C",
         description: "An educational repository focused on algorithms and data structures in C, covering ADTs, lists, queues, stacks, trees, graphs, and classic methods.",
         meta: "C • Teaching • Data structures",
         tags: ["C", "Education", "Algorithms"],
-        url: "https://github.com/tiagofga/Estruturas-de-Dados-em-C",
+        url: "https://github.com/tiagofga/Estruturas-de-Dados-e-Algoritmos-em-C",
         cta: "Open repository"
       },
       {
