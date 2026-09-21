@@ -1290,3 +1290,23 @@ html[data-theme="dark"] .archive-note {
     flex-shrink: 0;
   }
 }
+
+
+/* Legal and policy pages */
+.legal-content {
+  max-width: 900px;
+  margin-inline: auto;
+}
+.legal-content h2 {
+  margin-top: 2.2rem;
+  margin-bottom: .65rem;
+}
+.legal-content h2:first-of-type {
+  margin-top: 1.4rem;
+}
+.legal-content p {
+  color: var(--muted);
+}
+.legal-content strong {
+  color: var(--ink);
+}
