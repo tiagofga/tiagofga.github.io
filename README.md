@@ -199,6 +199,57 @@ Nesta etapa:
 
 A versão em inglês permanece no repositório, mas não é prioridade editorial nesta fase.
 
+## SEO, AdSense e cutover
+
+A camada de publicação foi preparada para o domínio principal `https://tiagofga.com.br`.
+
+Implementado nesta etapa:
+
+- `site` do Astro apontando para o domínio principal;
+- canonical, Open Graph, Twitter Card e JSON-LD usando o domínio principal;
+- `robots.txt` e `sitemap.xml`;
+- política de privacidade em Português e Inglês;
+- suporte opcional a Google Search Console por variável de ambiente;
+- integração do script do Google AdSense desativada por padrão;
+- `ads.txt` gerado a partir do publisher ID configurado;
+- arquivo `CNAME` para o domínio principal;
+- variáveis documentadas em `.env.example`.
+
+### Ativação do AdSense
+
+A publicidade permanece **desativada por padrão**. Para ativar após a conta estar pronta:
+
+```env
+PUBLIC_GOOGLE_ADSENSE_CLIENT=ca-pub-0000000000000000
+PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID=pub-0000000000000000
+PUBLIC_ENABLE_ADSENSE=true
+```
+
+Os identificadores acima são apenas exemplos de formato e nunca devem ser publicados como valores reais.
+
+Antes de habilitar anúncios para tráfego sujeito às regras europeias, deve ser configurada uma CMP certificada pelo Google conforme a região e o tipo de publicidade.
+
+### Cutover de domínio
+
+O código está preparado para `tiagofga.com.br`, porém a alteração efetiva de DNS deve ocorrer somente depois de duas condições:
+
+1. o domínio personalizado estar configurado em **GitHub Settings → Pages**;
+2. os downloads e URLs legados ainda necessários terem destino preservado.
+
+O acervo de 2015 ainda contém links para o Joomla em `tiagofga.com.br/index.php/...`. Portanto, mover o DNS antes de migrar ou redirecionar esses recursos quebraria downloads históricos.
+
+Configuração DNS planejada para o cutover final:
+
+```text
+A     @     185.199.108.153
+A     @     185.199.109.153
+A     @     185.199.110.153
+A     @     185.199.111.153
+CNAME www   tiagofga.github.io
+```
+
+Os registros AAAA oficiais do GitHub Pages podem ser adicionados em conjunto. Após o provisionamento do certificado, HTTPS deve ser forçado no GitHub Pages.
+
 ## Desenvolvimento local
 
 Requisitos:
