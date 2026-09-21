@@ -8,6 +8,10 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Added
 
+- `robots.txt` e `sitemap.xml` gerados pelo Astro.
+- Política de Privacidade em Português e Inglês.
+- Integração configurável com Google Search Console e Google AdSense por variáveis de ambiente.
+- Endpoint `ads.txt` com validação do publisher ID.
 - Componente reutilizável `PageHero` para páginas internas.
 - Estado ativo na navegação principal.
 - Rotas em inglês sob `/en/` para Início, Sobre, Pesquisa, Publicações, Ensino, Extensão, Software, Recursos e Contato.
@@ -43,6 +47,9 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Changed
 
+- Domínio canônico permanece em `https://tiagofga.github.io`; cutover de domínio personalizado foi adiado.
+- Metadados de robôs, Open Graph e structured data foram refinados mantendo GitHub Pages como origem canônica.
+- Script do AdSense permanece bloqueado por feature flag até configuração válida da conta e consentimento.
 - Versão em inglês recebeu revisão textual para inglês acadêmico mais natural e consistente.
 - Páginas internas em inglês passaram a utilizar o mesmo `PageHero` e o mesmo sistema visual da versão em Português.
 - Homepage em inglês passou a espelhar a hierarquia visual principal da homepage em Português.

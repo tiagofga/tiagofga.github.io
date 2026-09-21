@@ -28,26 +28,28 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 | Acessibilidade base | Em consolidação nesta branch |
 | Componentização | Header, Footer e SectionHeading integrados ao main |
 | PT/EN | Implementado; revisão visual e textual do inglês nesta branch |
-| SEO base | Canonical, hreflang, Open Graph e JSON-LD implementados nesta branch |
+| SEO base | Canonical, hreflang, Open Graph, JSON-LD, sitemap e robots ativos para GitHub Pages |
 | Branding web | Integrado ao main |
+| AdSense | Estrutura preparada; script desativado até publisher ID e CMP estarem configurados |
+| Privacidade | Política PT/EN criada nesta branch |
 | Fechamento visual | Integrado ao main; paridade visual do inglês em revisão nesta branch |
 | Arquivos históricos | Ainda no legado |
 | Cloudflare R2 | Planejado, ainda não criado |
-| Domínio principal | Cutover futuro |
+| Domínio principal | Cutover adiado; GitHub Pages permanece canônico |
 | Joomla | Mantido apenas durante transição |
 
 ## Branch de trabalho atual
 
 ```text
-feat/en-visual-review
+feat/seo-adsense-cutover
 ```
 
 Objetivo da branch:
 
-- revisar a tradução inglesa com terminologia acadêmica mais natural;
-- garantir paridade visual entre Português e Inglês;
-- ajustar navegação inglesa para títulos mais longos;
-- manter o mesmo sistema de componentes, responsividade e tema nas duas versões.
+- consolidar SEO técnico mantendo `tiagofga.github.io` como host canônico;
+- preparar Search Console, AdSense, ads.txt e política de privacidade;
+- manter o cutover de `tiagofga.com.br` adiado;
+- preservar URLs e downloads do Joomla até a migração do legado.
 
 ## Ensino atual — protótipo
 
