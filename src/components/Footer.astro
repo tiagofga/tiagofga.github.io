@@ -10,10 +10,10 @@ const { locale = "pt" } = Astro.props;
       <strong>Tiago Alves de Oliveira</strong>
       <p>{locale === "en" ? "Computing · Science · Technology · Society" : "Computação · Ciência · Tecnologia · Sociedade"}</p>
     </div>
-    <div class="footer-links" aria-label={locale === "en" ? "External links" : "Links externos"}>
+    <div class="footer-links" aria-label={locale === "en" ? "Footer links" : "Links do rodapé"}>
       <a href="https://github.com/tiagofga">GitHub</a>
-      <a href="https://lattes.cnpq.br/">Lattes</a>
-      <a href="https://orcid.org/">ORCID</a>
+      <a href={locale === "en" ? "/en/contact/" : "/contato/"}>{locale === "en" ? "Contact" : "Contato"}</a>
+      <a href={locale === "en" ? "/en/about/" : "/sobre/"}>{locale === "en" ? "About" : "Sobre"}</a>
     </div>
   </div>
 </footer>
