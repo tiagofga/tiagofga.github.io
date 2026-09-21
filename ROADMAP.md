@@ -71,11 +71,13 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 - [x] criar página Sobre;
 - [x] criar página Contato;
 - [x] integrar Sobre, Pesquisa e Contato à navegação e homepage;
-- [ ] consolidar tokens de design: cores, tipografia, espaçamento e estados;
+- [x] consolidar base de tokens de espaçamento, raios e estados visuais;
+- [ ] revisar e simplificar CSS legado/duplicado após fechamento visual;
 - [ ] criar componentes reutilizáveis:
   - [x] Header;
   - [x] Footer;
-  - [ ] Hero;
+  - [x] Hero interno / PageHero;
+  - [ ] Hero da homepage como componente reutilizável;
   - [ ] ProjectCard;
   - [x] SectionHeading;
   - [ ] ArchiveCard;
@@ -89,7 +91,8 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 - [x] implementar base de acessibilidade: skip link, foco visível, labels e reduced motion;
 - [ ] revisar acessibilidade WCAG de forma completa;
 - [x] implementar menu mobile e consolidar responsividade do cabeçalho;
-- [ ] revisar responsividade completa de todas as páginas.
+- [ ] revisar responsividade completa de todas as páginas;
+- [ ] revisar visualmente todas as páginas em claro/escuro antes do acervo até 2025.
 
 **Critério de saída:** homepage e páginas internas utilizam componentes e tokens comuns, sem CSS ad hoc relevante.
 
