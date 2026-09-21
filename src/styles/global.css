@@ -1268,3 +1268,25 @@ html[data-theme="dark"] .archive-note {
     width: min(100%, 360px);
   }
 }
+
+
+/* English visual parity */
+.site-header[data-locale="en"] .primary-nav {
+  gap: 16px;
+  font-size: .86rem;
+}
+.site-header[data-locale="en"] .brand span {
+  letter-spacing: .12em;
+}
+@media (min-width: 981px) and (max-width: 1140px) {
+  .site-header[data-locale="en"] .nav-wrap {
+    gap: 18px;
+  }
+  .site-header[data-locale="en"] .primary-nav {
+    gap: 11px;
+    font-size: .81rem;
+  }
+  .site-header[data-locale="en"] .language-switch {
+    flex-shrink: 0;
+  }
+}
