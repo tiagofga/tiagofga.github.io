@@ -73,11 +73,11 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 - [x] integrar Sobre, Pesquisa e Contato à navegação e homepage;
 - [ ] consolidar tokens de design: cores, tipografia, espaçamento e estados;
 - [ ] criar componentes reutilizáveis:
-  - [ ] Header;
-  - [ ] Footer;
+  - [x] Header;
+  - [x] Footer;
   - [ ] Hero;
   - [ ] ProjectCard;
-  - [ ] SectionHeading;
+  - [x] SectionHeading;
   - [ ] ArchiveCard;
   - [ ] MaterialList;
   - [ ] Breadcrumb;
@@ -85,8 +85,10 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 - [x] implementar tema claro/escuro;
 - [ ] implementar PT/EN na nova arquitetura;
 - [ ] migrar favicon, social card e metatags;
-- [ ] revisar acessibilidade WCAG;
-- [ ] revisar responsividade.
+- [x] implementar base de acessibilidade: skip link, foco visível, labels e reduced motion;
+- [ ] revisar acessibilidade WCAG de forma completa;
+- [x] implementar menu mobile e consolidar responsividade do cabeçalho;
+- [ ] revisar responsividade completa de todas as páginas.
 
 **Critério de saída:** homepage e páginas internas utilizam componentes e tokens comuns, sem CSS ad hoc relevante.
 
