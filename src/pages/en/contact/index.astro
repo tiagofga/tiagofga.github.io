@@ -1,11 +1,42 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHero from "../../../components/PageHero.astro";
 ---
-<BaseLayout title="Contact" description="Professional and academic contact channels for Tiago Alves de Oliveira.">
-  <section class="archive-hero"><div class="shell"><div class="breadcrumb"><a href="/en/">Home</a> / Contact</div><p class="eyebrow">Contact</p><h1>Professional and academic contact.</h1><p>Use the institutional and project channels listed below.</p></div></section>
-  <section class="section"><div class="shell contact-grid">
-    <article class="card contact-card"><span class="contact-symbol">CEFET</span><h2>Institution</h2><p>CEFET-MG · Divinópolis Campus · Computer Engineering.</p></article>
-    <article class="card contact-card"><span class="contact-symbol">GH</span><h2>GitHub</h2><p>Research, teaching and software repositories.</p><a class="button light" href="https://github.com/tiagofga">Open GitHub ↗</a></article>
-    <article class="card contact-card"><span class="contact-symbol">WEB</span><h2>Portal</h2><p>This website is the central index for public academic and technical material.</p><a class="button light" href="/en/">Back to home →</a></article>
-  </div></section>
+<BaseLayout
+  title="Contact"
+  description="Professional and academic contact channels for Tiago Alves de Oliveira."
+>
+  <PageHero
+    eyebrow="Contact"
+    title="Academic and professional contact."
+    current="Contact"
+    homeLabel="Home"
+    homeHref="/en/"
+    description="For research, teaching, collaboration or software-related matters, use the professional channels associated with this portal and its projects."
+  />
+
+  <section class="section">
+    <div class="shell contact-grid">
+      <article class="card contact-card">
+        <span class="contact-symbol">CEFET</span>
+        <h2>Institutional</h2>
+        <p>CEFET-MG · Divinópolis Campus<br />Computer Engineering</p>
+        <p class="contact-note">Specific institutional contact details will be added after the official links have been validated.</p>
+      </article>
+
+      <article class="card contact-card">
+        <span class="contact-symbol">&lt;/&gt;</span>
+        <h2>GitHub</h2>
+        <p>Research, teaching and open-source software repositories.</p>
+        <a class="button light" href="https://github.com/tiagofga">github.com/tiagofga ↗</a>
+      </article>
+
+      <article class="card contact-card">
+        <span class="contact-symbol">WEB</span>
+        <h2>Portal</h2>
+        <p>Use the thematic areas of the site to find projects, materials and publications before getting in touch.</p>
+        <a class="button light" href="/en/">Back to home →</a>
+      </article>
+    </div>
+  </section>
 </BaseLayout>
