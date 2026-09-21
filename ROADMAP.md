@@ -68,6 +68,9 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 - [x] criar homepage piloto;
 - [x] criar protótipo da área de Ensino com separação entre disciplinas atuais e acervo;
 - [x] destacar IA e LIPC como disciplinas atuais de 2026/2 no protótipo;
+- [x] criar página Sobre;
+- [x] criar página Contato;
+- [x] integrar Sobre, Pesquisa e Contato à navegação e homepage;
 - [ ] consolidar tokens de design: cores, tipografia, espaçamento e estados;
 - [ ] criar componentes reutilizáveis:
   - [ ] Header;
@@ -170,7 +173,9 @@ Para cada material:
 
 ### Pesquisa
 
-- [ ] linhas de pesquisa;
+- [x] criar página de Pesquisa;
+- [x] estruturar linhas de pesquisa;
+- [ ] revisar e consolidar linhas de pesquisa com metadados definitivos;
 - [ ] projetos em andamento;
 - [ ] projetos concluídos;
 - [x] criar rota e menu de Publicações;
