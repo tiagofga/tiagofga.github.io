@@ -1,12 +1,10 @@
 name: Astro CI
 
 on:
-  push:
-    branches:
-      - feat/astro-migration-2015
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
