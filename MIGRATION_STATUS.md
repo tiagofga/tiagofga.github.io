@@ -23,7 +23,10 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 | Contato | Integrado ao main |
 | Extensão | Implementado nesta branch |
 | Software | Implementado nesta branch |
-| Recursos | Implementado nesta branch |
+| Recursos | Integrado ao main |
+| Menu mobile | Implementado nesta branch |
+| Acessibilidade base | Em consolidação nesta branch |
+| Componentização | Header, Footer e SectionHeading implementados nesta branch |
 | Arquivos históricos | Ainda no legado |
 | Cloudflare R2 | Planejado, ainda não criado |
 | Domínio principal | Cutover futuro |
@@ -32,14 +35,15 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 ## Branch de trabalho atual
 
 ```text
-feat/portal-stage-2
+feat/portal-stage-3
 ```
 
 Objetivo da branch:
 
-- criar áreas próprias de Extensão, Software e Recursos;
-- conectar as três áreas à navegação e à homepage;
-- manter curadoria editorial e evitar conteúdo não validado.
+- componentizar elementos estruturais do portal;
+- implementar menu mobile;
+- consolidar responsividade do cabeçalho;
+- melhorar navegação por teclado e acessibilidade básica.
 
 ## Ensino atual — protótipo
 
@@ -124,7 +128,7 @@ Pendência administrativa:
 - revisar o tema em todas as páginas;
 - criar páginas de Sobre, Pesquisa e Contato;
 - definir destino da disciplina LIPC;
-- consolidar componentes reutilizáveis;
+- continuar componentização de cards, breadcrumbs, callouts e listas de materiais;
 - remover gradualmente frontend legado da raiz;
 - continuar migração de anos/instituições;
 - criar R2 apenas quando chegar a fase de migração dos binários;
