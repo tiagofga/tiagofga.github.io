@@ -1,21 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
 ---
 <BaseLayout
   title="Pesquisa"
   description="Linhas, projetos e recursos de pesquisa em Inteligência Artificial, aprendizado de máquina e descoberta de fármacos."
 >
-  <section class="archive-hero research-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/">Início</a> / Pesquisa</div>
-      <p class="eyebrow">Pesquisa</p>
-      <h1>Inteligência Artificial aplicada a problemas científicos e computacionais.</h1>
-      <p>
-        Pesquisa orientada por modelos computacionais, dados e software reproduzível,
-        com aplicações em descoberta de fármacos, bioinformática e visão computacional.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Pesquisa"
+    title="Inteligência Artificial aplicada a problemas científicos e computacionais."
+    current="Pesquisa"
+    description="Pesquisa orientada por modelos computacionais, dados e software reproduzível, com aplicações em descoberta de fármacos, bioinformática e visão computacional."
+  />
 
   <section class="section">
     <div class="shell">
