@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+---
+<BaseLayout
+  title="Tiago Alves de Oliveira"
+  description="Academic portal for research, teaching, extension and open software in Computing and Artificial Intelligence."
+>
+  <section class="hero">
+    <div class="shell hero-inner">
+      <div>
+        <p class="eyebrow">Knowledge · Code · Impact</p>
+        <h1>Computing, Artificial Intelligence and Science applied to research and education.</h1>
+        <p class="lead">Research, teaching, extension, open software and the academic teaching archive gathered in a single portal.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="/en/research/">Explore research →</a>
+          <a class="button secondary" href="/en/about/">About me</a>
+        </div>
+      </div>
+      <aside class="hero-profile-card" aria-label="Profile summary">
+        <div class="profile-monogram" aria-hidden="true">TAO</div>
+        <div>
+          <p class="hero-profile-name">Tiago Alves de Oliveira</p>
+          <p class="hero-profile-role">Professor · CEFET-MG</p>
+          <p class="hero-profile-text">Research and teaching in Artificial Intelligence, machine learning, drug discovery and scientific software.</p>
+          <a class="hero-profile-link" href="/en/about/">View profile →</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="shell pillars">
+    <article class="card pillar">
+      <div class="icon">AI</div>
+      <h3>Research</h3>
+      <p>From scientific questions to computational models.</p>
+      <ul><li>Applied AI</li><li>Drug discovery</li><li>ADMET and bioinformatics</li><li>Computer vision</li></ul>
+      <a class="card-link" href="/en/research/">View research →</a>
+    </article>
+    <article class="card pillar">
+      <div class="icon">EDU</div>
+      <h3>Teaching</h3>
+      <p>Current courses, educational resources and the historical teaching archive.</p>
+      <ul><li>Artificial Intelligence · 2026/2</li><li>Programming Lab · 2026/2</li><li>Educational resources</li><li>Historical archive</li></ul>
+      <a class="card-link" href="/en/teaching/">View teaching →</a>
+    </article>
+    <article class="card pillar">
+      <div class="icon">&lt;/&gt;</div>
+      <h3>Software</h3>
+      <p>Open projects connecting research and education.</p>
+      <ul><li>EC-IA</li><li>MLP</li><li>Drug-CNN</li><li>Algorithms in C</li></ul>
+      <a class="card-link" href="/en/software/">View software →</a>
+    </article>
+  </div>
+
+  <section class="section">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="Portal"
+        title="Research, teaching, extension and technical resources"
+        description="The English version mirrors the main institutional areas of the portal. Historical teaching material remains in Portuguese until individually reviewed and translated."
+      />
+      <div class="stage2-home-grid">
+        <article class="card stage2-home-card">
+          <span class="stage2-symbol">EXT</span>
+          <h3>Extension</h3>
+          <p>Projects, courses and workshops connecting Computing with the wider community.</p>
+          <a class="card-link" href="/en/extension/">View extension →</a>
+        </article>
+        <article class="card stage2-home-card">
+          <span class="stage2-symbol">RES</span>
+          <h3>Resources</h3>
+          <p>Articles, tutorials, technical notes and reusable educational material.</p>
+          <a class="card-link" href="/en/resources/">Explore resources →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

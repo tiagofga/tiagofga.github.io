@@ -8,6 +8,12 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Added
 
+- Rotas em inglês sob `/en/` para Início, Sobre, Pesquisa, Publicações, Ensino, Extensão, Software, Recursos e Contato.
+- Seletor PT/EN funcional entre páginas equivalentes.
+- Canonical e `hreflang` no layout base.
+- Metadados Open Graph e Twitter Card.
+- Structured data em JSON-LD para páginas, website e perfil acadêmico.
+- `favicon.svg` e `social-card.svg` globais.
 - Menu mobile expansível com estado acessível e fechamento por tecla Escape.
 - Link de salto para o conteúdo principal.
 - Suporte a `prefers-reduced-motion`.
@@ -35,6 +41,8 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Changed
 
+- Header e Footer agora recebem o locale atual e apresentam navegação traduzida.
+- O layout base infere o idioma pela rota e fornece metadados específicos por página.
 - Header e Footer foram extraídos do layout base para componentes Astro.
 - Rótulo acessível do seletor de tema agora acompanha o estado claro/escuro.
 - Responsividade do cabeçalho foi consolidada para desktop, tablet e mobile.

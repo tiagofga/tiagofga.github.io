@@ -83,8 +83,9 @@ Projetos educacionais e de software continuam independentes e são integrados pe
   - [ ] Breadcrumb;
   - [ ] Callout;
 - [x] implementar tema claro/escuro;
-- [ ] implementar PT/EN na nova arquitetura;
-- [ ] migrar favicon, social card e metatags;
+- [x] implementar PT/EN nas páginas institucionais principais;
+- [ ] traduzir seletivamente páginas históricas quando houver valor editorial;
+- [x] migrar favicon, social card e metatags;
 - [x] implementar base de acessibilidade: skip link, foco visível, labels e reduced motion;
 - [ ] revisar acessibilidade WCAG de forma completa;
 - [x] implementar menu mobile e consolidar responsividade do cabeçalho;
@@ -270,12 +271,13 @@ Para cada material:
 - [ ] construir mapa URL antiga → URL nova;
 - [ ] implementar redirects 301 quando tecnicamente possível;
 - [ ] preservar páginas antigas com tráfego relevante;
-- [ ] adicionar canonical;
+- [x] adicionar canonical;
 - [ ] sitemap.xml;
 - [ ] robots.txt;
-- [ ] Open Graph;
-- [ ] Twitter/X cards;
-- [ ] structured data apropriado;
+- [x] Open Graph;
+- [x] Twitter/X cards;
+- [x] structured data base para WebPage/ProfilePage, WebSite e Person;
+- [ ] revisar structured data específico conforme novos tipos de conteúdo forem adicionados;
 - [ ] configurar `tiagofga.com.br` como domínio principal;
 - [ ] manter `tiagofga.github.io` como origem técnica/secundária;
 - [ ] validar DNS, TLS e DNSSEC via Cloudflare.

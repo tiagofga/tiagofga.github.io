@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+const projects = [
+  ["EC-IA","Teaching + Software","Open educational resource for Artificial Intelligence.","https://tiagofga.github.io/EC-IA/"],
+  ["Algorithms in C","Teaching + Software","Implementations, tests, exercises and documentation for data structures and algorithms.","https://github.com/tiagofga/Estruturas-de-Dados-e-Algoritmos-em-C"],
+  ["Modular MLP","Research + Software","Modular multilayer perceptron implementation in modern C++.","https://tiagofga.github.io/mlp/"],
+  ["Drug-CNN","Research + Software","Deep learning applied to pharmacological class prediction and drug discovery.","https://github.com/tiagofga/drug-cnn"],
+];
+---
+<BaseLayout title="Software" description="Open software projects connecting research, teaching and Computing.">
+  <section class="archive-hero"><div class="shell"><div class="breadcrumb"><a href="/en/">Home</a> / Software</div><p class="eyebrow">Software</p><h1>Open projects for research, teaching and experimentation.</h1><p>The portal provides context while detailed documentation remains in each project repository or website.</p></div></section>
+  <section class="section"><div class="shell software-directory">
+    {projects.map(([title,type,description,href]) => <article class="card software-entry"><div class="software-mark">{title}</div><div class="software-entry-body"><span class="tag">{type}</span><h2>{title}</h2><p>{description}</p><a class="card-link" href={href}>Open project ↗</a></div></article>)}
+  </div></section>
+</BaseLayout>

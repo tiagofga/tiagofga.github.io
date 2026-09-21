@@ -168,6 +168,22 @@ A Etapa 3 inicia a consolidação do design system e da navegação:
 
 A componentização continuará progressivamente para cards, breadcrumbs, callouts e listas de materiais.
 
+## Internacionalização e metadados
+
+A Etapa 4 implementa a primeira versão funcional do portal bilíngue e da camada de metadados:
+
+- Português permanece na raiz do site;
+- Inglês passa a utilizar o prefixo `/en/`;
+- o seletor `PT / EN` navega entre páginas equivalentes quando existe tradução;
+- páginas históricas sem tradução mantêm o idioma alternativo indisponível;
+- cada página recebe `canonical`;
+- páginas traduzidas recebem `hreflang` e `x-default`;
+- Open Graph e Twitter Card são gerados pelo layout base;
+- JSON-LD descreve a página, o site e o perfil acadêmico;
+- `favicon.svg` e `social-card.svg` passam a fazer parte dos assets globais.
+
+O domínio canônico ainda segue o valor de `site` configurado no Astro (`https://tiagofga.github.io`). A troca para `tiagofga.com.br` será feita somente no cutover definitivo do domínio, evitando canonical apontando prematuramente para o site legado.
+
 ## Desenvolvimento local
 
 Requisitos:
