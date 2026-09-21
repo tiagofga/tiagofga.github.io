@@ -26,7 +26,10 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 | Recursos | Integrado ao main |
 | Menu mobile | Implementado nesta branch |
 | Acessibilidade base | Em consolidação nesta branch |
-| Componentização | Header, Footer e SectionHeading implementados nesta branch |
+| Componentização | Header, Footer e SectionHeading integrados ao main |
+| PT/EN | Implementado nesta branch para páginas institucionais principais |
+| SEO base | Canonical, hreflang, Open Graph e JSON-LD implementados nesta branch |
+| Branding web | Favicon e social card implementados nesta branch |
 | Arquivos históricos | Ainda no legado |
 | Cloudflare R2 | Planejado, ainda não criado |
 | Domínio principal | Cutover futuro |
@@ -35,15 +38,15 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 ## Branch de trabalho atual
 
 ```text
-feat/portal-stage-3
+feat/portal-stage-4
 ```
 
 Objetivo da branch:
 
-- componentizar elementos estruturais do portal;
-- implementar menu mobile;
-- consolidar responsividade do cabeçalho;
-- melhorar navegação por teclado e acessibilidade básica.
+- implementar PT/EN nas páginas institucionais principais;
+- adicionar canonical, hreflang, Open Graph e structured data;
+- adicionar favicon e social card;
+- manter o domínio canônico no GitHub Pages até o cutover definitivo.
 
 ## Ensino atual — protótipo
 
@@ -126,6 +129,7 @@ Pendência administrativa:
 - validar links profissionais e identificadores acadêmicos antes de publicá-los;
 - importar e validar metadados de publicações;
 - revisar o tema em todas as páginas;
+- revisar a tradução inglesa conforme novos conteúdos forem sendo adicionados;
 - criar páginas de Sobre, Pesquisa e Contato;
 - definir destino da disciplina LIPC;
 - continuar componentização de cards, breadcrumbs, callouts e listas de materiais;
