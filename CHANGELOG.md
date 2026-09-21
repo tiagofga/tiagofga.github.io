@@ -8,6 +8,10 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Added
 
+- Página `/sobre/` com perfil acadêmico, formação e áreas de interesse.
+- Página `/pesquisa/` com linhas de pesquisa, projetos e conexão com Publicações.
+- Página `/contato/` com canais profissionais e política de validação de identificadores.
+- Seção de perfil na homepage conectando Sobre e Contato.
 - Menu e rota `/publicacoes/` para produção acadêmica.
 - Estrutura inicial de Publicações por periódicos, eventos, datasets e artefatos.
 - Tema claro/escuro com detecção da preferência do sistema e persistência em `localStorage`.
@@ -23,6 +27,9 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Changed
 
+- Pesquisa passou de âncora da homepage para uma página própria.
+- Navegação principal passou a incluir Sobre e Contato.
+- CTA principal da homepage passou a apontar para a área de Pesquisa.
 - Navegação principal ampliada para incluir Publicações.
 - Cabeçalho ajustado para acomodar o controle de tema e o crescimento do menu.
 - Homepage deixou de apresentar apenas Inteligência Artificial como referência principal de ensino.

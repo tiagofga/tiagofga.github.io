@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout
+  title="Pesquisa"
+  description="Linhas, projetos e recursos de pesquisa em Inteligência Artificial, aprendizado de máquina e descoberta de fármacos."
+>
+  <section class="archive-hero research-hero">
+    <div class="shell">
+      <div class="breadcrumb"><a href="/">Início</a> / Pesquisa</div>
+      <p class="eyebrow">Pesquisa</p>
+      <h1>Inteligência Artificial aplicada a problemas científicos e computacionais.</h1>
+      <p>
+        Pesquisa orientada por modelos computacionais, dados e software reproduzível,
+        com aplicações em descoberta de fármacos, bioinformática e visão computacional.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow eyebrow-dark">Linhas de pesquisa</p>
+          <h2>Temas principais</h2>
+        </div>
+        <p>
+          As linhas abaixo organizam os temas recorrentes dos projetos e ajudam a conectar
+          publicações, datasets e software.
+        </p>
+      </div>
+
+      <div class="research-grid">
+        <article class="card research-card">
+          <span class="tag">IA aplicada</span>
+          <h3>Aprendizado de máquina</h3>
+          <p>Modelos preditivos, avaliação experimental, otimização e análise de robustez.</p>
+        </article>
+        <article class="card research-card">
+          <span class="tag">Saúde</span>
+          <h3>Descoberta de fármacos</h3>
+          <p>Deep learning e representação molecular para classificação e predição farmacológica.</p>
+        </article>
+        <article class="card research-card">
+          <span class="tag">Computação científica</span>
+          <h3>Bioinformática e ADMET</h3>
+          <p>Modelagem computacional, calibração e avaliação de propriedades relevantes a moléculas bioativas.</p>
+        </article>
+        <article class="card research-card">
+          <span class="tag">Visão</span>
+          <h3>Visão computacional</h3>
+          <p>Representações visuais, classificação, explicabilidade e análise de imagens.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section research-projects-section">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow eyebrow-dark">Projetos e artefatos</p>
+          <h2>Pesquisa conectada a software e dados</h2>
+        </div>
+        <p>
+          O portal evita duplicar documentação técnica extensa: cada projeto mantém seu repositório,
+          enquanto esta área organiza o contexto científico.
+        </p>
+      </div>
+
+      <div class="research-project-list">
+        <article class="card research-project">
+          <div>
+            <span class="tag">Deep Learning · Drug Discovery</span>
+            <h3>Drug-CNN</h3>
+            <p>Pipeline e experimentos de redes convolucionais aplicados à predição de classes farmacológicas.</p>
+          </div>
+          <a class="button light" href="https://github.com/tiagofga/drug-cnn">Ver projeto ↗</a>
+        </article>
+
+        <article class="card research-project">
+          <div>
+            <span class="tag">Machine Learning · C++</span>
+            <h3>Modular MLP</h3>
+            <p>Implementação modular de rede neural multicamadas para estudo, experimentação e software científico.</p>
+          </div>
+          <a class="button light" href="https://tiagofga.github.io/mlp/">Ver projeto ↗</a>
+        </article>
+      </div>
+
+      <div class="research-next card">
+        <div>
+          <span class="tag">Produção científica</span>
+          <h3>Publicações e resultados</h3>
+          <p>Artigos, trabalhos em eventos, datasets e artefatos são organizados em uma área própria.</p>
+        </div>
+        <a class="card-link" href="/publicacoes/">Ver publicações →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

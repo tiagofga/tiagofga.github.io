@@ -22,6 +22,7 @@ O site funciona como ponto central da presença acadêmica e técnica, com estes
 tiagofga.com.br / tiagofga.github.io
 │
 ├── Início
+├── Sobre
 ├── Pesquisa
 ├── Publicações
 ├── Ensino
@@ -52,6 +53,16 @@ tiagofga.com.br / tiagofga.github.io
 - **Vercel Preview** para revisão visual de branches/PRs;
 - **Cloudflare** para DNS e camada de borda;
 - **Cloudflare R2** planejado para o acervo binário histórico.
+
+## Páginas institucionais
+
+O núcleo institucional do portal agora possui páginas próprias para:
+
+- `/sobre/` — trajetória acadêmica, formação e áreas de atuação;
+- `/pesquisa/` — linhas de pesquisa, projetos e conexão com software e publicações;
+- `/contato/` — canais profissionais e acadêmicos, sem publicar identificadores ainda não validados.
+
+Essas páginas substituem o uso de âncoras genéricas da homepage para funções institucionais principais.
 
 ## Publicações
 
