@@ -12,6 +12,11 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
+      PUBLIC_GOOGLE_ADSENSE_CLIENT: ${{ vars.PUBLIC_GOOGLE_ADSENSE_CLIENT }}
+      PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID: ${{ vars.PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID }}
+      PUBLIC_ENABLE_ADSENSE: ${{ vars.PUBLIC_ENABLE_ADSENSE }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
