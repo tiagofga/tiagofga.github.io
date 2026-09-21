@@ -139,3 +139,47 @@ nav a:hover { color: var(--green-700); }
   .material a { grid-column: 2; }
   .footer-grid { align-items: flex-start; flex-direction: column; }
 }
+
+
+/* Teaching hub */
+.teaching-hero {
+  padding: 76px 0 62px;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(54,166,122,.14), transparent 25%),
+    linear-gradient(180deg, #edf6fa, #f7fafc);
+  border-bottom: 1px solid var(--line);
+}
+.teaching-hero-grid { display: grid; grid-template-columns: 1fr 280px; gap: 52px; align-items: end; }
+.teaching-hero h1 { margin: 5px 0 18px; max-width: 900px; font-size: clamp(2.6rem,5vw,4.8rem); line-height: 1; letter-spacing: -.055em; }
+.lead-dark { max-width: 760px; color: var(--muted); font-size: 1.05rem; }
+.teaching-summary { padding: 24px; }
+.teaching-summary strong { display: block; margin-top: 12px; font-size: 2.1rem; letter-spacing: -.04em; }
+.teaching-summary p { margin: 2px 0 0; color: var(--muted); }
+.eyebrow-dark { color: var(--green-700); }
+
+.current-courses { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+.current-course { padding: 28px; min-height: 270px; display: flex; flex-direction: column; align-items: flex-start; }
+.course-topline { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 24px; }
+.course-code { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 15px; background: var(--blue-900); color: white; font-weight: 900; }
+.current-course:nth-child(2) .course-code { background: var(--green-700); }
+.current-course h3 { margin: 0; font-size: 1.5rem; letter-spacing: -.025em; }
+.current-course p { color: var(--muted); flex: 1; }
+.course-status { display: inline-flex; padding: 10px 13px; border-radius: 10px; background: #f3f6f8; color: var(--muted); font-size: .82rem; font-weight: 750; }
+
+.archive-section { padding-top: 20px; }
+.archive-year { padding: 28px; box-shadow: none; }
+.archive-year-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.archive-year-head h3 { margin: 8px 0 0; font-size: 2rem; letter-spacing: -.04em; }
+.archive-count { color: var(--muted); font-size: .85rem; font-weight: 750; }
+.archive-course-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0 28px; }
+.archive-course-link { display: flex; justify-content: space-between; gap: 20px; padding: 17px 4px; border-bottom: 1px solid var(--line); font-weight: 720; }
+.archive-course-link:hover { color: var(--green-700); }
+.archive-note { margin-top: 18px; color: var(--muted); font-size: .87rem; }
+
+@media (max-width: 900px) {
+  .teaching-hero-grid { grid-template-columns: 1fr; }
+  .teaching-summary { max-width: 360px; }
+}
+@media (max-width: 620px) {
+  .current-courses, .archive-course-grid { grid-template-columns: 1fr; }
+}
