@@ -1,21 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 <BaseLayout
   title="Sobre"
   description="Trajetória acadêmica, formação e atuação de Tiago Alves de Oliveira."
 >
-  <section class="archive-hero profile-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/">Início</a> / Sobre</div>
-      <p class="eyebrow">Perfil acadêmico</p>
-      <h1>Tiago Alves de Oliveira</h1>
-      <p>
-        Professor de Computação, pesquisador em Inteligência Artificial e coordenador do
-        curso de Engenharia de Computação do CEFET-MG, Campus Divinópolis.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Perfil acadêmico"
+    title="Tiago Alves de Oliveira"
+    current="Sobre"
+    description="Professor de Computação, pesquisador em Inteligência Artificial e coordenador do curso de Engenharia de Computação do CEFET-MG, Campus Divinópolis."
+  />
 
   <section class="section">
     <div class="shell profile-layout">
