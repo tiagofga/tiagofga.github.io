@@ -20,6 +20,11 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#071a2d" />
+    <script is:inline>
+      const storedTheme = localStorage.getItem("theme");
+      const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = storedTheme ?? preferredTheme;
+    </script>
     <title>{pageTitle}</title>
   </head>
   <body>
@@ -31,6 +36,7 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
         </a>
         <nav aria-label="Navegação principal">
           <a href="/#pesquisa">Pesquisa</a>
+          <a href="/publicacoes/">Publicações</a>
           <a href="/ensino/">Ensino</a>
           <a href="/#extensao">Extensão</a>
           <a href="/#software">Software</a>
@@ -38,12 +44,41 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
         </nav>
         <div class="nav-meta" aria-label="Preferências">
           <span>PT</span><span class="muted">EN</span>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Alternar tema claro e escuro"
+            aria-pressed="false"
+            title="Alternar tema claro e escuro"
+          >
+            <span class="theme-icon" aria-hidden="true">◐</span>
+          </button>
         </div>
       </div>
     </header>
     <main>
       <slot />
     </main>
+    <script is:inline>
+      const toggle = document.querySelector(".theme-toggle");
+      const root = document.documentElement;
+
+      const syncToggle = () => {
+        if (!toggle) return;
+        const isDark = root.dataset.theme === "dark";
+        toggle.setAttribute("aria-pressed", String(isDark));
+        toggle.setAttribute("title", isDark ? "Usar tema claro" : "Usar tema escuro");
+      };
+
+      syncToggle();
+
+      toggle?.addEventListener("click", () => {
+        const next = root.dataset.theme === "dark" ? "light" : "dark";
+        root.dataset.theme = next;
+        localStorage.setItem("theme", next);
+        syncToggle();
+      });
+    </script>
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div>
