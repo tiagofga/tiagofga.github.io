@@ -8,6 +8,10 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Added
 
+- Menu e rota `/publicacoes/` para produção acadêmica.
+- Estrutura inicial de Publicações por periódicos, eventos, datasets e artefatos.
+- Tema claro/escuro com detecção da preferência do sistema e persistência em `localStorage`.
+- Controle de tema no cabeçalho com atributos de acessibilidade.
 - Área de Ensino em protótipo com separação explícita entre disciplinas atuais e acervo histórico.
 - Destaque para **Inteligência Artificial** e **LIPC** como disciplinas atuais de **2026/2**.
 - Rota `/ensino/` para concentrar disciplinas atuais e acervo.
@@ -19,6 +23,8 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Changed
 
+- Navegação principal ampliada para incluir Publicações.
+- Cabeçalho ajustado para acomodar o controle de tema e o crescimento do menu.
 - Homepage deixou de apresentar apenas Inteligência Artificial como referência principal de ensino.
 - Conteúdo histórico deixou de ocupar posição de destaque equivalente às disciplinas correntes.
 - Navegação de Ensino passou de âncora da homepage para uma página própria.
