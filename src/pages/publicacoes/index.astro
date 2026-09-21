@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout
+  title="Publicações"
+  description="Publicações acadêmicas, datasets, software de pesquisa e demais resultados científicos."
+>
+  <section class="archive-hero publications-hero">
+    <div class="shell">
+      <div class="breadcrumb"><a href="/">Início</a> / Publicações</div>
+      <p class="eyebrow">Produção acadêmica</p>
+      <h1>Publicações</h1>
+      <p>
+        Área destinada a artigos, trabalhos em eventos, datasets e outros resultados científicos.
+        A lista será consolidada a partir de fontes verificadas antes da publicação definitiva.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="publication-grid">
+        <article class="card publication-type">
+          <span class="tag">Artigos</span>
+          <h2>Periódicos</h2>
+          <p>Artigos científicos publicados em periódicos, organizados por ano e linha de pesquisa.</p>
+        </article>
+
+        <article class="card publication-type">
+          <span class="tag">Eventos</span>
+          <h2>Conferências e congressos</h2>
+          <p>Trabalhos completos, resumos e demais contribuições em eventos científicos.</p>
+        </article>
+
+        <article class="card publication-type">
+          <span class="tag">Dados</span>
+          <h2>Datasets e artefatos</h2>
+          <p>Conjuntos de dados, DOIs, software de pesquisa e materiais associados às publicações.</p>
+        </article>
+      </div>
+
+      <div class="notice publication-notice">
+        <strong>Em curadoria:</strong> esta página ainda não lista publicações individuais para evitar
+        introduzir registros incompletos ou não verificados. A próxima etapa será importar e revisar os
+        metadados acadêmicos oficiais.
+      </div>
+    </div>
+  </section>
+</BaseLayout>
