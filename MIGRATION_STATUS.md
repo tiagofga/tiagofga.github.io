@@ -17,7 +17,10 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 | Área de Ensino | Integrada ao main |
 | UEMG 2015 | Estrutura migrada |
 | Publicações | Landing page criada; metadados ainda pendentes |
-| Tema claro/escuro | Implementado nesta branch |
+| Tema claro/escuro | Integrado ao main |
+| Sobre | Implementado nesta branch |
+| Pesquisa | Implementado nesta branch |
+| Contato | Implementado nesta branch |
 | Arquivos históricos | Ainda no legado |
 | Cloudflare R2 | Planejado, ainda não criado |
 | Domínio principal | Cutover futuro |
@@ -26,15 +29,13 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 ## Branch de trabalho atual
 
 ```text
-feat/publications-theme-navigation
+feat/core-portal-pages
 ```
 
 Objetivo da branch:
 
-- adicionar Publicações como área de primeiro nível;
-- criar a rota `/publicacoes/`;
-- implementar modo claro/escuro;
-- ajustar a navegação para o crescimento do portal.
+- conectar essas páginas à homepage e à navegação principal;
+- manter informações profissionais sem inventar links acadêmicos não validados.
 
 ## Ensino atual — protótipo
 
@@ -113,6 +114,8 @@ Pendência administrativa:
 
 ## Próximas decisões
 
+- revisar visualmente as páginas Sobre, Pesquisa e Contato;
+- validar links profissionais e identificadores acadêmicos antes de publicá-los;
 - importar e validar metadados de publicações;
 - revisar o tema em todas as páginas;
 - criar páginas de Sobre, Pesquisa e Contato;
