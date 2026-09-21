@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const atuais = [
+  {
+    sigla: "IA",
+    titulo: "Inteligência Artificial",
+    periodo: "2026/2",
+    descricao: "Conteúdo atual da disciplina, materiais de apoio, atividades e recursos complementares.",
+    href: "https://tiagofga.github.io/EC-IA/",
+    cta: "Abrir disciplina ↗",
+  },
+  {
+    sigla: "LIPC",
+    titulo: "Laboratório de Introdução à Programação de Computadores",
+    periodo: "2026/2",
+    descricao: "Conteúdo atual da disciplina, práticas de laboratório, listas e materiais de programação.",
+    href: null,
+    cta: null,
+  },
+];
+
+const legado2015 = [
+  ["Estrutura de Dados II", "/ensino/acervo/uemg/2015/estrutura-de-dados-ii/"],
+  ["Lógica Digital", "/ensino/acervo/uemg/2015/logica-digital/"],
+  ["Sistemas Digitais", "/ensino/acervo/uemg/2015/sistemas-digitais/"],
+  ["Introdução à Engenharia da Computação", "/ensino/acervo/uemg/2015/introducao-engenharia-computacao/"],
+  ["Princípios de Desenvolvimento de Algoritmos", "/ensino/acervo/uemg/2015/principios-desenvolvimento-algoritmos/"],
+  ["Inteligência Artificial", "/ensino/acervo/uemg/2015/inteligencia-artificial/"],
+  ["Linguagens e Programação de Compiladores", "/ensino/acervo/uemg/2015/linguagens-programacao-compiladores/"],
+];
+---
+<BaseLayout
+  title="Ensino"
+  description="Disciplinas atuais, recursos de ensino e acervo histórico da trajetória docente."
+>
+  <section class="teaching-hero">
+    <div class="shell teaching-hero-grid">
+      <div>
+        <p class="eyebrow">Ensino</p>
+        <h1>Disciplinas atuais e acervo histórico em um único espaço.</h1>
+        <p class="lead-dark">
+          O conteúdo em andamento aparece primeiro. Materiais de períodos anteriores permanecem organizados separadamente como acervo histórico.
+        </p>
+      </div>
+      <aside class="teaching-summary card">
+        <span class="tag">Semestre atual</span>
+        <strong>2026/2</strong>
+        <p>2 disciplinas em andamento</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow eyebrow-dark">Em andamento</p>
+          <h2>Disciplinas atuais</h2>
+        </div>
+        <p>Área principal para estudantes: acesso rápido aos materiais e recursos usados no semestre corrente.</p>
+      </div>
+
+      <div class="current-courses">
+        {atuais.map((disciplina) => (
+          <article class="card current-course">
+            <div class="course-topline">
+              <span class="course-code">{disciplina.sigla}</span>
+              <span class="tag">{disciplina.periodo}</span>
+            </div>
+            <h3>{disciplina.titulo}</h3>
+            <p>{disciplina.descricao}</p>
+            {disciplina.href ? (
+              <a class="button light" href={disciplina.href}>{disciplina.cta}</a>
+            ) : (
+              <span class="course-status">Página atual a integrar ao portal</span>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section archive-section" id="acervo">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow eyebrow-dark">Trajetória docente</p>
+          <h2>Acervo histórico</h2>
+        </div>
+        <p>
+          Disciplinas de períodos anteriores são preservadas para consulta, sempre identificadas como conteúdo histórico e separadas das turmas atuais.
+        </p>
+      </div>
+
+      <div class="archive-year card">
+        <div class="archive-year-head">
+          <div>
+            <span class="tag">UEMG</span>
+            <h3>2015</h3>
+          </div>
+          <span class="archive-count">7 disciplinas</span>
+        </div>
+
+        <div class="archive-course-grid">
+          {legado2015.map(([titulo, href]) => (
+            <a class="archive-course-link" href={href}>
+              <span>{titulo}</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="archive-note">
+        <strong>Organização proposta:</strong>
+        anos e instituições anteriores entram aqui progressivamente. O acervo não compete visualmente com as disciplinas correntes.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

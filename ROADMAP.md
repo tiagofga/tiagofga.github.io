@@ -40,7 +40,7 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 
 ## Fase 0 — Segurança e governança
 
-**Status: concluída / em validação**
+**Status: concluída**
 
 - [x] proteger `main` com ruleset;
 - [x] exigir Pull Request;
@@ -50,8 +50,8 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 - [x] exigir status check `build`;
 - [x] criar branch `feat/astro-migration-2015`;
 - [x] manter o site publicado intacto durante a migração;
-- [ ] validar o primeiro PR de ponta a ponta;
-- [ ] consolidar squash como método preferencial de merge.
+- [x] validar o primeiro PR de ponta a ponta;
+- [x] consolidar squash/rebase como métodos permitidos pelo ruleset.
 
 **Critério de saída:** nenhum trabalho de migração depende de commits diretos no `main`.
 
@@ -66,6 +66,8 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 - [x] criar layout base;
 - [x] criar primeira versão da identidade tecnológica azul + verde;
 - [x] criar homepage piloto;
+- [x] criar protótipo da área de Ensino com separação entre disciplinas atuais e acervo;
+- [x] destacar IA e LIPC como disciplinas atuais de 2026/2 no protótipo;
 - [ ] consolidar tokens de design: cores, tipografia, espaçamento e estados;
 - [ ] criar componentes reutilizáveis:
   - [ ] Header;
@@ -91,21 +93,24 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 
 **Status: em andamento**
 
-### Inteligência Artificial — 2015/2
+### UEMG 2015
 
-- [x] importar título, instituição, ano e semestre;
-- [x] importar ementa;
-- [x] importar bibliografia;
-- [x] reconstruir sequência das aulas;
-- [x] preservar IDs e links legados do Phoca como referência;
-- [x] manter a disciplina exclusivamente como acervo histórico, sem associação com versões atuais;
+- [x] migrar Inteligência Artificial;
+- [x] migrar Estrutura de Dados II;
+- [x] migrar Sistemas Digitais;
+- [x] migrar Lógica Digital;
+- [x] migrar Introdução à Engenharia da Computação;
+- [x] migrar Princípios de Desenvolvimento de Algoritmos;
+- [x] migrar Linguagens e Programação de Compiladores;
+- [x] manter todas as disciplinas exclusivamente como acervo histórico;
+- [x] preservar metadados e links legados disponíveis;
 - [ ] validar todos os arquivos físicos;
 - [ ] decidir localização definitiva dos PDFs;
 - [ ] substituir endpoints Phoca por URLs permanentes;
 - [ ] registrar redirects da URL Joomla antiga;
 - [ ] revisar conteúdo visualmente;
 - [ ] validar SEO e canonical;
-- [ ] usar a disciplina como template para as demais de 2015.
+- [x] usar o piloto como base para as demais disciplinas de 2015.
 
 ### Automação
 
@@ -135,7 +140,7 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 
 ### UEMG
 
-- [ ] 2015;
+- [x] 2015 — estrutura das 7 disciplinas migrada;
 - [ ] 2016;
 - [ ] 2017;
 - [ ] 2018.
@@ -144,7 +149,7 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 
 - [ ] validar material 2015-2017 já presente no Phoca;
 - [ ] importar material pós-2017;
-- [ ] separar disciplinas atuais de acervo histórico;
+- [x] separar disciplinas atuais de acervo histórico na arquitetura de navegação;
 - [ ] excluir documentos administrativos, listas de estudantes, notas e material restrito.
 
 ### Política editorial
@@ -284,8 +289,12 @@ Para cada material:
 ## Preview e publicação
 
 - [x] adotar Vercel Preview para revisão visual de branches/PRs;
-- [ ] validar preview automático conectado ao repositório;
-- [ ] decidir o provedor definitivo de produção entre GitHub Pages, Cloudflare Pages ou Vercel;
+- [x] criar workflow de deploy Astro para GitHub Pages;
+- [x] validar build e deploy do Astro em GitHub Pages;
+- [ ] desativar completamente o pipeline Jekyll legado nas configurações do Pages;
+- [x] validar preview automático conectado ao repositório;
+- [x] adotar GitHub Pages como publicação técnica atual;
+- [ ] decidir se GitHub Pages permanecerá como produção definitiva após o cutover do domínio;
 - [ ] manter preview e produção desacoplados da camada de arquivos.
 
 ---

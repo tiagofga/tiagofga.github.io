@@ -2,31 +2,36 @@
 
 Portal pessoal e acadêmico de **Tiago Alves de Oliveira**, reunindo pesquisa, ensino, extensão, software, recursos técnicos e o acervo histórico da trajetória docente.
 
-> **Status atual:** migração em andamento para Astro na branch `feat/astro-migration-2015`.  
-> O `main` continua preservando o site publicado enquanto o novo portal é validado por Pull Request.
+> **Status atual:** migração ativa para Astro.  
+> O portal já é publicado por GitHub Actions/GitHub Pages, com Vercel usado para previews de branches e Pull Requests.
 
 ## Objetivo
 
-O novo site será o ponto central da presença acadêmica e técnica, com cinco princípios:
+O site funciona como ponto central da presença acadêmica e técnica, com estes princípios:
 
 - apresentar pesquisa, ensino, extensão e software em uma arquitetura única;
-- preservar o acervo histórico sem manter dependência do Joomla;
-- manter projetos independentes, como EC-IA, MLP e Estruturas de Dados e Algoritmos em C, em seus próprios repositórios/sites;
-- editar conteúdo como dados estruturados e Markdown/MDX, evitando páginas HTML manuais;
+- destacar disciplinas atuais sem misturá-las ao acervo histórico;
+- preservar a trajetória docente sem manter dependência do Joomla;
+- manter projetos independentes em seus próprios repositórios/sites;
+- editar conteúdo como dados estruturados e Markdown/MDX;
 - manter deploy estático, baixo custo e pouca manutenção operacional.
 
-## Arquitetura em migração
+## Arquitetura
 
 ```text
 tiagofga.com.br / tiagofga.github.io
 │
+├── Início
 ├── Pesquisa
 ├── Ensino
 │   ├── disciplinas atuais
+│   │   ├── Inteligência Artificial · 2026/2
+│   │   └── LIPC · 2026/2
 │   ├── recursos educacionais
 │   └── acervo histórico
 │       ├── UNIFOR-MG
 │       ├── UEMG
+│       │   └── 2015 · 7 disciplinas migradas
 │       └── CEFET-MG
 ├── Extensão
 ├── Software
@@ -34,71 +39,78 @@ tiagofga.com.br / tiagofga.github.io
 └── Contato
 ```
 
-### Stack
+## Stack
 
 - **Astro** para geração estática;
 - **TypeScript** para configuração e componentes;
 - **Markdown/MDX** para conteúdo;
 - **CSS** próprio com identidade visual tecnológica azul + verde;
-- **GitHub Actions** para validação;
-- **GitHub Pages** como destino de publicação;
-- domínio principal planejado: **tiagofga.com.br**.
+- **GitHub Actions** para CI e deploy;
+- **GitHub Pages** para publicação;
+- **Vercel Preview** para revisão visual de branches/PRs;
+- **Cloudflare** para DNS e camada de borda;
+- **Cloudflare R2** planejado para o acervo binário histórico.
 
-## Piloto de migração
+## Ensino
 
-A primeira disciplina reconstruída é:
+A área de ensino está sendo organizada em duas camadas claramente separadas.
 
-**Inteligência Artificial — UEMG — 2015/2**
+### Disciplinas atuais
 
-A página piloto valida o fluxo:
+No semestre **2026/2**, o protótipo considera:
 
-```text
-SQL Joomla antigo
-        +
-metadados do Phoca Download
-        +
-arquivos físicos recuperados
-        ↓
-conteúdo estruturado
-        ↓
-Markdown
-        ↓
-Astro
-        ↓
-página histórica moderna
-```
+- **Inteligência Artificial** — com acesso ao projeto EC-IA;
+- **Laboratório de Introdução à Programação de Computadores (LIPC)** — integração ao portal em definição.
 
-Rota piloto:
+As disciplinas atuais aparecem primeiro na homepage e na rota:
 
 ```text
-/ensino/acervo/uemg/2015/inteligencia-artificial/
+/ensino/
 ```
 
-O material é tratado exclusivamente como **acervo histórico**, sem associação com disciplinas ou projetos atuais.
+### Acervo histórico
 
-## Estrutura atual da branch de migração
+O conteúdo legado é apresentado por instituição, ano e disciplina, sempre identificado como histórico.
+
+A migração da **UEMG 2015** está estruturalmente concluída no portal, com sete disciplinas:
+
+- Estrutura de Dados II;
+- Lógica Digital;
+- Sistemas Digitais;
+- Introdução à Engenharia da Computação;
+- Princípios de Desenvolvimento de Algoritmos;
+- Inteligência Artificial;
+- Linguagens e Programação de Compiladores.
+
+Os arquivos físicos continuam temporariamente associados ao legado. A migração definitiva para `arquivos.tiagofga.com.br` será feita somente após a criação da infraestrutura de armazenamento.
+
+## Estrutura principal
 
 ```text
 .
 ├── .github/
 │   └── workflows/
 │       ├── astro-ci.yml
-│       └── commitlint.yml
+│       ├── commitlint.yml
+│       └── deploy-pages.yml
 ├── src/
 │   ├── content/
 │   │   └── ensino/
 │   ├── layouts/
 │   ├── pages/
-│   │   └── ensino/acervo/
+│   │   └── ensino/
+│   │       └── acervo/
 │   └── styles/
 ├── astro.config.mjs
 ├── package.json
 ├── tsconfig.json
 ├── README.md
+├── CHANGELOG.md
+├── MIGRATION_STATUS.md
 └── ROADMAP.md
 ```
 
-Os arquivos legados do site atual permanecem temporariamente no repositório durante a transição. Eles serão removidos somente quando a nova implementação substituir completamente a versão publicada.
+Os arquivos legados da raiz ainda podem permanecer durante a transição. Eles só devem ser removidos após validação final do portal Astro e do fluxo de publicação.
 
 ## Desenvolvimento local
 
@@ -119,39 +131,39 @@ Servidor local:
 npm run dev
 ```
 
-Build de produção:
+Build:
 
 ```bash
 npm run build
 ```
 
-Pré-visualização do build:
+Preview local:
 
 ```bash
 npm run preview
 ```
 
-## CI e proteção do `main`
+## CI, preview e publicação
 
-O repositório utiliza dois workflows:
+O fluxo esperado é:
 
-### Astro CI
+```text
+branch
+  ↓
+Pull Request
+  ↓
+Astro CI + Commitlint + Vercel Preview
+  ↓
+revisão
+  ↓
+merge em main
+  ↓
+Deploy Astro to GitHub Pages
+  ↓
+tiagofga.github.io
+```
 
-Valida se o projeto instala dependências e gera o build estático sem erros.
-
-### Commitlint
-
-Valida mensagens de commit conforme **Conventional Commits**.
-
-O `main` é protegido por ruleset com:
-
-- Pull Request obrigatório;
-- resolução de conversas antes do merge;
-- status check `build` obrigatório;
-- branch atualizada antes do merge;
-- bloqueio de force push;
-- bloqueio de exclusão;
-- merge permitido por **squash** ou **rebase**.
+O `main` é protegido por ruleset com Pull Request obrigatório, resolução de conversas, status check `build`, bloqueio de force push e exclusão.
 
 ## Conventional Commits
 
@@ -164,53 +176,51 @@ Formato:
 Exemplos:
 
 ```text
-feat(archive): migrate UEMG artificial intelligence 2015
-feat(home): add research and teaching sections
-fix(astro): escape project visual text
-docs(roadmap): define migration phases
-ci(astro): update build workflow
-```
-
-Tipos aceitos:
-
-- `feat`
-- `fix`
-- `docs`
-- `style`
-- `refactor`
-- `perf`
-- `test`
-- `build`
-- `ci`
-- `chore`
-- `revert`
-
-Hook local:
-
-```bash
-git config core.hooksPath .githooks
-chmod +x .githooks/commit-msg
+feat(teaching): add current and historical teaching hub
+feat(archive): migrate remaining UEMG 2015 disciplines
+fix(pages): update artifact upload action
+docs(roadmap): update migration status
+ci(pages): deploy Astro build to GitHub Pages
 ```
 
 ## Conteúdo legado
 
-Os bancos SQL e backups Joomla/Phoca são **fontes de migração**, não dependências permanentes do novo site.
+SQL, backups Joomla e Phoca Download são fontes de migração, não dependências permanentes do novo portal.
 
-A política de migração é:
+Política:
 
 - preservar metadados e contexto acadêmico relevantes;
-- preservar URLs históricas por meio de redirects quando possível;
-- separar conteúdo histórico de material atual;
-- não publicar automaticamente provas, notas, dados de alunos ou materiais restritos;
-- revisar tecnicamente artigos, dicas e tutoriais antes de republicá-los.
+- manter conteúdo histórico explicitamente identificado;
+- preservar URLs históricas por redirect quando possível;
+- não publicar automaticamente provas, notas, dados de alunos ou material restrito;
+- revisar tecnicamente artigos e tutoriais antes de republicar;
+- não antecipar URLs de armazenamento ainda inexistentes.
+
+## Arquivos históricos
+
+O armazenamento definitivo dos binários será separado do repositório do portal.
+
+Destino planejado:
+
+```text
+Cloudflare R2
+      ↓
+arquivos.tiagofga.com.br
+```
+
+Até essa infraestrutura existir, os materiais permanecem temporariamente vinculados ao legado.
 
 ## CMS visual
 
-O objetivo é manter uma experiência próxima ao WYSIWYG que motivava o uso do Joomla, mas sem manter PHP/MySQL apenas para edição de conteúdo.
+O objetivo continua sendo oferecer uma experiência de edição próxima a WYSIWYG sem manter Joomla/PHP/MySQL apenas para gerenciamento de conteúdo.
 
-A etapa planejada é integrar um **CMS visual baseado em Git**, com o conteúdo permanecendo em Markdown/MDX no repositório.
+O CMS deverá:
 
-Consulte [ROADMAP.md](./ROADMAP.md) para o plano completo.
+- operar sobre Git;
+- editar Markdown/MDX e metadados;
+- criar branch/commit;
+- permitir preview antes do merge;
+- manter o repositório como fonte de verdade.
 
 ## Projetos relacionados
 
@@ -219,6 +229,12 @@ Consulte [ROADMAP.md](./ROADMAP.md) para o plano completo.
 - [MLP](https://github.com/tiagofga/mlp) — implementação acadêmica de perceptron multicamadas em C++;
 - [Drug-CNN](https://github.com/tiagofga/drug-cnn) — deep learning aplicado à descoberta de fármacos.
 
+## Documentação do projeto
+
+- [ROADMAP.md](./ROADMAP.md) — fases e próximos passos;
+- [MIGRATION_STATUS.md](./MIGRATION_STATUS.md) — estado operacional da migração;
+- [CHANGELOG.md](./CHANGELOG.md) — registro das principais mudanças.
+
 ## Licença e conteúdo
 
-Código, materiais acadêmicos e documentos podem possuir condições de uso distintas. A política de licenciamento do novo portal será consolidada antes da migração definitiva do acervo.
+Código, materiais acadêmicos e documentos podem possuir condições de uso distintas. A política de licenciamento do portal e do acervo será consolidada antes da migração definitiva dos arquivos históricos.
