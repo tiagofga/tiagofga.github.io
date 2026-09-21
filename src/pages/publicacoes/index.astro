@@ -1,21 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 <BaseLayout
   title="Publicações"
   description="Publicações acadêmicas, datasets, software de pesquisa e demais resultados científicos."
 >
-  <section class="archive-hero publications-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/">Início</a> / Publicações</div>
-      <p class="eyebrow">Produção acadêmica</p>
-      <h1>Publicações</h1>
-      <p>
-        Área destinada a artigos, trabalhos em eventos, datasets e outros resultados científicos.
-        A lista será consolidada a partir de fontes verificadas antes da publicação definitiva.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Produção acadêmica"
+    title="Publicações"
+    current="Publicações"
+    description="Área destinada a artigos, trabalhos em eventos, datasets e outros resultados científicos. A lista será consolidada a partir de fontes verificadas antes da publicação definitiva."
+  />
 
   <section class="section">
     <div class="shell">

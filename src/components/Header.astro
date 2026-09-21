@@ -30,6 +30,11 @@ const navEn = [
 
 const navItems = locale === "en" ? navEn : navPt;
 const homeHref = locale === "en" ? "/en/" : "/";
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === "/" || href === "/en/") return currentPath === href;
+  return currentPath === href || currentPath.startsWith(href);
+};
 const labels = locale === "en"
   ? {
       home: "Tiago Alves de Oliveira — home",
@@ -72,7 +77,7 @@ const labels = locale === "en"
     </button>
 
     <nav id="primary-navigation" class="primary-nav" aria-label={labels.navigation}>
-      {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
+      {navItems.map(([label, href]) => <a href={href} class:list={{ active: isActive(href) }} aria-current={isActive(href) ? "page" : undefined}>{label}</a>)}
     </nav>
 
     <div class="nav-meta" aria-label={labels.preferences}>

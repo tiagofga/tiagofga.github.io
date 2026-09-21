@@ -1,21 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 <BaseLayout
   title="Extensão"
   description="Projetos, cursos, oficinas e ações de extensão em Computação e tecnologia."
 >
-  <section class="archive-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/">Início</a> / Extensão</div>
-      <p class="eyebrow">Extensão</p>
-      <h1>Conhecimento acadêmico conectado à comunidade.</h1>
-      <p>
-        Espaço dedicado a projetos, cursos, oficinas e outras ações de extensão.
-        Os registros individuais serão adicionados à medida que seus metadados e materiais forem validados.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Extensão"
+    title="Conhecimento acadêmico conectado à comunidade."
+    current="Extensão"
+    description="Espaço dedicado a projetos, cursos, oficinas e outras ações de extensão. Os registros individuais serão adicionados à medida que seus metadados e materiais forem validados."
+  />
 
   <section class="section">
     <div class="shell">

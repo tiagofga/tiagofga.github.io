@@ -1,0 +1,33 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  current: string;
+  homeLabel?: string;
+  homeHref?: string;
+  className?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  current,
+  homeLabel = "Início",
+  homeHref = "/",
+  className = "",
+} = Astro.props;
+---
+<section class:list={["page-hero", className]}>
+  <div class="shell page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href={homeHref}>{homeLabel}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{current}</span>
+    </nav>
+    <p class="eyebrow eyebrow-dark">{eyebrow}</p>
+    <h1>{title}</h1>
+    <p class="page-hero-lead">{description}</p>
+  </div>
+</section>
