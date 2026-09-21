@@ -7,21 +7,34 @@ O objetivo não é restaurar o Joomla, mas **preservar seu conteúdo e sua hist�
 ## Visão de destino
 
 ```text
-GitHub
+Edição
   │
-  ├── conteúdo Markdown/MDX
-  ├── componentes Astro
-  ├── metadados estruturados
-  └── workflows
+  ├── Git / Markdown / MDX
+  └── CMS visual baseado em Git
           ↓
-      Astro build
+        GitHub
           ↓
-      GitHub Pages
-          ↓
-  tiagofga.com.br
+     branch + PR
+       ↙      ↘
+GitHub Actions  Vercel Preview
+     CI         revisão visual
+       \      /
+         merge
+           ↓
+          main
+           ↓
+   deploy de produção
+           ↓
+    tiagofga.com.br
+
+Arquivos históricos e binários
+           ↓
+     Cloudflare R2
+           ↓
+arquivos.tiagofga.com.br
 ```
 
-Projetos educacionais e de software continuam independentes e são integrados pelo portal por metadados e links.
+Projetos educacionais e de software continuam independentes e são integrados pelo portal por metadados e links. O provedor definitivo de produção permanece uma decisão separada do preview e do armazenamento de arquivos.
 
 ---
 
@@ -222,14 +235,15 @@ Para cada material:
 
 - [ ] medir tamanho total do acervo público;
 - [ ] listar arquivos individuais grandes;
-- [ ] decidir se PDFs ficam:
-  - [ ] no mesmo repositório;
-  - [ ] em repositório de acervo;
-  - [ ] em object storage;
-  - [ ] em subdomínio dedicado;
-- [ ] evitar versionar arquivos redundantes;
+- [x] adotar object storage separado do repositório do portal;
+- [x] definir Cloudflare R2 como destino preferencial do acervo;
+- [x] reservar o padrão de domínio `arquivos.tiagofga.com.br`;
+- [ ] criar bucket e política de acesso;
+- [ ] definir estrutura estável de caminhos por instituição/ano/disciplina;
+- [ ] migrar os arquivos da disciplina piloto;
+- [ ] evitar versionar arquivos binários redundantes no repositório principal;
 - [ ] definir URLs permanentes;
-- [ ] verificar integridade por hash para arquivos migrados.
+- [ ] verificar integridade por SHA-256 para arquivos migrados.
 
 **Critério de saída:** estratégia de arquivos suporta todo o acervo sem comprometer o repositório do portal.
 
@@ -264,6 +278,15 @@ Para cada material:
 - [ ] minimizar fontes/scripts de terceiros;
 - [ ] monitorar links quebrados;
 - [ ] adicionar check periódico de URLs internas.
+
+---
+
+## Preview e publicação
+
+- [x] adotar Vercel Preview para revisão visual de branches/PRs;
+- [ ] validar preview automático conectado ao repositório;
+- [ ] decidir o provedor definitivo de produção entre GitHub Pages, Cloudflare Pages ou Vercel;
+- [ ] manter preview e produção desacoplados da camada de arquivos.
 
 ---
 
