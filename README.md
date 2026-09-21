@@ -74,7 +74,7 @@ Rota piloto:
 /ensino/acervo/uemg/2015/inteligencia-artificial/
 ```
 
-O material histórico é explicitamente diferenciado do conteúdo atual e aponta para o **EC-IA** como recurso contemporâneo.
+O material é tratado exclusivamente como **acervo histórico**, sem associação com disciplinas ou projetos atuais.
 
 ## Estrutura atual da branch de migração
 
