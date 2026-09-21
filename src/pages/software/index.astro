@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projetos = [
+  {
+    sigla: "EC-IA",
+    titulo: "EC-IA",
+    tipo: "Ensino + Software",
+    descricao: "Recurso educacional aberto para a disciplina de Inteligência Artificial.",
+    href: "https://tiagofga.github.io/EC-IA/",
+    acao: "Abrir projeto ↗",
+  },
+  {
+    sigla: "{ C }",
+    titulo: "Estruturas de Dados e Algoritmos em C",
+    tipo: "Ensino + Software",
+    descricao: "Implementações, testes, exercícios e documentação para algoritmos e estruturas de dados.",
+    href: "https://github.com/tiagofga/Estruturas-de-Dados-e-Algoritmos-em-C",
+    acao: "Ver no GitHub ↗",
+  },
+  {
+    sigla: "MLP",
+    titulo: "Modular MLP",
+    tipo: "Pesquisa + Software",
+    descricao: "Implementação modular de perceptron multicamadas em C++ moderno.",
+    href: "https://tiagofga.github.io/mlp/",
+    acao: "Abrir projeto ↗",
+  },
+  {
+    sigla: "Drug-CNN",
+    titulo: "Drug-CNN",
+    tipo: "Pesquisa + Software",
+    descricao: "Deep learning aplicado à predição de classes farmacológicas e descoberta de fármacos.",
+    href: "https://github.com/tiagofga/drug-cnn",
+    acao: "Ver no GitHub ↗",
+  },
+];
+---
+<BaseLayout
+  title="Software"
+  description="Projetos de software aberto conectando pesquisa, ensino e Computação."
+>
+  <section class="archive-hero">
+    <div class="shell">
+      <div class="breadcrumb"><a href="/">Início</a> / Software</div>
+      <p class="eyebrow">Software</p>
+      <h1>Projetos abertos para pesquisa, ensino e experimentação.</h1>
+      <p>
+        Esta área reúne projetos selecionados. A documentação detalhada permanece nos
+        repositórios e sites próprios, enquanto o portal fornece contexto e descoberta.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="software-directory">
+        {projetos.map((projeto) => (
+          <article class="card software-entry">
+            <div class="software-mark">{projeto.sigla}</div>
+            <div class="software-entry-body">
+              <span class="tag">{projeto.tipo}</span>
+              <h2>{projeto.titulo}</h2>
+              <p>{projeto.descricao}</p>
+              <a class="card-link" href={projeto.href}>{projeto.acao}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="notice stage2-notice">
+        <strong>Curadoria:</strong> a página não é um espelho automático do GitHub.
+        Apenas projetos representativos de pesquisa, ensino ou produção técnica entram no catálogo.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

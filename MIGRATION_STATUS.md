@@ -20,7 +20,10 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 | Tema claro/escuro | Integrado ao main |
 | Sobre | Implementado nesta branch |
 | Pesquisa | Implementado nesta branch |
-| Contato | Implementado nesta branch |
+| Contato | Integrado ao main |
+| Extensão | Implementado nesta branch |
+| Software | Implementado nesta branch |
+| Recursos | Implementado nesta branch |
 | Arquivos históricos | Ainda no legado |
 | Cloudflare R2 | Planejado, ainda não criado |
 | Domínio principal | Cutover futuro |
@@ -29,13 +32,14 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 ## Branch de trabalho atual
 
 ```text
-feat/core-portal-pages
+feat/portal-stage-2
 ```
 
 Objetivo da branch:
 
-- conectar essas páginas à homepage e à navegação principal;
-- manter informações profissionais sem inventar links acadêmicos não validados.
+- criar áreas próprias de Extensão, Software e Recursos;
+- conectar as três áreas à navegação e à homepage;
+- manter curadoria editorial e evitar conteúdo não validado.
 
 ## Ensino atual — protótipo
 

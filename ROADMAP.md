@@ -186,18 +186,19 @@ Para cada material:
 
 ### Extensão
 
-- [ ] projetos;
-- [ ] cursos;
-- [ ] oficinas;
+- [x] criar página de Extensão;
+- [x] estruturar projetos, cursos e oficinas;
+- [ ] importar e validar ações específicas;
 - [ ] ações com comunidade externa;
 - [ ] materiais públicos.
 
 ### Software
 
-- [ ] EC-IA;
-- [ ] Estruturas de Dados e Algoritmos em C;
-- [ ] MLP;
-- [ ] Drug-CNN;
+- [x] criar página de Software;
+- [x] EC-IA;
+- [x] Estruturas de Dados e Algoritmos em C;
+- [x] MLP;
+- [x] Drug-CNN;
 - [ ] selecionar outros repositórios representativos;
 - [ ] evitar catálogo automático de todos os repositórios.
 
@@ -211,11 +212,12 @@ Para cada material:
 - [ ] inventariar dicas técnicas;
 - [ ] inventariar minicursos;
 - [ ] revisar tecnicamente antes de republicar;
-- [ ] criar categorias:
-  - [ ] Artigos;
-  - [ ] Tutoriais;
-  - [ ] Notas técnicas;
-  - [ ] Minicursos;
+- [x] criar página de Recursos;
+- [x] criar categorias:
+  - [x] Artigos;
+  - [x] Tutoriais;
+  - [x] Notas técnicas;
+  - [x] Minicursos;
 - [ ] preservar data original;
 - [ ] registrar data de revisão quando houver atualização;
 - [ ] migrar “Pode uma máquina pensar?” com enquadramento histórico/editorial adequado.
