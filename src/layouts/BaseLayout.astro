@@ -23,6 +23,7 @@ const routePairs: Record<string, string> = {
   "/software/": "/en/software/",
   "/recursos/": "/en/resources/",
   "/contato/": "/en/contact/",
+  "/privacidade/": "/en/privacy/",
 };
 
 const reverseRoutePairs = Object.fromEntries(
@@ -51,7 +52,10 @@ const alternateURL = alternatePath
   : undefined;
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
-const adsenseClient = import.meta.env.PUBLIC_GOOGLE_ADSENSE_CLIENT?.trim();
+const rawAdsenseClient = import.meta.env.PUBLIC_GOOGLE_ADSENSE_CLIENT?.trim();
+const adsenseClient = rawAdsenseClient && /^ca-pub-\d{16}$/.test(rawAdsenseClient)
+  ? rawAdsenseClient
+  : undefined;
 const adsenseEnabled = import.meta.env.PUBLIC_ENABLE_ADSENSE === "true" && Boolean(adsenseClient);
 
 const structuredData = {
@@ -69,6 +73,8 @@ const structuredData = {
   about: {
     "@type": "Person",
     name: "Tiago Alves de Oliveira",
+    url: new URL(locale === "en" ? "/en/about/" : "/sobre/", Astro.site ?? Astro.url.origin).toString(),
+    sameAs: ["https://github.com/tiagofga"],
     jobTitle: locale === "en" ? "Professor and researcher in Computing" : "Professor e pesquisador em Computação",
     affiliation: {
       "@type": "CollegeOrUniversity",
@@ -84,7 +90,7 @@ const structuredData = {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="author" content="Tiago Alves de Oliveira" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content="Astro" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f8fb" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#071a2d" />
     <meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
