@@ -8,6 +8,10 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Added
 
+- Página `/extensao/` para projetos, cursos e oficinas.
+- Página `/software/` com catálogo curado de EC-IA, Estruturas de Dados e Algoritmos em C, Modular MLP e Drug-CNN.
+- Página `/recursos/` com categorias para artigos, tutoriais, notas técnicas e minicursos.
+- Bloco de Extensão e Recursos na homepage.
 - Página `/sobre/` com perfil acadêmico, formação e áreas de interesse.
 - Página `/pesquisa/` com linhas de pesquisa, projetos e conexão com Publicações.
 - Página `/contato/` com canais profissionais e política de validação de identificadores.
@@ -27,6 +31,8 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Changed
 
+- Extensão, Software e Recursos deixaram de apontar para âncoras vazias e passaram a ter rotas próprias.
+- O card de Software na homepage agora aponta para o catálogo dedicado.
 - Pesquisa passou de âncora da homepage para uma página própria.
 - Navegação principal passou a incluir Sobre e Contato.
 - CTA principal da homepage passou a apontar para a área de Pesquisa.
