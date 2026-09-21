@@ -29,7 +29,8 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 | Componentização | Header, Footer e SectionHeading integrados ao main |
 | PT/EN | Implementado nesta branch para páginas institucionais principais |
 | SEO base | Canonical, hreflang, Open Graph e JSON-LD implementados nesta branch |
-| Branding web | Favicon e social card implementados nesta branch |
+| Branding web | Integrado ao main |
+| Fechamento visual | Em andamento nesta branch |
 | Arquivos históricos | Ainda no legado |
 | Cloudflare R2 | Planejado, ainda não criado |
 | Domínio principal | Cutover futuro |
@@ -38,15 +39,15 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 ## Branch de trabalho atual
 
 ```text
-feat/portal-stage-4
+feat/visual-polish
 ```
 
 Objetivo da branch:
 
-- implementar PT/EN nas páginas institucionais principais;
-- adicionar canonical, hreflang, Open Graph e structured data;
-- adicionar favicon e social card;
-- manter o domínio canônico no GitHub Pages até o cutover definitivo.
+- fechar a identidade visual e a consistência entre páginas;
+- padronizar heroes, cards, espaçamentos e navegação;
+- revisar claro/escuro, desktop e mobile;
+- preparar a interface para a migração do acervo legado até 2025.
 
 ## Ensino atual — protótipo
 
