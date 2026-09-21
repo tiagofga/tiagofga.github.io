@@ -184,6 +184,21 @@ A Etapa 4 implementa a primeira versão funcional do portal bilíngue e da camad
 
 O domínio canônico ainda segue o valor de `site` configurado no Astro (`https://tiagofga.github.io`). A troca para `tiagofga.com.br` será feita somente no cutover definitivo do domínio, evitando canonical apontando prematuramente para o site legado.
 
+## Fechamento visual
+
+O fechamento visual do portal está sendo tratado em uma etapa própria antes da migração ampla do acervo legado até 2025.
+
+Nesta etapa:
+
+- páginas institucionais em Português passam a compartilhar um hero interno comum;
+- navegação principal destaca visualmente a seção ativa;
+- cards, espaçamentos, títulos e estados de interação passam a seguir um ritmo comum;
+- a homepage recebe ajustes de hierarquia visual e consistência entre seções;
+- o rodapé deixa de exibir placeholders genéricos de Lattes e ORCID até validação dos links oficiais;
+- tema claro e escuro continuam utilizando os mesmos componentes e tokens.
+
+A versão em inglês permanece no repositório, mas não é prioridade editorial nesta fase.
+
 ## Desenvolvimento local
 
 Requisitos:
