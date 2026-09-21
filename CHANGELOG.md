@@ -8,6 +8,10 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Added
 
+- Menu mobile expansível com estado acessível e fechamento por tecla Escape.
+- Link de salto para o conteúdo principal.
+- Suporte a `prefers-reduced-motion`.
+- Componente reutilizável `SectionHeading`.
 - Página `/extensao/` para projetos, cursos e oficinas.
 - Página `/software/` com catálogo curado de EC-IA, Estruturas de Dados e Algoritmos em C, Modular MLP e Drug-CNN.
 - Página `/recursos/` com categorias para artigos, tutoriais, notas técnicas e minicursos.
@@ -31,6 +35,9 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Changed
 
+- Header e Footer foram extraídos do layout base para componentes Astro.
+- Rótulo acessível do seletor de tema agora acompanha o estado claro/escuro.
+- Responsividade do cabeçalho foi consolidada para desktop, tablet e mobile.
 - Extensão, Software e Recursos deixaram de apontar para âncoras vazias e passaram a ter rotas próprias.
 - O card de Software na homepage agora aponta para o catálogo dedicado.
 - Pesquisa passou de âncora da homepage para uma página própria.
