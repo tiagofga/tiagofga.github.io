@@ -1,5 +1,12 @@
 ---
-const navItems = [
+interface Props {
+  locale?: "pt" | "en";
+  alternatePath?: string;
+}
+
+const { locale = "pt", alternatePath } = Astro.props;
+
+const navPt = [
   ["Sobre", "/sobre/"],
   ["Pesquisa", "/pesquisa/"],
   ["Publicações", "/publicacoes/"],
@@ -9,12 +16,45 @@ const navItems = [
   ["Recursos", "/recursos/"],
   ["Contato", "/contato/"],
 ];
+
+const navEn = [
+  ["About", "/en/about/"],
+  ["Research", "/en/research/"],
+  ["Publications", "/en/publications/"],
+  ["Teaching", "/en/teaching/"],
+  ["Extension", "/en/extension/"],
+  ["Software", "/en/software/"],
+  ["Resources", "/en/resources/"],
+  ["Contact", "/en/contact/"],
+];
+
+const navItems = locale === "en" ? navEn : navPt;
+const homeHref = locale === "en" ? "/en/" : "/";
+const labels = locale === "en"
+  ? {
+      home: "Tiago Alves de Oliveira — home",
+      menuOpen: "Open main menu",
+      menuClose: "Close main menu",
+      navigation: "Main navigation",
+      preferences: "Preferences",
+      language: "Language",
+      theme: "Toggle light and dark theme",
+    }
+  : {
+      home: "Tiago Alves de Oliveira — página inicial",
+      menuOpen: "Abrir menu principal",
+      menuClose: "Fechar menu principal",
+      navigation: "Navegação principal",
+      preferences: "Preferências",
+      language: "Idioma",
+      theme: "Alternar tema claro e escuro",
+    };
 ---
-<header class="site-header">
+<header class="site-header" data-locale={locale}>
   <div class="shell nav-wrap">
-    <a class="brand" href="/" aria-label="Tiago Alves de Oliveira — página inicial">
+    <a class="brand" href={homeHref} aria-label={labels.home}>
       <strong>Tiago Alves de Oliveira</strong>
-      <span>Computação · Ciência · Educação</span>
+      <span>{locale === "en" ? "Computing · Science · Education" : "Computação · Ciência · Educação"}</span>
     </a>
 
     <button
@@ -22,28 +62,45 @@ const navItems = [
       type="button"
       aria-expanded="false"
       aria-controls="primary-navigation"
-      aria-label="Abrir menu principal"
+      aria-label={labels.menuOpen}
+      data-open-label={labels.menuOpen}
+      data-close-label={labels.menuClose}
     >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </button>
 
-    <nav id="primary-navigation" class="primary-nav" aria-label="Navegação principal">
+    <nav id="primary-navigation" class="primary-nav" aria-label={labels.navigation}>
       {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
     </nav>
 
-    <div class="nav-meta" aria-label="Preferências">
-      <div class="language-switch" aria-label="Idioma">
-        <span class="language-option active" aria-current="page">PT</span>
-        <span class="language-option disabled" aria-disabled="true" title="Versão em inglês em preparação">EN</span>
+    <div class="nav-meta" aria-label={labels.preferences}>
+      <div class="language-switch" aria-label={labels.language}>
+        {locale === "pt" ? (
+          <>
+            <span class="language-option active" aria-current="page">PT</span>
+            {alternatePath
+              ? <a class="language-option" href={alternatePath} lang="en" hreflang="en">EN</a>
+              : <span class="language-option disabled" aria-disabled="true">EN</span>}
+          </>
+        ) : (
+          <>
+            {alternatePath
+              ? <a class="language-option" href={alternatePath} lang="pt-BR" hreflang="pt-BR">PT</a>
+              : <span class="language-option disabled" aria-disabled="true">PT</span>}
+            <span class="language-option active" aria-current="page">EN</span>
+          </>
+        )}
       </div>
       <button
         class="theme-toggle"
         type="button"
-        aria-label="Alternar tema claro e escuro"
+        aria-label={labels.theme}
         aria-pressed="false"
-        title="Alternar tema claro e escuro"
+        title={labels.theme}
+        data-light-label={locale === "en" ? "Use light theme" : "Usar tema claro"}
+        data-dark-label={locale === "en" ? "Use dark theme" : "Usar tema escuro"}
       >
         <span class="theme-icon" aria-hidden="true">◐</span>
       </button>
@@ -58,7 +115,7 @@ const navItems = [
   const closeMenu = () => {
     if (!menuToggle || !primaryNav) return;
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Abrir menu principal");
+    menuToggle.setAttribute("aria-label", menuToggle.dataset.openLabel || "Open menu");
     primaryNav.classList.remove("is-open");
     document.body.classList.remove("menu-open");
   };
@@ -66,14 +123,15 @@ const navItems = [
   menuToggle?.addEventListener("click", () => {
     const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", String(!isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Abrir menu principal" : "Fechar menu principal");
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? (menuToggle.dataset.openLabel || "Open menu") : (menuToggle.dataset.closeLabel || "Close menu"),
+    );
     primaryNav?.classList.toggle("is-open", !isOpen);
     document.body.classList.toggle("menu-open", !isOpen);
   });
 
-  primaryNav?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+  primaryNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true") {
