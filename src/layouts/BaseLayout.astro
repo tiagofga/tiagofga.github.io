@@ -45,7 +45,10 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
           <a href="/contato/">Contato</a>
         </nav>
         <div class="nav-meta" aria-label="Preferências">
-          <span>PT</span><span class="muted">EN</span>
+          <div class="language-switch" aria-label="Idioma">
+            <span class="language-option active" aria-current="page">PT</span>
+            <span class="language-option disabled" aria-disabled="true" title="Versão em inglês em preparação">EN</span>
+          </div>
           <button
             class="theme-toggle"
             type="button"
