@@ -79,7 +79,7 @@ Projetos educacionais e de software continuam independentes e são integrados pe
   - [ ] MaterialList;
   - [ ] Breadcrumb;
   - [ ] Callout;
-- [ ] implementar tema claro/escuro;
+- [x] implementar tema claro/escuro;
 - [ ] implementar PT/EN na nova arquitetura;
 - [ ] migrar favicon, social card e metatags;
 - [ ] revisar acessibilidade WCAG;
@@ -173,6 +173,8 @@ Para cada material:
 - [ ] linhas de pesquisa;
 - [ ] projetos em andamento;
 - [ ] projetos concluídos;
+- [x] criar rota e menu de Publicações;
+- [ ] importar e validar metadados de publicações;
 - [ ] publicações;
 - [ ] datasets e DOIs;
 - [ ] relações entre projeto, artigo, software e dados.
