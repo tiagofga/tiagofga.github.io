@@ -1,23 +1,29 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHero from "../../../components/PageHero.astro";
 ---
-<BaseLayout title="About" description="Academic background, professional profile and areas of interest of Tiago Alves de Oliveira.">
-  <section class="archive-hero profile-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/en/">Home</a> / About</div>
-      <p class="eyebrow">Academic profile</p>
-      <h1>Tiago Alves de Oliveira</h1>
-      <p>Professor in Computing, researcher in Artificial Intelligence and coordinator of the Computer Engineering program at CEFET-MG, Divinópolis Campus.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="About"
+  description="Academic background, professional roles and research interests of Tiago Alves de Oliveira."
+>
+  <PageHero
+    eyebrow="Academic profile"
+    title="Tiago Alves de Oliveira"
+    current="About"
+    homeLabel="Home"
+    homeHref="/en/"
+    description="Professor of Computing, researcher in Artificial Intelligence and coordinator of the Computer Engineering program at CEFET-MG, Divinópolis Campus."
+  />
+
   <section class="section">
     <div class="shell profile-layout">
       <div class="profile-main">
         <article class="card content-panel">
-          <h2>Professional activity</h2>
-          <p>My work combines teaching, research, software development and academic supervision in Computing, with emphasis on applied Artificial Intelligence.</p>
-          <p>At CEFET-MG, I work as a professor and in the coordination of the Computer Engineering program at the Divinópolis Campus.</p>
+          <h2>Academic and professional roles</h2>
+          <p>My work combines teaching, research, software development and academic supervision in Computing, with an emphasis on applied Artificial Intelligence.</p>
+          <p>At CEFET-MG, I work as a professor and serve as coordinator of the Computer Engineering program at the Divinópolis Campus.</p>
         </article>
+
         <article class="card content-panel">
           <h2>Education</h2>
           <div class="timeline-list">
@@ -27,10 +33,28 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
           </div>
         </article>
       </div>
+
       <aside class="profile-sidebar">
         <article class="card side-card">
-          <h3>Areas of interest</h3>
-          <ul><li>Artificial Intelligence</li><li>Machine Learning</li><li>Drug discovery</li><li>Bioinformatics</li><li>Computer Vision</li><li>Algorithms and scientific software</li></ul>
+          <h3>Research interests</h3>
+          <ul>
+            <li>Artificial Intelligence</li>
+            <li>Machine Learning</li>
+            <li>Drug discovery</li>
+            <li>Bioinformatics</li>
+            <li>Computer Vision</li>
+            <li>Algorithms and scientific software</li>
+          </ul>
+        </article>
+
+        <article class="card side-card">
+          <h3>Explore</h3>
+          <div class="stack-links">
+            <a class="card-link" href="/en/research/">Research →</a>
+            <a class="card-link" href="/en/publications/">Publications →</a>
+            <a class="card-link" href="/en/teaching/">Teaching →</a>
+            <a class="card-link" href="/en/contact/">Contact →</a>
+          </div>
         </article>
       </aside>
     </div>
