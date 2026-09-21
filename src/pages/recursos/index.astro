@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout
+  title="Recursos"
+  description="Artigos, tutoriais, notas técnicas, minicursos e materiais reutilizáveis."
+>
+  <section class="archive-hero">
+    <div class="shell">
+      <div class="breadcrumb"><a href="/">Início</a> / Recursos</div>
+      <p class="eyebrow">Recursos</p>
+      <h1>Conteúdo técnico e educacional para consulta e reutilização.</h1>
+      <p>
+        Espaço para materiais que continuam úteis fora de uma disciplina ou projeto específico,
+        incluindo conteúdo recuperado do site legado após revisão editorial.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="resource-grid">
+        <article class="card resource-card">
+          <span class="stage2-symbol">ART</span>
+          <h2>Artigos</h2>
+          <p>Textos autorais, reflexões e conteúdo técnico com data e contexto editorial preservados.</p>
+        </article>
+        <article class="card resource-card">
+          <span class="stage2-symbol">TUT</span>
+          <h2>Tutoriais</h2>
+          <p>Guias técnicos revisados antes da republicação para evitar instruções obsoletas.</p>
+        </article>
+        <article class="card resource-card">
+          <span class="stage2-symbol">NT</span>
+          <h2>Notas técnicas</h2>
+          <p>Referências curtas, procedimentos e documentação de apoio a ensino, pesquisa e software.</p>
+        </article>
+        <article class="card resource-card">
+          <span class="stage2-symbol">MINI</span>
+          <h2>Minicursos</h2>
+          <p>Materiais independentes de disciplinas regulares e ações formativas reaproveitáveis.</p>
+        </article>
+      </div>
+
+      <div class="notice stage2-notice">
+        <strong>Política editorial:</strong> conteúdo legado só será republicado depois de revisão técnica.
+        A data original será preservada e atualizações relevantes terão data de revisão própria.
+      </div>
+    </div>
+  </section>
+</BaseLayout>
