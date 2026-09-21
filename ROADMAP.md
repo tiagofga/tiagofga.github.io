@@ -281,9 +281,9 @@ Para cada material:
 - [x] Twitter/X cards;
 - [x] structured data base para WebPage/ProfilePage, WebSite e Person;
 - [ ] revisar structured data específico conforme novos tipos de conteúdo forem adicionados;
-- [x] preparar código, canonical e CNAME para `tiagofga.com.br`;
+- [ ] preparar custom domain/CNAME para `tiagofga.com.br` quando o cutover for retomado;
 - [ ] configurar domínio personalizado em GitHub Pages e executar cutover DNS após preservar URLs legadas;
-- [ ] manter `tiagofga.github.io` como origem técnica/secundária;
+- [x] manter `tiagofga.github.io` como origem técnica e canônica nesta fase;
 - [ ] validar DNS, TLS e DNSSEC via Cloudflare.
 
 **Critério de saída:** mudança de plataforma não quebra navegação histórica nem indexação relevante.
