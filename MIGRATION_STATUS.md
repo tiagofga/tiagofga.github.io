@@ -13,9 +13,11 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 | Vercel Preview | Operacional |
 | GitHub Pages / Astro | Operacional |
 | Pipeline Jekyll legado | Ainda precisa ser desativado nas configurações do Pages |
-| Homepage | Em revisão |
-| Área de Ensino | Protótipo em branch |
+| Homepage | Operacional, ainda em evolução |
+| Área de Ensino | Integrada ao main |
 | UEMG 2015 | Estrutura migrada |
+| Publicações | Landing page criada; metadados ainda pendentes |
+| Tema claro/escuro | Implementado nesta branch |
 | Arquivos históricos | Ainda no legado |
 | Cloudflare R2 | Planejado, ainda não criado |
 | Domínio principal | Cutover futuro |
@@ -24,15 +26,15 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 ## Branch de trabalho atual
 
 ```text
-feat/teaching-hub-prototype
+feat/publications-theme-navigation
 ```
 
 Objetivo da branch:
 
-- revisar a disposição da área de Ensino;
-- destacar disciplinas atuais;
-- manter o acervo histórico em segundo nível;
-- validar homepage e `/ensino/` em conjunto.
+- adicionar Publicações como área de primeiro nível;
+- criar a rota `/publicacoes/`;
+- implementar modo claro/escuro;
+- ajustar a navegação para o crescimento do portal.
 
 ## Ensino atual — protótipo
 
@@ -111,7 +113,9 @@ Pendência administrativa:
 
 ## Próximas decisões
 
-- revisar visualmente o protótipo de Ensino;
+- importar e validar metadados de publicações;
+- revisar o tema em todas as páginas;
+- criar páginas de Sobre, Pesquisa e Contato;
 - definir destino da disciplina LIPC;
 - consolidar componentes reutilizáveis;
 - remover gradualmente frontend legado da raiz;
