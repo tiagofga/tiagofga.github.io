@@ -201,18 +201,17 @@ A versão em inglês permanece no repositório, mas não é prioridade editorial
 
 ## SEO, AdSense e cutover
 
-A camada de publicação foi preparada para o domínio principal `https://tiagofga.com.br`.
+A camada de publicação permanece em `https://tiagofga.github.io` nesta fase. O domínio `tiagofga.com.br` continua reservado para um cutover futuro.
 
 Implementado nesta etapa:
 
-- `site` do Astro apontando para o domínio principal;
-- canonical, Open Graph, Twitter Card e JSON-LD usando o domínio principal;
+- `site` do Astro mantido em `https://tiagofga.github.io`;
+- canonical, Open Graph, Twitter Card e JSON-LD continuam usando GitHub Pages enquanto o domínio personalizado não for ativado;
 - `robots.txt` e `sitemap.xml`;
 - política de privacidade em Português e Inglês;
 - suporte opcional a Google Search Console por variável de ambiente;
 - integração do script do Google AdSense desativada por padrão;
 - `ads.txt` gerado a partir do publisher ID configurado;
-- arquivo `CNAME` para o domínio principal;
 - variáveis documentadas em `.env.example`.
 
 ### Ativação do AdSense
@@ -231,14 +230,14 @@ Antes de habilitar anúncios para tráfego sujeito às regras europeias, deve se
 
 ### Cutover de domínio
 
-O código está preparado para `tiagofga.com.br`, porém a alteração efetiva de DNS deve ocorrer somente depois de duas condições:
+O cutover para `tiagofga.com.br` foi adiado. O portal continua oficialmente em GitHub Pages até que duas condições sejam atendidas:
 
 1. o domínio personalizado estar configurado em **GitHub Settings → Pages**;
 2. os downloads e URLs legados ainda necessários terem destino preservado.
 
 O acervo de 2015 ainda contém links para o Joomla em `tiagofga.com.br/index.php/...`. Portanto, mover o DNS antes de migrar ou redirecionar esses recursos quebraria downloads históricos.
 
-Configuração DNS planejada para o cutover final:
+Quando o cutover for retomado, a configuração DNS planejada será:
 
 ```text
 A     @     185.199.108.153
