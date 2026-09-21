@@ -23,6 +23,7 @@ tiagofga.com.br / tiagofga.github.io
 │
 ├── Início
 ├── Pesquisa
+├── Publicações
 ├── Ensino
 │   ├── disciplinas atuais
 │   │   ├── Inteligência Artificial · 2026/2
@@ -45,11 +46,22 @@ tiagofga.com.br / tiagofga.github.io
 - **TypeScript** para configuração e componentes;
 - **Markdown/MDX** para conteúdo;
 - **CSS** próprio com identidade visual tecnológica azul + verde;
+- **tema claro/escuro** sem dependência externa, com preferência persistida no navegador;
 - **GitHub Actions** para CI e deploy;
 - **GitHub Pages** para publicação;
 - **Vercel Preview** para revisão visual de branches/PRs;
 - **Cloudflare** para DNS e camada de borda;
 - **Cloudflare R2** planejado para o acervo binário histórico.
+
+## Publicações
+
+A rota `/publicacoes/` foi criada como área própria de produção acadêmica, inicialmente organizada em:
+
+- periódicos;
+- conferências e congressos;
+- datasets e artefatos.
+
+Os registros individuais ainda serão importados e validados antes da publicação definitiva.
 
 ## Ensino
 
