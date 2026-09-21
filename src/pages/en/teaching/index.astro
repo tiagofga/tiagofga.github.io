@@ -1,22 +1,80 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SectionHeading from "../../../components/SectionHeading.astro";
+
+const currentCourses = [
+  {
+    code: "AI",
+    title: "Artificial Intelligence",
+    term: "2026/2",
+    description: "Current course materials, activities and supplementary resources.",
+    href: "https://tiagofga.github.io/EC-IA/",
+    action: "Open course ↗",
+  },
+  {
+    code: "LIPC",
+    title: "Introduction to Computer Programming Laboratory",
+    term: "2026/2",
+    description: "Laboratory exercises, programming lists and materials for the current semester.",
+    href: null,
+    action: null,
+  },
+];
 ---
-<BaseLayout title="Teaching" description="Current courses, educational resources and historical teaching archive.">
+<BaseLayout
+  title="Teaching"
+  description="Current courses, educational resources and the historical teaching archive."
+>
   <section class="teaching-hero">
     <div class="shell teaching-hero-grid">
       <div>
-        <div class="breadcrumb"><a href="/en/">Home</a> / Teaching</div>
-        <p class="eyebrow eyebrow-dark">Teaching</p>
-        <h1>Current courses and educational resources.</h1>
-        <p class="lead-dark">Current teaching is presented separately from the historical archive.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/en/">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Teaching</span>
+        </nav>
+        <p class="eyebrow">Teaching</p>
+        <h1>Current courses and the historical teaching archive in one place.</h1>
+        <p class="lead-dark">Current teaching appears first. Materials from previous years remain clearly separated as historical content.</p>
       </div>
+      <aside class="teaching-summary card">
+        <span class="tag">Current term</span>
+        <strong>2026/2</strong>
+        <p>2 courses in progress</p>
+      </aside>
     </div>
   </section>
+
   <section class="section">
-    <div class="shell current-courses">
-      <article class="card current-course"><div class="course-topline"><span class="course-code">AI</span><span class="tag">2026/2</span></div><h3>Artificial Intelligence</h3><p>Current materials, activities and supplementary resources.</p><a class="button light" href="https://tiagofga.github.io/EC-IA/">Open course ↗</a></article>
-      <article class="card current-course"><div class="course-topline"><span class="course-code">LIPC</span><span class="tag">2026/2</span></div><h3>Introduction to Computer Programming Laboratory</h3><p>Programming laboratory activities and semester materials.</p><span class="course-status">Portal integration in progress</span></article>
+    <div class="shell">
+      <SectionHeading
+        eyebrow="In progress"
+        title="Current courses"
+        description="Quick access to the materials and resources used during the current semester."
+        darkEyebrow={true}
+      />
+
+      <div class="current-courses">
+        {currentCourses.map((course) => (
+          <article class="card current-course">
+            <div class="course-topline">
+              <span class="course-code">{course.code}</span>
+              <span class="tag">{course.term}</span>
+            </div>
+            <h3>{course.title}</h3>
+            <p>{course.description}</p>
+            {course.href ? (
+              <a class="button light" href={course.href}>{course.action}</a>
+            ) : (
+              <span class="course-status">Portal integration in progress</span>
+            )}
+          </article>
+        ))}
+      </div>
+
+      <div class="notice stage2-notice">
+        <strong>Historical archive:</strong> legacy course pages remain available in Portuguese while the archive is reviewed. <a class="card-link" href="/ensino/#acervo">Open Portuguese archive →</a>
+      </div>
     </div>
-    <div class="notice stage2-notice"><strong>Historical archive:</strong> legacy course pages remain available in Portuguese while the archive is reviewed and translated selectively. <a class="card-link" href="/ensino/#acervo">Open Portuguese archive →</a></div>
   </section>
 </BaseLayout>
