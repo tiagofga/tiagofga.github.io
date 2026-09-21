@@ -36,8 +36,16 @@ tiagofga.com.br / tiagofga.github.io
 │       │   └── 2015 · 7 disciplinas migradas
 │       └── CEFET-MG
 ├── Extensão
+│   ├── projetos
+│   ├── cursos
+│   └── oficinas
 ├── Software
+│   └── projetos selecionados
 ├── Recursos
+│   ├── artigos
+│   ├── tutoriais
+│   ├── notas técnicas
+│   └── minicursos
 └── Contato
 ```
 
@@ -73,6 +81,16 @@ A rota `/publicacoes/` foi criada como área própria de produção acadêmica, 
 - datasets e artefatos.
 
 Os registros individuais ainda serão importados e validados antes da publicação definitiva.
+
+## Extensão, software e recursos
+
+A segunda etapa do portal adiciona áreas próprias para:
+
+- `/extensao/` — projetos, cursos, oficinas e ações com a comunidade;
+- `/software/` — catálogo curado de projetos representativos de ensino e pesquisa;
+- `/recursos/` — artigos, tutoriais, notas técnicas e minicursos.
+
+O catálogo de software não replica automaticamente todos os repositórios do GitHub. A área de Recursos segue política editorial própria e só republicará conteúdo legado após revisão técnica.
 
 ## Ensino
 
