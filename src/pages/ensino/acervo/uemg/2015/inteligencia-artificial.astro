@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../../../../layouts/BaseLayout.astro";
+import Content, { frontmatter } from "../../../../../content/ensino/uemg-2015-inteligencia-artificial.md";
+
+const { title, institution, year, semester, legacyUrl, materials } = frontmatter;
+---
+<BaseLayout title={`${title} — ${institution} ${year}`} description={`Acervo histórico da disciplina de ${title}, ${institution}, ${year}.`}>
+  <section class="archive-hero">
+    <div class="shell">
+      <div class="breadcrumb"><a href="/">Início</a> / Ensino / Acervo / UEMG / 2015</div>
+      <p class="eyebrow">Acervo histórico · Ensino</p>
+      <h1>{title}</h1>
+      <p>Material público utilizado na disciplina em {year}, preservado como parte da trajetória docente.</p>
+      <div class="meta-row">
+        <span class="meta-chip">{institution}</span>
+        <span class="meta-chip">{year}</span>
+        <span class="meta-chip">{semester}º semestre</span>
+        <span class="meta-chip">Material histórico</span>
+      </div>
+      <div class="notice">
+        <strong>Acervo histórico:</strong> esta página preserva o material da disciplina tal como organizado em 2015, sem representar uma versão atual do curso.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell content-layout">
+      <article class="card content-panel">
+        <Content />
+
+        <h2>Materiais públicos</h2>
+        <p class="legacy-note">Nesta primeira etapa, os botões ainda utilizam os endpoints legados do Phoca Download. Os arquivos físicos já foram recuperados e serão movidos para o armazenamento definitivo em uma etapa posterior.</p>
+        <div class="material-list">
+          {materials.map((item) => (
+            <div class="material">
+              <div class="material-index">{item.index}</div>
+              <div>
+                <strong>{item.title}</strong>
+                <small>{item.date} · {item.file}</small>
+              </div>
+              <a href={item.url}>Abrir ↗</a>
+            </div>
+          ))}
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <section class="card side-card">
+          <p class="eyebrow">Contexto</p>
+          <h3>Disciplina de 2015</h3>
+          <p>Conteúdo preservado como registro histórico da disciplina ministrada na UEMG em 2015/2.</p>
+        </section>
+        <section class="card side-card">
+          <p class="eyebrow">Origem</p>
+          <h3>Registro legado</h3>
+          <p>Metadados importados do banco Joomla antigo e associados aos arquivos recuperados do Phoca Download de 2015.</p>
+          <a class="card-link" href={legacyUrl}>Ver URL histórica ↗</a>
+        </section>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

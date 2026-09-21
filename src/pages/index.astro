@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Tiago Alves de Oliveira">
+  <section class="hero">
+    <div class="shell hero-inner">
+      <div>
+        <p class="eyebrow">Conhecimento · Código · Impacto</p>
+        <h1>Computação, Inteligência Artificial e Ciência aplicadas à pesquisa e à educação.</h1>
+        <p class="lead">Pesquisa, ensino, extensão, software aberto e um acervo da trajetória docente reunidos em uma presença acadêmica única.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#pesquisa">Conhecer a pesquisa →</a>
+          <a class="button secondary" href="#software">Explorar projetos</a>
+        </div>
+      </div>
+      <aside class="signal-card" aria-label="Eixos de atuação">
+        <div class="signal" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <p><strong>Ciência · Tecnologia · Pessoas</strong><br />Um portal acadêmico orientado por pesquisa aplicada, educação e software reproduzível.</p>
+      </aside>
+    </div>
+  </section>
+
+  <div class="shell pillars">
+    <article class="card pillar" id="pesquisa">
+      <div class="icon">AI</div>
+      <h3>Pesquisa</h3>
+      <p>Do problema científico ao modelo computacional.</p>
+      <ul><li>IA aplicada</li><li>Drug discovery</li><li>ADMET e bioinformática</li><li>Visão computacional</li></ul>
+    </article>
+    <article class="card pillar" id="ensino">
+      <div class="icon">EDU</div>
+      <h3>Ensino</h3>
+      <p>Recursos atuais e preservação da trajetória docente.</p>
+      <ul><li>Inteligência Artificial</li><li>Algoritmos</li><li>Estruturas de dados</li><li>Acervo histórico</li></ul>
+    </article>
+    <article class="card pillar" id="software">
+      <div class="icon">&lt;/&gt;</div>
+      <h3>Software</h3>
+      <p>Projetos abertos conectando pesquisa e ensino.</p>
+      <ul><li>EC-IA</li><li>MLP</li><li>Drug-CNN</li><li>Algoritmos em C</li></ul>
+    </article>
+  </div>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Projetos em destaque</p><h2>Software e recursos abertos</h2></div>
+        <p>Projetos independentes permanecem em seus próprios repositórios e sites, enquanto o portal principal organiza o contexto acadêmico.</p>
+      </div>
+      <div class="projects">
+        <article class="card project-card"><div class="project-visual">EC-IA</div><div class="project-body"><span class="tag">Ensino + Software</span><h3>EC-IA</h3><p>Recurso educacional aberto para Inteligência Artificial.</p><a class="card-link" href="https://tiagofga.github.io/EC-IA/">Explorar →</a></div></article>
+        <article class="card project-card"><div class="project-visual">&#123; C &#125;</div><div class="project-body"><span class="tag">Ensino + Software</span><h3>Estruturas de Dados e Algoritmos em C</h3><p>Implementações, testes, exercícios e documentação.</p><a class="card-link" href="https://github.com/tiagofga/Estruturas-de-Dados-e-Algoritmos-em-C">GitHub →</a></div></article>
+        <article class="card project-card"><div class="project-visual">MLP</div><div class="project-body"><span class="tag">Pesquisa + Software</span><h3>Modular MLP</h3><p>Rede neural do zero em C++ moderno.</p><a class="card-link" href="https://tiagofga.github.io/mlp/">Explorar →</a></div></article>
+        <article class="card project-card"><div class="project-visual">Drug-CNN</div><div class="project-body"><span class="tag">Pesquisa + Software</span><h3>Drug-CNN</h3><p>Deep learning aplicado à descoberta de fármacos.</p><a class="card-link" href="https://github.com/tiagofga/drug-cnn">GitHub →</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0">
+    <div class="shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Piloto de migração</p><h2>Acervo histórico · 2015</h2></div>
+        <p>Primeira disciplina reconstruída a partir do SQL Joomla e do acervo físico do Phoca Download.</p>
+      </div>
+      <article class="card content-panel">
+        <span class="tag">UEMG · 2015/2</span>
+        <h2>Inteligência Artificial</h2>
+        <p>A página piloto preserva ementa, bibliografia, cronologia e referências originais, mas apresenta o material com a nova identidade visual.</p>
+        <a class="button light" href="/ensino/acervo/uemg/2015/inteligencia-artificial/">Abrir disciplina →</a>
+      </article>
+    </div>
+  </section>
+
+  <span id="extensao"></span><span id="recursos"></span>
+</BaseLayout>

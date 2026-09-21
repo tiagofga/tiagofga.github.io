@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Pesquisa, ensino, extensão e software em Computação e Inteligência Artificial.",
+} = Astro.props;
+
+const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiago Alves de Oliveira`;
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#071a2d" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="brand" href="/">
+          <strong>Tiago Alves de Oliveira</strong>
+          <span>Computação · Ciência · Educação</span>
+        </a>
+        <nav aria-label="Navegação principal">
+          <a href="/#pesquisa">Pesquisa</a>
+          <a href="/#ensino">Ensino</a>
+          <a href="/#extensao">Extensão</a>
+          <a href="/#software">Software</a>
+          <a href="/#recursos">Recursos</a>
+        </nav>
+        <div class="nav-meta" aria-label="Preferências">
+          <span>PT</span><span class="muted">EN</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <strong>Tiago Alves de Oliveira</strong>
+          <p>Computação · Ciência · Tecnologia · Sociedade</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/tiagofga">GitHub</a>
+          <a href="https://lattes.cnpq.br/">Lattes</a>
+          <a href="https://orcid.org/">ORCID</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

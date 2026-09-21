@@ -1,148 +1,174 @@
 # tiagofga.github.io
 
-Homepage pessoal de Tiago Alves de Oliveira, com foco em perfil acadêmico, projetos, publicações e contatos.
+Portal pessoal e acadêmico de **Tiago Alves de Oliveira**, reunindo pesquisa, ensino, extensão, software, recursos técnicos e o acervo histórico da trajetória docente.
 
-## Stack e arquitetura
+> **Status atual:** migração em andamento para Astro na branch `feat/astro-migration-2015`.  
+> O `main` continua preservando o site publicado enquanto o novo portal é validado por Pull Request.
 
-- Site estático (sem backend)
-- HTML + CSS + JavaScript vanilla
-- Conteúdo PT-BR e EN definido em objeto JS (`content` em `script.js`)
-- Deploy para GitHub Pages
+## Objetivo
 
-Arquivos principais:
+O novo site será o ponto central da presença acadêmica e técnica, com cinco princípios:
 
-- `index.html`: estrutura semântica da página
-- `styles.css`: tema visual (black/light), layout responsivo e animações
-- `script.js`: i18n, troca de tema, renderização dos cards/listas e animações de reveal
-- `analytics.js`: bootstrap opcional do Google Analytics 4 (GA4)
-- `favicon.svg` e `social-card.svg`: assets de identidade e compartilhamento
+- apresentar pesquisa, ensino, extensão e software em uma arquitetura única;
+- preservar o acervo histórico sem manter dependência do Joomla;
+- manter projetos independentes, como EC-IA, MLP e Estruturas de Dados e Algoritmos em C, em seus próprios repositórios/sites;
+- editar conteúdo como dados estruturados e Markdown/MDX, evitando páginas HTML manuais;
+- manter deploy estático, baixo custo e pouca manutenção operacional.
 
-## Funcionalidades
+## Arquitetura em migração
 
-- Alternância de idioma (PT/EN)
-- Alternância de tema (black/light)
-- Persistência de preferências de idioma e tema com `localStorage`
-- Renderização dinâmica de seções (projetos, publicações, colaboração e contatos)
-- SEO/social tags (Open Graph e Twitter Cards)
+```text
+tiagofga.com.br / tiagofga.github.io
+│
+├── Pesquisa
+├── Ensino
+│   ├── disciplinas atuais
+│   ├── recursos educacionais
+│   └── acervo histórico
+│       ├── UNIFOR-MG
+│       ├── UEMG
+│       └── CEFET-MG
+├── Extensão
+├── Software
+├── Recursos
+└── Contato
+```
+
+### Stack
+
+- **Astro** para geração estática;
+- **TypeScript** para configuração e componentes;
+- **Markdown/MDX** para conteúdo;
+- **CSS** próprio com identidade visual tecnológica azul + verde;
+- **GitHub Actions** para validação;
+- **GitHub Pages** como destino de publicação;
+- domínio principal planejado: **tiagofga.com.br**.
+
+## Piloto de migração
+
+A primeira disciplina reconstruída é:
+
+**Inteligência Artificial — UEMG — 2015/2**
+
+A página piloto valida o fluxo:
+
+```text
+SQL Joomla antigo
+        +
+metadados do Phoca Download
+        +
+arquivos físicos recuperados
+        ↓
+conteúdo estruturado
+        ↓
+Markdown
+        ↓
+Astro
+        ↓
+página histórica moderna
+```
+
+Rota piloto:
+
+```text
+/ensino/acervo/uemg/2015/inteligencia-artificial/
+```
+
+O material é tratado exclusivamente como **acervo histórico**, sem associação com disciplinas ou projetos atuais.
+
+## Estrutura atual da branch de migração
+
+```text
+.
+├── .github/
+│   └── workflows/
+│       ├── astro-ci.yml
+│       └── commitlint.yml
+├── src/
+│   ├── content/
+│   │   └── ensino/
+│   ├── layouts/
+│   ├── pages/
+│   │   └── ensino/acervo/
+│   └── styles/
+├── astro.config.mjs
+├── package.json
+├── tsconfig.json
+├── README.md
+└── ROADMAP.md
+```
+
+Os arquivos legados do site atual permanecem temporariamente no repositório durante a transição. Eles serão removidos somente quando a nova implementação substituir completamente a versão publicada.
 
 ## Desenvolvimento local
 
-### Opção 1: abrir direto no navegador
+Requisitos:
 
-Como o projeto é estático e não faz requisições locais via `fetch`, abrir `index.html` diretamente costuma funcionar.
+- Node.js 22 ou superior;
+- npm.
 
-### Opção 2: usar servidor HTTP local (recomendado)
-
-Para reproduzir melhor o comportamento de produção (GitHub Pages) e evitar diferenças de políticas do protocolo `file://` entre navegadores:
-
-```bash
-python3 -m http.server 4173
-```
-
-Ou, se preferir Node.js:
+Instalação:
 
 ```bash
-npx serve -l 4173
+npm install
 ```
 
-Depois abra:
+Servidor local:
 
-```text
-http://127.0.0.1:4173
+```bash
+npm run dev
 ```
 
-## Preciso realmente executar servidor HTTP?
+Build de produção:
 
-Resposta curta: **não é obrigatório para este projeto hoje**, mas **é recomendado**.
+```bash
+npm run build
+```
 
-Motivos:
+Pré-visualização do build:
 
-- Hoje: não há backend nem `fetch` para arquivos locais, então o site funciona sem servidor na maioria dos navegadores.
-- Recomendado: `file://` pode ter comportamento diferente por navegador (principalmente para APIs web e segurança).
-- Futuro: se você adicionar `fetch` de JSON/MD, service worker, ou novas restrições de segurança, o servidor passa a ser necessário.
+```bash
+npm run preview
+```
 
-## Privacidade (LGPD e GDPR)
+## CI e proteção do `main`
 
-Aviso: este conteúdo é informativo e não substitui orientação jurídica.
+O repositório utiliza dois workflows:
 
-### Dados tratados por este site
+### Astro CI
 
-- Preferências locais de tema e idioma via `localStorage` (no navegador do visitante).
-- Metadados técnicos comuns de acesso (por exemplo, IP e user-agent) podem ser processados por provedores externos quando o navegador requisita recursos de terceiros.
+Valida se o projeto instala dependências e gera o build estático sem erros.
 
-### Recursos externos atualmente utilizados
+### Commitlint
 
-- Google Fonts (`fonts.googleapis.com` e `fonts.gstatic.com`)
-- Avatar do GitHub (`avatars.githubusercontent.com`)
-- Google Analytics 4 (`googletagmanager.com` e `google-analytics.com`), quando configurado
+Valida mensagens de commit conforme **Conventional Commits**.
 
-## Configurar Google Analytics 4 (GA4)
+O `main` é protegido por ruleset com:
 
-O projeto ja esta pronto para GA4 sem ativar rastreamento por padrao.
+- Pull Request obrigatório;
+- resolução de conversas antes do merge;
+- status check `build` obrigatório;
+- branch atualizada antes do merge;
+- bloqueio de force push;
+- bloqueio de exclusão;
+- merge permitido por **squash** ou **rebase**.
 
-Passos:
+## Conventional Commits
 
-1. Abra `analytics.js`.
-2. Defina `GA_MEASUREMENT_ID` com seu codigo, por exemplo: `G-ABC123DEF4`.
-3. Publique no GitHub Pages.
-
-Observacoes:
-
-- Sem ID configurado, o arquivo retorna imediatamente e nao envia dados.
-- O script `analytics.js` e carregado em `index.html` e `privacy.html`.
-- O GA4 so e carregado apos consentimento explicito de cookies para analytics.
-- A escolha de consentimento e salva em `localStorage` na chave `cookieConsent` (`accepted` ou `rejected`).
-
-## Cookies e consentimento
-
-- O site exibe um aviso de cookies quando o GA4 esta configurado e ainda nao existe escolha salva.
-- O usuario pode aceitar ou recusar cookies de analytics.
-- Sem aceite, o analytics nao e inicializado.
-
-## Credito da imagem de fundo
-
-- Arquivo local: `bookshelf-real.jpg`
-- Origem: Wikimedia Commons - `File:Engineering and Computer Science Library.jpg`
-- Licenca: CC0 (dominio publico)
-- Link da fonte: https://commons.wikimedia.org/wiki/File:Engineering_and_Computer_Science_Library.jpg
-
-### Como isso se relaciona com LGPD/GDPR
-
-- LGPD (Brasil): considerar transparência sobre dados tratados, finalidade e direitos do titular.
-- GDPR (UE/EEE): informar base legal aplicável, direitos do titular e, quando necessário, transferências internacionais.
-
-### Boas práticas recomendadas
-
-- Publicar uma Política de Privacidade no próprio site.
-- Explicar claramente uso de `localStorage` para preferências de interface.
-- Listar provedores de terceiros e links para políticas deles.
-- Disponibilizar canal de contato para solicitações de titulares.
-- Revisar necessidade de consentimento/cookie banner caso novos rastreadores sejam adicionados.
-
-### Página de política no site
-
-- A política dedicada está disponível em `privacy.html`.
-- A página inclui índice clicável por seção e layout simplificado para leitura rápida.
-
-## Padrão de commits (obrigatório)
-
-Este repositório usa **Conventional Commits** e bloqueia mensagens fora do padrão.
-
-Formato esperado:
+Formato:
 
 ```text
 <type>(<scope opcional>): <descrição>
 ```
 
-Exemplos válidos:
+Exemplos:
 
 ```text
-feat(home): adiciona seção de projetos
-fix(i18n): corrige troca de idioma no header
-docs(readme): atualiza guia de contribuição
-style(css): ajusta espaçamentos mobile
-refactor(js): simplifica renderização dos cards
-chore(ci): adiciona validação de commit em workflow
+feat(archive): migrate UEMG artificial intelligence 2015
+feat(home): add research and teaching sections
+fix(astro): escape project visual text
+docs(roadmap): define migration phases
+ci(astro): update build workflow
 ```
 
 Tipos aceitos:
@@ -159,17 +185,40 @@ Tipos aceitos:
 - `chore`
 - `revert`
 
-## Validação local e no GitHub (CI)
-
-O hook versionado fica em `.githooks/commit-msg`.
-
-Execute uma vez:
+Hook local:
 
 ```bash
 git config core.hooksPath .githooks
 chmod +x .githooks/commit-msg
 ```
 
-A partir disso, commits fora do padrão serão rejeitados localmente.
+## Conteúdo legado
 
-Também existe validação automática no workflow de CI em PRs e pushes para `main`, impedindo integração de mensagens fora do Conventional Commits.
+Os bancos SQL e backups Joomla/Phoca são **fontes de migração**, não dependências permanentes do novo site.
+
+A política de migração é:
+
+- preservar metadados e contexto acadêmico relevantes;
+- preservar URLs históricas por meio de redirects quando possível;
+- separar conteúdo histórico de material atual;
+- não publicar automaticamente provas, notas, dados de alunos ou materiais restritos;
+- revisar tecnicamente artigos, dicas e tutoriais antes de republicá-los.
+
+## CMS visual
+
+O objetivo é manter uma experiência próxima ao WYSIWYG que motivava o uso do Joomla, mas sem manter PHP/MySQL apenas para edição de conteúdo.
+
+A etapa planejada é integrar um **CMS visual baseado em Git**, com o conteúdo permanecendo em Markdown/MDX no repositório.
+
+Consulte [ROADMAP.md](./ROADMAP.md) para o plano completo.
+
+## Projetos relacionados
+
+- [EC-IA](https://github.com/tiagofga/EC-IA) — recurso educacional aberto de Inteligência Artificial;
+- [Estruturas de Dados e Algoritmos em C](https://github.com/tiagofga/Estruturas-de-Dados-e-Algoritmos-em-C);
+- [MLP](https://github.com/tiagofga/mlp) — implementação acadêmica de perceptron multicamadas em C++;
+- [Drug-CNN](https://github.com/tiagofga/drug-cnn) — deep learning aplicado à descoberta de fármacos.
+
+## Licença e conteúdo
+
+Código, materiais acadêmicos e documentos podem possuir condições de uso distintas. A política de licenciamento do novo portal será consolidada antes da migração definitiva do acervo.
