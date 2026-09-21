@@ -85,7 +85,7 @@ Projetos educacionais e de software continuam independentes e são integrados pe
 - [x] importar bibliografia;
 - [x] reconstruir sequência das aulas;
 - [x] preservar IDs e links legados do Phoca como referência;
-- [x] relacionar a disciplina ao EC-IA;
+- [x] manter a disciplina exclusivamente como acervo histórico, sem associação com versões atuais;
 - [ ] validar todos os arquivos físicos;
 - [ ] decidir localização definitiva dos PDFs;
 - [ ] substituir endpoints Phoca por URLs permanentes;
