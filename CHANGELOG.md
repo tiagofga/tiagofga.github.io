@@ -8,6 +8,8 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Added
 
+- Componente reutilizável `PageHero` para páginas internas.
+- Estado ativo na navegação principal.
 - Rotas em inglês sob `/en/` para Início, Sobre, Pesquisa, Publicações, Ensino, Extensão, Software, Recursos e Contato.
 - Seletor PT/EN funcional entre páginas equivalentes.
 - Canonical e `hreflang` no layout base.
@@ -41,6 +43,9 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Changed
 
+- Páginas institucionais em Português foram padronizadas com hero interno comum.
+- Ritmo visual, espaçamentos, cards e estados de interação foram refinados.
+- Rodapé deixou de exibir placeholders genéricos de Lattes e ORCID até validação oficial.
 - Header e Footer agora recebem o locale atual e apresentam navegação traduzida.
 - O layout base infere o idioma pela rota e fornece metadados específicos por página.
 - Header e Footer foram extraídos do layout base para componentes Astro.
