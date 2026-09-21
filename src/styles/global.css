@@ -700,3 +700,60 @@ html[data-theme="dark"] .language-option.active {
 @media (max-width: 520px) {
   .hero-profile-card { grid-template-columns: 1fr; }
 }
+
+
+/* Homepage teaching section */
+.current-home-courses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.current-home-courses .content-panel {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.current-home-courses .content-panel p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.current-home-courses .content-panel .button {
+  margin-top: auto;
+}
+
+.archive-home-callout {
+  margin-top: 20px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  box-shadow: none;
+}
+.archive-home-callout h3 {
+  margin: 10px 0 6px;
+  font-size: 1.35rem;
+  letter-spacing: -.02em;
+}
+.archive-home-callout p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 760px;
+}
+.archive-home-callout .card-link {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+html[data-theme="dark"] .archive-home-callout {
+  background: var(--surface);
+}
+
+@media (max-width: 760px) {
+  .current-home-courses { grid-template-columns: 1fr; }
+  .archive-home-callout {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
