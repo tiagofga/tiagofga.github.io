@@ -6,22 +6,123 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  noindex?: boolean;
 }
+
+const path = Astro.url.pathname;
+const locale: "pt" | "en" = path.startsWith("/en/") || path === "/en" ? "en" : "pt";
+
+const routePairs: Record<string, string> = {
+  "/": "/en/",
+  "/sobre/": "/en/about/",
+  "/pesquisa/": "/en/research/",
+  "/publicacoes/": "/en/publications/",
+  "/ensino/": "/en/teaching/",
+  "/extensao/": "/en/extension/",
+  "/software/": "/en/software/",
+  "/recursos/": "/en/resources/",
+  "/contato/": "/en/contact/",
+};
+
+const reverseRoutePairs = Object.fromEntries(
+  Object.entries(routePairs).map(([pt, en]) => [en, pt]),
+) as Record<string, string>;
+
+const alternatePath = locale === "pt" ? routePairs[path] : reverseRoutePairs[path];
 
 const {
   title,
-  description = "Pesquisa, ensino, extensão e software em Computação e Inteligência Artificial.",
+  description = locale === "en"
+    ? "Research, teaching, extension and software in Computing and Artificial Intelligence."
+    : "Pesquisa, ensino, extensão e software em Computação e Inteligência Artificial.",
+  image = "/social-card.svg",
+  noindex = false,
 } = Astro.props;
 
-const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiago Alves de Oliveira`;
+const pageTitle = title === "Tiago Alves de Oliveira"
+  ? title
+  : `${title} | Tiago Alves de Oliveira`;
+
+const canonicalURL = new URL(path, Astro.site ?? Astro.url.origin);
+const imageURL = new URL(image, Astro.site ?? Astro.url.origin);
+const alternateURL = alternatePath
+  ? new URL(alternatePath, Astro.site ?? Astro.url.origin)
+  : undefined;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": path === "/" || path === "/en/" ? "ProfilePage" : "WebPage",
+  name: pageTitle,
+  description,
+  url: canonicalURL.toString(),
+  inLanguage: locale === "en" ? "en" : "pt-BR",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Tiago Alves de Oliveira",
+    url: new URL("/", Astro.site ?? Astro.url.origin).toString(),
+  },
+  about: {
+    "@type": "Person",
+    name: "Tiago Alves de Oliveira",
+    jobTitle: locale === "en" ? "Professor and researcher in Computing" : "Professor e pesquisador em Computação",
+    affiliation: {
+      "@type": "CollegeOrUniversity",
+      name: "CEFET-MG",
+    },
+  },
+};
 ---
 <!doctype html>
-<html lang="pt-BR">
+<html lang={locale === "en" ? "en" : "pt-BR"}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#071a2d" />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    <link rel="canonical" href={canonicalURL} />
+    {alternateURL && (
+      <>
+        <link
+          rel="alternate"
+          hreflang={locale === "en" ? "pt-BR" : "en"}
+          href={alternateURL}
+        />
+        <link
+          rel="alternate"
+          hreflang={locale === "en" ? "en" : "pt-BR"}
+          href={canonicalURL}
+        />
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={locale === "en" ? alternateURL : canonicalURL}
+        />
+      </>
+    )}
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tiago Alves de Oliveira" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:locale" content={locale === "en" ? "en_US" : "pt_BR"} />
+    {alternateURL && (
+      <meta property="og:locale:alternate" content={locale === "en" ? "pt_BR" : "en_US"} />
+    )}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+
     <script is:inline>
       const storedTheme = localStorage.getItem("theme");
       const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -30,8 +131,10 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
-    <Header />
+    <a class="skip-link" href="#main-content">
+      {locale === "en" ? "Skip to main content" : "Pular para o conteúdo principal"}
+    </a>
+    <Header locale={locale} alternatePath={alternatePath} />
     <main id="main-content" tabindex="-1">
       <slot />
     </main>
@@ -43,7 +146,9 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
         if (!toggle) return;
         const isDark = root.dataset.theme === "dark";
         toggle.setAttribute("aria-pressed", String(isDark));
-        const label = isDark ? "Usar tema claro" : "Usar tema escuro";
+        const label = isDark
+          ? (toggle.dataset.lightLabel || "Use light theme")
+          : (toggle.dataset.darkLabel || "Use dark theme");
         toggle.setAttribute("title", label);
         toggle.setAttribute("aria-label", label);
       };
@@ -57,6 +162,6 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
         syncToggle();
       });
     </script>
-    <Footer />
+    <Footer locale={locale} />
   </body>
 </html>
