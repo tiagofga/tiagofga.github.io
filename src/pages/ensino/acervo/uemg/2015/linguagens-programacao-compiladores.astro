@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../../../../../layouts/BaseLayout.astro";
+import Content, { frontmatter } from "../../../../../content/ensino/uemg-2015-linguagens-programacao-compiladores.md";
+
+const { title, institution, year, semester, legacyUrl, legacyDownloadsUrl, materials = [] } = frontmatter;
+---
+<BaseLayout title={`${title} — ${institution} ${year}`} description={`Acervo histórico da disciplina de ${title}, ${institution}, ${year}.`}>
+  <section class="archive-hero">
+    <div class="shell">
+      <div class="breadcrumb"><a href="/">Início</a> / Ensino / Acervo / UEMG / 2015</div>
+      <p class="eyebrow">Acervo histórico · Ensino</p>
+      <h1>{title}</h1>
+      <p>Material público utilizado na disciplina em {year}, preservado como parte da trajetória docente.</p>
+      <div class="meta-row">
+        <span class="meta-chip">{institution}</span>
+        <span class="meta-chip">{year}</span>
+        <span class="meta-chip">{semester}º semestre</span>
+        <span class="meta-chip">Material histórico</span>
+      </div>
+      <div class="notice">
+        <strong>Acervo histórico:</strong> esta página preserva a organização registrada para a disciplina em 2015, sem representar uma versão atual do curso.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell content-layout">
+      <article class="card content-panel">
+        <Content />
+
+        <h2>Materiais públicos</h2>
+        {materials.length > 0 ? (
+          <>
+            <p class="legacy-note">Os arquivos permanecem temporariamente vinculados ao acervo legado até a criação do armazenamento definitivo.</p>
+            <div class="material-list">
+              {materials.map((item) => (
+                <div class="material">
+                  <div class="material-index">{item.index}</div>
+                  <div>
+                    <strong>{item.title}</strong>
+                    <small>{item.file}</small>
+                  </div>
+                  <a href={legacyDownloadsUrl}>Ver no legado ↗</a>
+                </div>
+              ))}
+            </div>
+          </>
+        ) : (
+          <p class="legacy-note">Os links e arquivos da disciplina continuam disponíveis na página histórica enquanto o armazenamento definitivo do acervo não é criado. <a href={legacyUrl}>Consultar página legada ↗</a></p>
+        )}
+      </article>
+
+      <aside class="sidebar">
+        <section class="card side-card">
+          <p class="eyebrow">Contexto</p>
+          <h3>Disciplina de 2015</h3>
+          <p>Conteúdo preservado exclusivamente como registro histórico da atividade docente na UEMG.</p>
+        </section>
+        <section class="card side-card">
+          <p class="eyebrow">Origem</p>
+          <h3>Registro legado</h3>
+          <p>Informações preservadas a partir das páginas públicas históricas e do acervo de downloads.</p>
+          <a class="card-link" href={legacyUrl}>Ver página histórica ↗</a>
+        </section>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
