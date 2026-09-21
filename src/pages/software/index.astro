@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 
 const projetos = [
   {
@@ -40,17 +41,12 @@ const projetos = [
   title="Software"
   description="Projetos de software aberto conectando pesquisa, ensino e Computação."
 >
-  <section class="archive-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/">Início</a> / Software</div>
-      <p class="eyebrow">Software</p>
-      <h1>Projetos abertos para pesquisa, ensino e experimentação.</h1>
-      <p>
-        Esta área reúne projetos selecionados. A documentação detalhada permanece nos
-        repositórios e sites próprios, enquanto o portal fornece contexto e descoberta.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Software"
+    title="Projetos abertos para pesquisa, ensino e experimentação."
+    current="Software"
+    description="Esta área reúne projetos selecionados. A documentação detalhada permanece nos repositórios e sites próprios, enquanto o portal fornece contexto e descoberta."
+  />
 
   <section class="section">
     <div class="shell">
