@@ -2,7 +2,7 @@
 import BaseLayout from "../../../../../layouts/BaseLayout.astro";
 import Content, { frontmatter } from "../../../../../content/ensino/uemg-2015-inteligencia-artificial.md";
 
-const { title, institution, year, semester, legacyUrl, successor, materials } = frontmatter;
+const { title, institution, year, semester, legacyUrl, materials } = frontmatter;
 ---
 <BaseLayout title={`${title} — ${institution} ${year}`} description={`Acervo histórico da disciplina de ${title}, ${institution}, ${year}.`}>
   <section class="archive-hero">
@@ -18,8 +18,7 @@ const { title, institution, year, semester, legacyUrl, successor, materials } = 
         <span class="meta-chip">Material histórico</span>
       </div>
       <div class="notice">
-        <strong>Conteúdo atual:</strong> para a disciplina contemporânea de Inteligência Artificial, consulte o
-        <a href={successor.url}><strong> {successor.name}</strong></a>. Esta página preserva a versão de 2015.
+        <strong>Acervo histórico:</strong> esta página preserva o material da disciplina tal como organizado em 2015, sem representar uma versão atual do curso.
       </div>
     </div>
   </section>
@@ -47,10 +46,9 @@ const { title, institution, year, semester, legacyUrl, successor, materials } = 
 
       <aside class="sidebar">
         <section class="card side-card">
-          <p class="eyebrow">Continuidade</p>
-          <h3>Do acervo ao EC-IA</h3>
-          <p>A versão atual da disciplina evoluiu para um recurso educacional com notas visuais, estudos guiados, atividades, visualizações e pseudocódigos.</p>
-          <a class="button light" href={successor.url}>Explorar EC-IA →</a>
+          <p class="eyebrow">Contexto</p>
+          <h3>Disciplina de 2015</h3>
+          <p>Conteúdo preservado como registro histórico da disciplina ministrada na UEMG em 2015/2.</p>
         </section>
         <section class="card side-card">
           <p class="eyebrow">Origem</p>
