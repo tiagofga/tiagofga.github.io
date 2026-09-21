@@ -1,21 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 <BaseLayout
   title="Recursos"
   description="Artigos, tutoriais, notas técnicas, minicursos e materiais reutilizáveis."
 >
-  <section class="archive-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/">Início</a> / Recursos</div>
-      <p class="eyebrow">Recursos</p>
-      <h1>Conteúdo técnico e educacional para consulta e reutilização.</h1>
-      <p>
-        Espaço para materiais que continuam úteis fora de uma disciplina ou projeto específico,
-        incluindo conteúdo recuperado do site legado após revisão editorial.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Recursos"
+    title="Conteúdo técnico e educacional para consulta e reutilização."
+    current="Recursos"
+    description="Espaço para materiais que continuam úteis fora de uma disciplina ou projeto específico, incluindo conteúdo recuperado do site legado após revisão editorial."
+  />
 
   <section class="section">
     <div class="shell">
