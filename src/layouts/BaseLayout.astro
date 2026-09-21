@@ -43,7 +43,9 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
         if (!toggle) return;
         const isDark = root.dataset.theme === "dark";
         toggle.setAttribute("aria-pressed", String(isDark));
-        toggle.setAttribute("title", isDark ? "Usar tema claro" : "Usar tema escuro");
+        const label = isDark ? "Usar tema claro" : "Usar tema escuro";
+        toggle.setAttribute("title", label);
+        toggle.setAttribute("aria-label", label);
       };
 
       syncToggle();
