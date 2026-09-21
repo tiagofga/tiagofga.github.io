@@ -1,20 +1,31 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHero from "../../../components/PageHero.astro";
 ---
-<BaseLayout title="Publications" description="Scientific publications, conference papers, datasets and research artifacts.">
-  <section class="archive-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/en/">Home</a> / Publications</div>
-      <p class="eyebrow">Publications</p>
-      <h1>Scientific output and research artifacts.</h1>
-      <p>Publication records will be added after metadata validation.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="Publications"
+  description="Academic publications, conference papers, datasets, research software and related scientific outputs."
+>
+  <PageHero
+    eyebrow="Academic output"
+    title="Publications"
+    current="Publications"
+    homeLabel="Home"
+    homeHref="/en/"
+    description="Journal articles, conference papers, datasets and other scientific outputs will be added after their official metadata has been reviewed."
+  />
+
   <section class="section">
-    <div class="shell publication-grid">
-      <article class="card publication-type"><span class="tag">Journals</span><h2>Journal articles</h2><p>Peer-reviewed journal publications.</p></article>
-      <article class="card publication-type"><span class="tag">Events</span><h2>Conferences</h2><p>Conference and congress papers.</p></article>
-      <article class="card publication-type"><span class="tag">Artifacts</span><h2>Datasets and artifacts</h2><p>Datasets, software and associated research outputs.</p></article>
+    <div class="shell">
+      <div class="publication-grid">
+        <article class="card publication-type"><span class="tag">Articles</span><h2>Journal articles</h2><p>Peer-reviewed articles organized by year and research area.</p></article>
+        <article class="card publication-type"><span class="tag">Events</span><h2>Conferences and congresses</h2><p>Full papers, abstracts and other contributions presented at scientific events.</p></article>
+        <article class="card publication-type"><span class="tag">Data</span><h2>Datasets and artifacts</h2><p>Datasets, DOIs, research software and materials associated with scientific publications.</p></article>
+      </div>
+
+      <div class="notice publication-notice">
+        <strong>Under curation:</strong> individual records are not listed yet in order to avoid publishing incomplete or unverified metadata.
+      </div>
     </div>
   </section>
 </BaseLayout>

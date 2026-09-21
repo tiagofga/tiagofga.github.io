@@ -43,6 +43,11 @@ O projeto ainda está em fase de migração, portanto as entradas abaixo represe
 
 ### Changed
 
+- Versão em inglês recebeu revisão textual para inglês acadêmico mais natural e consistente.
+- Páginas internas em inglês passaram a utilizar o mesmo `PageHero` e o mesmo sistema visual da versão em Português.
+- Homepage em inglês passou a espelhar a hierarquia visual principal da homepage em Português.
+- Navegação em inglês usa `Outreach` em vez de `Extension` e recebeu ajuste de espaçamento para títulos mais longos.
+- Página de Teaching em inglês foi alinhada visualmente à página de Ensino em Português.
 - Páginas institucionais em Português foram padronizadas com hero interno comum.
 - Ritmo visual, espaçamentos, cards e estados de interação foram refinados.
 - Rodapé deixou de exibir placeholders genéricos de Lattes e ORCID até validação oficial.

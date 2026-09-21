@@ -27,10 +27,10 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 | Menu mobile | Implementado nesta branch |
 | Acessibilidade base | Em consolidação nesta branch |
 | Componentização | Header, Footer e SectionHeading integrados ao main |
-| PT/EN | Implementado nesta branch para páginas institucionais principais |
+| PT/EN | Implementado; revisão visual e textual do inglês nesta branch |
 | SEO base | Canonical, hreflang, Open Graph e JSON-LD implementados nesta branch |
 | Branding web | Integrado ao main |
-| Fechamento visual | Em andamento nesta branch |
+| Fechamento visual | Integrado ao main; paridade visual do inglês em revisão nesta branch |
 | Arquivos históricos | Ainda no legado |
 | Cloudflare R2 | Planejado, ainda não criado |
 | Domínio principal | Cutover futuro |
@@ -39,15 +39,15 @@ Estado operacional da renovação de `tiagofga.github.io` / `tiagofga.com.br`.
 ## Branch de trabalho atual
 
 ```text
-feat/visual-polish
+feat/en-visual-review
 ```
 
 Objetivo da branch:
 
-- fechar a identidade visual e a consistência entre páginas;
-- padronizar heroes, cards, espaçamentos e navegação;
-- revisar claro/escuro, desktop e mobile;
-- preparar a interface para a migração do acervo legado até 2025.
+- revisar a tradução inglesa com terminologia acadêmica mais natural;
+- garantir paridade visual entre Português e Inglês;
+- ajustar navegação inglesa para títulos mais longos;
+- manter o mesmo sistema de componentes, responsividade e tema nas duas versões.
 
 ## Ensino atual — protótipo
 

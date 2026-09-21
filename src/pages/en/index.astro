@@ -53,24 +53,88 @@ import SectionHeading from "../../components/SectionHeading.astro";
     </article>
   </div>
 
+  <section class="section home-profile-section">
+    <div class="shell home-profile-grid">
+      <div>
+        <p class="eyebrow eyebrow-dark">Profile</p>
+        <h2>Teaching, research and software development in Computing.</h2>
+        <p>Professor at CEFET-MG working in Artificial Intelligence, machine learning and computational applications in science and health.</p>
+      </div>
+      <div class="home-profile-actions">
+        <a class="button light" href="/en/about/">View profile →</a>
+        <a class="card-link" href="/en/contact/">Academic contact →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="shell">
       <SectionHeading
-        eyebrow="Portal"
-        title="Research, teaching, extension and technical resources"
-        description="The English version mirrors the main institutional areas of the portal. Historical teaching material remains in Portuguese until individually reviewed and translated."
+        eyebrow="Selected projects"
+        title="Open software and educational resources"
+        description="Independent projects remain in their own repositories and websites, while the portal provides academic context and discovery."
+      />
+      <div class="projects">
+        <article class="card project-card"><div class="project-visual">EC-IA</div><div class="project-body"><span class="tag">Teaching + Software</span><h3>EC-IA</h3><p>Open educational resource for Artificial Intelligence.</p><a class="card-link" href="https://tiagofga.github.io/EC-IA/">Explore →</a></div></article>
+        <article class="card project-card"><div class="project-visual">&#123; C &#125;</div><div class="project-body"><span class="tag">Teaching + Software</span><h3>Data Structures and Algorithms in C</h3><p>Implementations, tests, exercises and documentation.</p><a class="card-link" href="https://github.com/tiagofga/Estruturas-de-Dados-e-Algoritmos-em-C">GitHub →</a></div></article>
+        <article class="card project-card"><div class="project-visual">MLP</div><div class="project-body"><span class="tag">Research + Software</span><h3>Modular MLP</h3><p>A neural network implementation from scratch in modern C++.</p><a class="card-link" href="https://tiagofga.github.io/mlp/">Explore →</a></div></article>
+        <article class="card project-card"><div class="project-visual">Drug-CNN</div><div class="project-body"><span class="tag">Research + Software</span><h3>Drug-CNN</h3><p>Deep learning applied to pharmacological class prediction and drug discovery.</p><a class="card-link" href="https://github.com/tiagofga/drug-cnn">GitHub →</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="Current teaching"
+        title="Courses in progress · 2026/2"
+        description="The current semester appears first. Historical material remains available separately."
+      />
+      <div class="current-home-courses">
+        <article class="card content-panel">
+          <span class="tag">CEFET-MG · 2026/2</span>
+          <h2>Artificial Intelligence</h2>
+          <p>Current materials, activities and supplementary resources.</p>
+          <a class="button light" href="https://tiagofga.github.io/EC-IA/">Open course ↗</a>
+        </article>
+        <article class="card content-panel">
+          <span class="tag">CEFET-MG · 2026/2</span>
+          <h2>Introduction to Computer Programming Laboratory</h2>
+          <p>Programming laboratory activities, exercise lists and semester materials.</p>
+          <a class="button light" href="/en/teaching/">View teaching →</a>
+        </article>
+      </div>
+
+      <div class="archive-home-callout card">
+        <div>
+          <span class="tag">Historical archive</span>
+          <h3>Materials from previous years</h3>
+          <p>Legacy courses are organized by institution and year and remain separate from current teaching.</p>
+        </div>
+        <a class="card-link" href="/ensino/#acervo">Open Portuguese archive →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section stage2-home-section">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="Other areas"
+        title="Outreach and resources"
+        description="Dedicated areas for university outreach and reusable technical content."
+        darkEyebrow={true}
       />
       <div class="stage2-home-grid">
         <article class="card stage2-home-card">
           <span class="stage2-symbol">EXT</span>
-          <h3>Extension</h3>
-          <p>Projects, courses and workshops connecting Computing with the wider community.</p>
-          <a class="card-link" href="/en/extension/">View extension →</a>
+          <h3>Outreach</h3>
+          <p>Projects, short courses, workshops and activities connecting Computing with the wider community.</p>
+          <a class="card-link" href="/en/extension/">View outreach →</a>
         </article>
         <article class="card stage2-home-card">
           <span class="stage2-symbol">RES</span>
           <h3>Resources</h3>
-          <p>Articles, tutorials, technical notes and reusable educational material.</p>
+          <p>Articles, tutorials, technical notes, short courses and reviewed educational materials.</p>
           <a class="card-link" href="/en/resources/">Explore resources →</a>
         </article>
       </div>

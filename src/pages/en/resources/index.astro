@@ -1,12 +1,32 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHero from "../../../components/PageHero.astro";
 ---
-<BaseLayout title="Resources" description="Articles, tutorials, technical notes, short courses and reusable educational resources.">
-  <section class="archive-hero"><div class="shell"><div class="breadcrumb"><a href="/en/">Home</a> / Resources</div><p class="eyebrow">Resources</p><h1>Technical and educational content for consultation and reuse.</h1><p>Legacy content will only be republished after technical and editorial review.</p></div></section>
-  <section class="section"><div class="shell resource-grid">
-    <article class="card resource-card"><span class="stage2-symbol">ART</span><h2>Articles</h2><p>Technical writing and contextualized editorial content.</p></article>
-    <article class="card resource-card"><span class="stage2-symbol">TUT</span><h2>Tutorials</h2><p>Reviewed technical guides and practical instructions.</p></article>
-    <article class="card resource-card"><span class="stage2-symbol">TN</span><h2>Technical notes</h2><p>Short references and supporting documentation.</p></article>
-    <article class="card resource-card"><span class="stage2-symbol">MINI</span><h2>Short courses</h2><p>Standalone educational material beyond regular courses.</p></article>
-  </div></section>
+<BaseLayout
+  title="Resources"
+  description="Articles, tutorials, technical notes, short courses and reusable educational resources."
+>
+  <PageHero
+    eyebrow="Resources"
+    title="Technical and educational content for reference and reuse."
+    current="Resources"
+    homeLabel="Home"
+    homeHref="/en/"
+    description="A collection of materials that remain useful beyond a specific course or project, including legacy content republished after technical and editorial review."
+  />
+
+  <section class="section">
+    <div class="shell">
+      <div class="resource-grid">
+        <article class="card resource-card"><span class="stage2-symbol">ART</span><h2>Articles</h2><p>Technical writing, reflections and contextualized editorial content.</p></article>
+        <article class="card resource-card"><span class="stage2-symbol">TUT</span><h2>Tutorials</h2><p>Technical guides reviewed before republication to avoid outdated instructions.</p></article>
+        <article class="card resource-card"><span class="stage2-symbol">TN</span><h2>Technical notes</h2><p>Short references, procedures and supporting documentation for teaching, research and software.</p></article>
+        <article class="card resource-card"><span class="stage2-symbol">MINI</span><h2>Short courses</h2><p>Standalone educational materials outside regular courses and reusable training activities.</p></article>
+      </div>
+
+      <div class="notice stage2-notice">
+        <strong>Editorial policy:</strong> legacy material will only be republished after technical review. Original publication dates will be preserved, and substantial updates will include a separate revision date.
+      </div>
+    </div>
+  </section>
 </BaseLayout>

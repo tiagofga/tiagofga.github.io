@@ -1,21 +1,35 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import SectionHeading from "../../../components/SectionHeading.astro";
 ---
-<BaseLayout title="Research" description="Research in applied Artificial Intelligence, machine learning, drug discovery, bioinformatics and computer vision.">
-  <section class="archive-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/en/">Home</a> / Research</div>
-      <p class="eyebrow">Research</p>
-      <h1>Applied Artificial Intelligence for scientific and computational problems.</h1>
-      <p>Research interests connecting machine learning, scientific software, drug discovery, bioinformatics and computer vision.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="Research"
+  description="Research in applied Artificial Intelligence, machine learning, drug discovery, bioinformatics and computer vision."
+>
+  <PageHero
+    eyebrow="Research"
+    title="Applied Artificial Intelligence for scientific and computational problems."
+    current="Research"
+    homeLabel="Home"
+    homeHref="/en/"
+    description="Research driven by computational models, data and reproducible software, with applications in drug discovery, bioinformatics and computer vision."
+  />
+
   <section class="section">
-    <div class="shell research-grid">
-      <article class="card research-card"><span class="tag">AI</span><h3>Machine Learning</h3><p>Model development, evaluation and reproducible computational pipelines.</p></article>
-      <article class="card research-card"><span class="tag">Drug discovery</span><h3>Drug discovery</h3><p>Computational methods for molecular classification and virtual screening.</p></article>
-      <article class="card research-card"><span class="tag">ADMET</span><h3>Bioinformatics and ADMET</h3><p>Predictive modelling and computational analysis related to pharmacological properties.</p></article>
-      <article class="card research-card"><span class="tag">Vision</span><h3>Computer Vision</h3><p>Image-based models and visual representations for scientific applications.</p></article>
+    <div class="shell">
+      <SectionHeading
+        eyebrow="Research areas"
+        title="Main themes"
+        description="These areas organize recurring research topics and connect projects, publications, datasets and software."
+        darkEyebrow={true}
+      />
+      <div class="research-grid">
+        <article class="card research-card"><span class="tag">Applied AI</span><h3>Machine Learning</h3><p>Predictive models, experimental evaluation, optimization and robustness analysis.</p></article>
+        <article class="card research-card"><span class="tag">Health</span><h3>Drug discovery</h3><p>Deep learning and molecular representations for pharmacological classification and prediction.</p></article>
+        <article class="card research-card"><span class="tag">Scientific computing</span><h3>Bioinformatics and ADMET</h3><p>Computational modelling, calibration and evaluation of properties relevant to bioactive molecules.</p></article>
+        <article class="card research-card"><span class="tag">Vision</span><h3>Computer Vision</h3><p>Visual representations, classification, explainability and image analysis.</p></article>
+      </div>
     </div>
   </section>
 </BaseLayout>

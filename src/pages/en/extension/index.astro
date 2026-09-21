@@ -1,11 +1,38 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PageHero from "../../../components/PageHero.astro";
+import SectionHeading from "../../../components/SectionHeading.astro";
 ---
-<BaseLayout title="Extension" description="Extension projects, courses and workshops in Computing and technology.">
-  <section class="archive-hero"><div class="shell"><div class="breadcrumb"><a href="/en/">Home</a> / Extension</div><p class="eyebrow">Extension</p><h1>Academic knowledge connected to the wider community.</h1><p>Projects, courses, workshops and outreach activities will be added as their records are validated.</p></div></section>
-  <section class="section"><div class="shell stage2-grid">
-    <article class="card stage2-card"><span class="stage2-symbol">PRJ</span><h3>Projects</h3><p>Institutional outreach projects with their own goals, audiences and results.</p></article>
-    <article class="card stage2-card"><span class="stage2-symbol">CRS</span><h3>Courses</h3><p>Short courses and educational activities for internal and external audiences.</p></article>
-    <article class="card stage2-card"><span class="stage2-symbol">WRK</span><h3>Workshops</h3><p>Hands-on activities, demonstrations and technology training.</p></article>
-  </div></section>
+<BaseLayout
+  title="Outreach"
+  description="University outreach projects, short courses, workshops and community-oriented activities in Computing and technology."
+>
+  <PageHero
+    eyebrow="Outreach"
+    title="Academic knowledge connected with the wider community."
+    current="Outreach"
+    homeLabel="Home"
+    homeHref="/en/"
+    description="Projects, short courses, workshops and other university outreach activities will be added as their records and supporting materials are validated."
+  />
+
+  <section class="section">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="Organization"
+        title="Areas of activity"
+        description="Outreach activities are presented separately from regular courses and research projects."
+        darkEyebrow={true}
+      />
+      <div class="stage2-grid">
+        <article class="card stage2-card"><span class="stage2-symbol">PRJ</span><h3>Projects</h3><p>Institutional initiatives with defined goals, audiences, teams, time frames and outcomes.</p></article>
+        <article class="card stage2-card"><span class="stage2-symbol">CRS</span><h3>Short courses</h3><p>Training activities designed for internal and external audiences.</p></article>
+        <article class="card stage2-card"><span class="stage2-symbol">WRK</span><h3>Workshops</h3><p>Hands-on activities, demonstrations and technology training.</p></article>
+      </div>
+
+      <div class="notice stage2-notice">
+        <strong>Under curation:</strong> specific activities will be added only after titles, dates and institutional links have been verified.
+      </div>
+    </div>
+  </section>
 </BaseLayout>
