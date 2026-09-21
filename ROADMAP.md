@@ -275,13 +275,14 @@ Para cada material:
 - [ ] implementar redirects 301 quando tecnicamente possível;
 - [ ] preservar páginas antigas com tráfego relevante;
 - [x] adicionar canonical;
-- [ ] sitemap.xml;
-- [ ] robots.txt;
+- [x] sitemap.xml;
+- [x] robots.txt;
 - [x] Open Graph;
 - [x] Twitter/X cards;
 - [x] structured data base para WebPage/ProfilePage, WebSite e Person;
 - [ ] revisar structured data específico conforme novos tipos de conteúdo forem adicionados;
-- [ ] configurar `tiagofga.com.br` como domínio principal;
+- [x] preparar código, canonical e CNAME para `tiagofga.com.br`;
+- [ ] configurar domínio personalizado em GitHub Pages e executar cutover DNS após preservar URLs legadas;
 - [ ] manter `tiagofga.github.io` como origem técnica/secundária;
 - [ ] validar DNS, TLS e DNSSEC via Cloudflare.
 
@@ -291,7 +292,8 @@ Para cada material:
 
 ## Fase 9 — Privacidade e observabilidade
 
-- [ ] migrar/revisar política de privacidade;
+- [x] criar/revisar política de privacidade base em PT/EN;
+- [ ] revisar política após ativação efetiva de analytics/publicidade;
 - [ ] revisar necessidade real de analytics;
 - [ ] se GA4 for mantido, conservar consentimento prévio;
 - [ ] considerar analytics mais simples e com menor coleta;
@@ -325,7 +327,7 @@ Para cada material:
 - [ ] validar mobile;
 - [ ] validar acessibilidade;
 - [ ] validar redirects;
-- [ ] apontar domínio;
+- [ ] apontar DNS para GitHub Pages após preservar downloads e rotas legadas;
 - [ ] observar erros por período de transição;
 - [ ] somente depois decidir sobre renovação da Hostinger;
 - [ ] desativar Joomla quando não houver dependência residual.
