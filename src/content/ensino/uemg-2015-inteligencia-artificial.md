@@ -5,9 +5,6 @@ year: 2015
 semester: 2
 status: "historical"
 legacyUrl: "https://tiagofga.com.br/index.php/aulas/2015/uemg/inteligencia-artificial.html"
-successor:
-  name: "EC-IA"
-  url: "https://tiagofga.github.io/EC-IA/"
 materials:
   - index: "00"
     title: "Apresentação da ementa"
@@ -108,4 +105,4 @@ materials:
 
 ## Sobre este acervo
 
-Esta página preserva a organização e os materiais públicos utilizados na disciplina em 2015. O conteúdo é mantido como registro histórico da atividade docente; materiais atuais de Inteligência Artificial são organizados no projeto EC-IA.
+Esta página preserva a organização e os materiais públicos utilizados na disciplina em 2015. O conteúdo é mantido exclusivamente como registro histórico da atividade docente.
