@@ -153,6 +153,21 @@ Os arquivos físicos continuam temporariamente associados ao legado. A migraçã
 
 Os arquivos legados da raiz ainda podem permanecer durante a transição. Eles só devem ser removidos após validação final do portal Astro e do fluxo de publicação.
 
+## Interface e acessibilidade
+
+A Etapa 3 inicia a consolidação do design system e da navegação:
+
+- Header e Footer foram extraídos para componentes Astro reutilizáveis;
+- títulos de seção começaram a usar um componente comum;
+- o menu principal possui navegação mobile expansível;
+- o menu informa estado com `aria-expanded` e pode ser fechado com `Escape`;
+- foi adicionado link de salto para o conteúdo principal;
+- estados de foco visível foram padronizados;
+- `prefers-reduced-motion` é respeitado;
+- o controle de tema mantém rótulo acessível sincronizado com o estado.
+
+A componentização continuará progressivamente para cards, breadcrumbs, callouts e listas de materiais.
+
 ## Desenvolvimento local
 
 Requisitos:

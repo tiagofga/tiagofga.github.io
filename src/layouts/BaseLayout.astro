@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -28,40 +30,9 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
     <title>{pageTitle}</title>
   </head>
   <body>
-    <header class="site-header">
-      <div class="shell nav-wrap">
-        <a class="brand" href="/">
-          <strong>Tiago Alves de Oliveira</strong>
-          <span>Computação · Ciência · Educação</span>
-        </a>
-        <nav aria-label="Navegação principal">
-          <a href="/sobre/">Sobre</a>
-          <a href="/pesquisa/">Pesquisa</a>
-          <a href="/publicacoes/">Publicações</a>
-          <a href="/ensino/">Ensino</a>
-          <a href="/extensao/">Extensão</a>
-          <a href="/software/">Software</a>
-          <a href="/recursos/">Recursos</a>
-          <a href="/contato/">Contato</a>
-        </nav>
-        <div class="nav-meta" aria-label="Preferências">
-          <div class="language-switch" aria-label="Idioma">
-            <span class="language-option active" aria-current="page">PT</span>
-            <span class="language-option disabled" aria-disabled="true" title="Versão em inglês em preparação">EN</span>
-          </div>
-          <button
-            class="theme-toggle"
-            type="button"
-            aria-label="Alternar tema claro e escuro"
-            aria-pressed="false"
-            title="Alternar tema claro e escuro"
-          >
-            <span class="theme-icon" aria-hidden="true">◐</span>
-          </button>
-        </div>
-      </div>
-    </header>
-    <main>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+    <Header />
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <script is:inline>
@@ -72,7 +43,9 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
         if (!toggle) return;
         const isDark = root.dataset.theme === "dark";
         toggle.setAttribute("aria-pressed", String(isDark));
-        toggle.setAttribute("title", isDark ? "Usar tema claro" : "Usar tema escuro");
+        const label = isDark ? "Usar tema claro" : "Usar tema escuro";
+        toggle.setAttribute("title", label);
+        toggle.setAttribute("aria-label", label);
       };
 
       syncToggle();
@@ -84,18 +57,6 @@ const pageTitle = title === "Tiago Alves de Oliveira" ? title : `${title} | Tiag
         syncToggle();
       });
     </script>
-    <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div>
-          <strong>Tiago Alves de Oliveira</strong>
-          <p>Computação · Ciência · Tecnologia · Sociedade</p>
-        </div>
-        <div class="footer-links">
-          <a href="https://github.com/tiagofga">GitHub</a>
-          <a href="https://lattes.cnpq.br/">Lattes</a>
-          <a href="https://orcid.org/">ORCID</a>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>

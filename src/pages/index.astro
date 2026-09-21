@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 ---
 <BaseLayout title="Tiago Alves de Oliveira">
   <section class="hero">
@@ -71,10 +72,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="section">
     <div class="shell">
-      <div class="section-heading">
-        <div><p class="eyebrow">Projetos em destaque</p><h2>Software e recursos abertos</h2></div>
-        <p>Projetos independentes permanecem em seus próprios repositórios e sites, enquanto o portal principal organiza o contexto acadêmico.</p>
-      </div>
+      <SectionHeading
+        eyebrow="Projetos em destaque"
+        title="Software e recursos abertos"
+        description="Projetos independentes permanecem em seus próprios repositórios e sites, enquanto o portal principal organiza o contexto acadêmico."
+      />
       <div class="projects">
         <article class="card project-card"><div class="project-visual">EC-IA</div><div class="project-body"><span class="tag">Ensino + Software</span><h3>EC-IA</h3><p>Recurso educacional aberto para Inteligência Artificial.</p><a class="card-link" href="https://tiagofga.github.io/EC-IA/">Explorar →</a></div></article>
         <article class="card project-card"><div class="project-visual">&#123; C &#125;</div><div class="project-body"><span class="tag">Ensino + Software</span><h3>Estruturas de Dados e Algoritmos em C</h3><p>Implementações, testes, exercícios e documentação.</p><a class="card-link" href="https://github.com/tiagofga/Estruturas-de-Dados-e-Algoritmos-em-C">GitHub →</a></div></article>
@@ -86,10 +88,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="section" style="padding-top: 0">
     <div class="shell">
-      <div class="section-heading">
-        <div><p class="eyebrow">Ensino atual</p><h2>Disciplinas em andamento · 2026/2</h2></div>
-        <p>A página principal passa a destacar o semestre corrente. O acervo histórico permanece disponível, mas em segundo plano.</p>
-      </div>
+      <SectionHeading
+        eyebrow="Ensino atual"
+        title="Disciplinas em andamento · 2026/2"
+        description="A página principal destaca o semestre corrente. O acervo histórico permanece disponível, mas em segundo plano."
+      />
       <div class="current-home-courses">
         <article class="card content-panel">
           <span class="tag">CEFET-MG · 2026/2</span>
@@ -118,13 +121,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="section stage2-home-section">
     <div class="shell">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow eyebrow-dark">Outras frentes</p>
-          <h2>Extensão e recursos</h2>
-        </div>
-        <p>Áreas próprias para ações de extensão e conteúdo técnico reutilizável.</p>
-      </div>
+      <SectionHeading
+        eyebrow="Outras frentes"
+        title="Extensão e recursos"
+        description="Áreas próprias para ações de extensão e conteúdo técnico reutilizável."
+        darkEyebrow={true}
+      />
       <div class="stage2-home-grid">
         <article class="card stage2-home-card">
           <span class="stage2-symbol">EXT</span>

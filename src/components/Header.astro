@@ -1,0 +1,88 @@
+---
+const navItems = [
+  ["Sobre", "/sobre/"],
+  ["Pesquisa", "/pesquisa/"],
+  ["Publicações", "/publicacoes/"],
+  ["Ensino", "/ensino/"],
+  ["Extensão", "/extensao/"],
+  ["Software", "/software/"],
+  ["Recursos", "/recursos/"],
+  ["Contato", "/contato/"],
+];
+---
+<header class="site-header">
+  <div class="shell nav-wrap">
+    <a class="brand" href="/" aria-label="Tiago Alves de Oliveira — página inicial">
+      <strong>Tiago Alves de Oliveira</strong>
+      <span>Computação · Ciência · Educação</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+      aria-label="Abrir menu principal"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav id="primary-navigation" class="primary-nav" aria-label="Navegação principal">
+      {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
+    </nav>
+
+    <div class="nav-meta" aria-label="Preferências">
+      <div class="language-switch" aria-label="Idioma">
+        <span class="language-option active" aria-current="page">PT</span>
+        <span class="language-option disabled" aria-disabled="true" title="Versão em inglês em preparação">EN</span>
+      </div>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Alternar tema claro e escuro"
+        aria-pressed="false"
+        title="Alternar tema claro e escuro"
+      >
+        <span class="theme-icon" aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const primaryNav = document.querySelector(".primary-nav");
+
+  const closeMenu = () => {
+    if (!menuToggle || !primaryNav) return;
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menu principal");
+    primaryNav.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+  };
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Abrir menu principal" : "Fechar menu principal");
+    primaryNav?.classList.toggle("is-open", !isOpen);
+    document.body.classList.toggle("menu-open", !isOpen);
+  });
+
+  primaryNav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true") {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+
+  window.matchMedia("(min-width: 981px)").addEventListener("change", (event) => {
+    if (event.matches) closeMenu();
+  });
+</script>
