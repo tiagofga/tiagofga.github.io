@@ -1,21 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 ---
 <BaseLayout
   title="Contato"
   description="Canais profissionais e acadêmicos para contato com Tiago Alves de Oliveira."
 >
-  <section class="archive-hero contact-hero">
-    <div class="shell">
-      <div class="breadcrumb"><a href="/">Início</a> / Contato</div>
-      <p class="eyebrow">Contato</p>
-      <h1>Contato acadêmico e profissional.</h1>
-      <p>
-        Para assuntos de pesquisa, ensino, colaboração ou software, utilize os canais profissionais
-        associados ao portal e aos projetos.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Contato"
+    title="Contato acadêmico e profissional."
+    current="Contato"
+    description="Para assuntos de pesquisa, ensino, colaboração ou software, utilize os canais profissionais associados ao portal e aos projetos."
+  />
 
   <section class="section">
     <div class="shell contact-grid">
